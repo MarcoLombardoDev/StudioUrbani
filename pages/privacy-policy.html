@@ -39,6 +39,7 @@
 <link rel="manifest" href="../assets/img/site.webmanifest">
 <link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js");</script>
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -55,10 +56,11 @@
     </a>
     <nav class="nav" id="mainNav" aria-label="Menu principale">
       <a href="../index.html#studio" data-i18n="nav.studio">Studio</a>
-      <a href="../index.html#servizi" data-i18n="nav.servizi">Servizi</a>
-      <a href="../index.html#fatturazione" data-i18n="nav.fatturazione">Fatturazione</a>
       <a href="../index.html#team" data-i18n="nav.team">Team</a>
+      <a href="../index.html#rapporto" data-i18n="nav.rapporto">Come lavoriamo</a>
+      <a href="../index.html#servizi" data-i18n="nav.servizi">Servizi</a>
       <a href="contatti.html" data-i18n="nav.contatti">Contatti</a>
+      <a class="btn nav__call" href="tel:+39065123225"><span data-i18n="nav.call">Chiama</span> · 06 5123225</a>
     </nav>
     <div class="header__actions">
       <div class="lang-switch" role="group" aria-label="Lingua / Language">
@@ -192,25 +194,25 @@
         <p class="footer__about" data-i18n="footer.about">Assistenza a imprese, professionisti e privati nell'ambito contabile, fiscale, del lavoro e del contenzioso.</p>
       </div>
       <div>
-        <h4 data-i18n="footer.nav">Navigazione</h4>
+        <h2 class="footer__title" data-i18n="footer.nav">Navigazione</h2>
         <ul class="footer__list">
           <li><a href="../index.html#studio" data-i18n="nav.studio">Studio</a></li>
-          <li><a href="../index.html#servizi" data-i18n="nav.servizi">Servizi</a></li>
-          <li><a href="../index.html#fatturazione" data-i18n="nav.fatturazione">Fatturazione</a></li>
           <li><a href="../index.html#team" data-i18n="nav.team">Team</a></li>
+          <li><a href="../index.html#rapporto" data-i18n="nav.rapporto">Come lavoriamo</a></li>
+          <li><a href="../index.html#servizi" data-i18n="nav.servizi">Servizi</a></li>
           <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
         </ul>
       </div>
       <div>
-        <h4 data-i18n="footer.contact">Contatti</h4>
-        <ul class="footer__list">
+        <h2 class="footer__title" data-i18n="footer.contact">Contatti</h2>
+        <ul class="footer__list footer__list--contact">
           <li>Via Cristoforo Colombo 348<br>Sc. D int. 3 — 00145 Roma</li>
           <li><a href="tel:+39065123225">(+39) 06 5123225</a></li>
           <li><a href="mailto:info@studiourbani.it">info@studiourbani.it</a></li>
         </ul>
       </div>
       <div>
-        <h4 data-i18n="footer.legalTitle">Informazioni legali</h4>
+        <h2 class="footer__title" data-i18n="footer.legalTitle">Informazioni legali</h2>
         <ul class="footer__list">
           <li><a href="note-legali.html" data-i18n="footer.note">Note legali</a></li>
           <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy policy</a></li>
@@ -220,17 +222,12 @@
     </div>
     <div class="footer__bottom">
       <p>© <span data-year>2026</span> Massimo Urbani (P.IVA 10600291008) - <span data-i18n="footer.rights">Tutti i diritti riservati</span></p>
-      <div class="footer__legal">
-        <a href="note-legali.html" data-i18n="footer.note">Note legali</a>
-        <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy policy</a>
-        <a href="cookie-policy.html" data-i18n="footer.cookie">Cookie policy</a>
-      </div>
     </div>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Torna su" data-i18n-aria-label="a11y.top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
 <script src="../assets/js/i18n.js"></script>

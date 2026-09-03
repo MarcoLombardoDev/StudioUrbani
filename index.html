@@ -39,6 +39,7 @@
 <link rel="manifest" href="assets/img/site.webmanifest">
 <link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js");</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">
 {
@@ -76,10 +77,11 @@
 
     <nav class="nav" id="mainNav" aria-label="Menu principale">
       <a href="#studio" data-i18n="nav.studio">Studio</a>
-      <a href="#servizi" data-i18n="nav.servizi">Servizi</a>
-      <a href="#fatturazione" data-i18n="nav.fatturazione">Fatturazione</a>
       <a href="#team" data-i18n="nav.team">Team</a>
+      <a href="#rapporto" data-i18n="nav.rapporto">Come lavoriamo</a>
+      <a href="#servizi" data-i18n="nav.servizi">Servizi</a>
       <a href="pages/contatti.html" data-i18n="nav.contatti">Contatti</a>
+      <a class="btn nav__call" href="tel:+39065123225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg><span data-i18n="nav.call">Chiama</span> · 06 5123225</a>
     </nav>
 
     <div class="header__actions">
@@ -105,14 +107,15 @@
             <span data-i18n="hero.title1">Contabilità, fisco e lavoro.</span>
             <span class="thin" data-i18n="hero.title2">Un solo interlocutore, per ogni decisione.</span>
           </h1>
-          <p class="lead hero__lead reveal" data-delay="2" data-i18n="hero.lead">Lo Studio Urbani rivolge la propria attività all'assistenza di imprese, professionisti e privati nell'ambito contabile, fiscale, del lavoro e del contenzioso. Consulenza fiscale, amministrativa, bancaria e finanziaria, revisione contabile, elaborazione dati e pubbliche relazioni: competenze integrate, un rapporto diretto.</p>
+          <p class="lead hero__lead reveal" data-delay="2" data-i18n="hero.lead">Assistiamo imprese, professionisti e privati: chi conosce il vostro caso è la stessa persona che ne segue numeri, adempimenti e scadenze.</p>
           <div class="btn-row reveal" data-delay="3">
-            <a class="btn" href="#servizi">
-              <span data-i18n="hero.cta1">Scopri i servizi</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <a class="btn" href="tel:+39065123225">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
+              <span data-i18n="hero.cta1">Chiama lo Studio</span> · 06 5123225
             </a>
-            <a class="btn btn--ghost" href="pages/contatti.html" data-i18n="hero.cta2">Parla con lo Studio</a>
+            <a class="btn btn--ghost" href="#servizi" data-i18n="hero.cta2">Scopri i servizi</a>
           </div>
+          <p class="hero__hours reveal" data-delay="3" data-i18n="hero.hours">Lunedì-venerdì, 09:00-13:00 e 14:00-18:00 · oppure <a href="mailto:info@studiourbani.it">info@studiourbani.it</a></p>
         </div>
 
         <dl class="hero__aside reveal" data-delay="3">
@@ -130,11 +133,6 @@
           </div>
         </dl>
       </div>
-
-      <p class="hero__scroll" aria-hidden="true">
-        <span data-i18n="hero.scroll">Scorri</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-      </p>
     </div>
   </section>
 
@@ -143,23 +141,23 @@
     <div class="wrap">
       <div class="strip__inner">
         <div class="strip__item reveal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3l8 4v6c0 4.5-3.2 7.2-8 8.6C7.2 20.2 4 17.5 4 13V7l8-4z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
-          <h4 data-i18n="values.1.t">Un unico interlocutore</h4>
-          <p data-i18n="values.1.d">Contabilità, fisco, lavoro e contenzioso gestiti insieme, senza passaggi dispersi.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 3l8 4v6c0 4.5-3.2 7.2-8 8.6C7.2 20.2 4 17.5 4 13V7l8-4z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+          <h2 data-i18n="values.1.t">Referente stabile</h2>
+          <p data-i18n="values.1.d">La stessa persona segue la vostra pratica nel tempo: non si riparte da capo a ogni chiamata.</p>
         </div>
         <div class="strip__item reveal" data-delay="1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6.5 18a4.5 4.5 0 010-9 6 6 0 0111.5 1.6A3.7 3.7 0 0117.5 18H6.5z"/><path d="M12 12v5"/><path d="M9.8 14.2L12 12l2.2 2.2"/></svg>
-          <h4 data-i18n="values.2.t">Studio in cloud</h4>
-          <p data-i18n="values.2.d">Area riservata per contabilità e fatturazione elettronica, accessibile sempre.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7l7-3 7 3"/><path d="M3 11h6l-3 5-3-5zM15 11h6l-3 5-3-5z"/><path d="M8 21h8"/></svg>
+          <h2 data-i18n="values.2.t">Contenzioso incluso</h2>
+          <p data-i18n="values.2.d">Accertamenti, cartelle e ricorsi tributari seguiti in studio, con un Avvocato quando serve.</p>
         </div>
         <div class="strip__item reveal" data-delay="2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M9.7 10.3L6.4 7.4M14.3 10.3l3.3-2.9M9.7 13.7l-3.3 2.9M14.3 13.7l3.3 2.9"/></svg>
-          <h4 data-i18n="values.3.t">Rete di specialisti</h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M9.7 10.3L6.4 7.4M14.3 10.3l3.3-2.9M9.7 13.7l-3.3 2.9M14.3 13.7l3.3 2.9"/></svg>
+          <h2 data-i18n="values.3.t">Rete di specialisti</h2>
           <p data-i18n="values.3.d">Docenti universitari, società di revisione, strutture estere e associazioni di categoria.</p>
         </div>
         <div class="strip__item reveal" data-delay="3">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M8 21h8M12 17v4"/><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 12l3-3 2.4 2.4L17 7"/></svg>
-          <h4 data-i18n="values.4.t">Numeri che parlano</h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 21h8M12 17v4"/><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 12l3-3 2.4 2.4L17 7"/></svg>
+          <h2 data-i18n="values.4.t">Numeri che parlano</h2>
           <p data-i18n="values.4.d">Dati elaborati per essere letti e usati: bilanci, budget, indicatori di gestione.</p>
         </div>
       </div>
@@ -182,15 +180,15 @@
 
           <ul class="about__list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
               <span data-i18n="about.li1"><strong>Imprese, professionisti e privati:</strong> lo stesso metodo, calibrato sulla dimensione di chi lo richiede.</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
               <span data-i18n="about.li2"><strong>Commercialisti e revisori legali:</strong> competenze abilitate alla revisione e alla certificazione dei conti.</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.9"/></svg>
               <span data-i18n="about.li3"><strong>Assistenza nel contenzioso:</strong> ricorsi tributari, autotutele e rapporti con l'Amministrazione Finanziaria.</span>
             </li>
           </ul>
@@ -204,12 +202,127 @@
     </div>
   </section>
 
+  <!-- ============ TEAM ============ -->
+  <section class="section section--paper2" id="team">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="team.eyebrow">Le persone</p>
+        <h2 data-i18n="team.title">Chi risponde è chi segue la vostra pratica.</h2>
+        <p class="lead mt-3" data-i18n="team.lead">Lo staff dello Studio Massimo Urbani è composto dagli otto professionisti che seguono, ciascuno con un proprio portafoglio di clienti seguito in continuità.</p>
+      </div>
+
+      <div class="team reveal" data-delay="1">
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>MU</span></div>
+          <h3>Rag. Massimo Urbani</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>EU</span></div>
+          <h3>Rag. Edmondo Urbani</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>SU</span></div>
+          <h3>Rag. Silvia Urbani</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>GC</span></div>
+          <h3>Rag. Giuliano Cerasa</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>GF</span></div>
+          <h3>Rag. Giuseppe Forcinella</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>DC</span></div>
+          <h3>Rag. Daniela Carrarini</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>MS</span></div>
+          <h3>Rag. Massimiliano Sgamma</h3>
+        </article>
+        <article class="team__card">
+          <div class="team__photo" aria-hidden="true"><span>MM</span></div>
+          <h3>Rag. Marco Modica</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COME LAVORIAMO (fascia scura) ============ -->
+  <section class="section section--dark" id="rapporto">
+    <div class="wrap">
+      <div class="billing">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="rel.eyebrow">Come lavoriamo</p>
+          <h2 data-i18n="rel.title">Un solo interlocutore, dall'inizio alla fine.</h2>
+          <p class="lead mt-3" data-i18n="rel.lead">Dal primo contatto all'ordinaria amministrazione, il percorso è sempre lo stesso: nessun passaggio di mano, nessuna pratica che ricomincia da zero.</p>
+
+          <ol class="steps mt-3">
+            <li>
+              <div>
+                <h3 data-i18n="rel.s1.t">Primo contatto</h3>
+                <p data-i18n="rel.s1.d">Una telefonata o una email: ci raccontate la situazione e vi diciamo subito se e come possiamo occuparcene.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3 data-i18n="rel.s2.t">Incontro, in studio o in video</h3>
+                <p data-i18n="rel.s2.d">Vediamo i documenti, definiamo che cosa serve e con quali tempi. Senza impegno fino all'incarico.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3 data-i18n="rel.s3.t">Un referente assegnato</h3>
+                <p data-i18n="rel.s3.d">Un professionista dello Studio diventa il vostro riferimento: conosce la pratica e risponde direttamente.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3 data-i18n="rel.s4.t">Adempimenti in continuità</h3>
+                <p data-i18n="rel.s4.d">Contabilità, dichiarazioni, paghe e scadenze seguite nel tempo, con le altre aree dello Studio attivabili quando servono.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="panel reveal" data-delay="2">
+          <h2 data-i18n="rel.panel.t">Parlare con lo Studio</h2>
+          <p data-i18n="rel.panel.d">Il primo contatto non impegna a nulla. Rispondiamo negli orari di studio, dal lunedì al venerdì.</p>
+          <div class="panel__actions">
+            <a class="btn btn--light" href="tel:+39065123225">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
+              06 5123225
+            </a>
+            <a class="btn btn--outline-light" href="mailto:info@studiourbani.it">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
+              info@studiourbani.it
+            </a>
+          </div>
+          <ul class="panel__meta">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+              <span data-i18n="rel.panel.l1">Lunedì-venerdì, 09:00-13:00 e 14:00-18:00</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <span data-i18n="rel.panel.l2">Via Cristoforo Colombo 348, Sc. D int. 3 — Roma</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 017 0V10"/></svg>
+              <span data-i18n="rel.panel.l3">Incontro in studio o in videochiamata</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SERVIZI ============ -->
-  <section class="section section--paper2" id="servizi">
+  <section class="section" id="servizi">
     <div class="wrap">
       <div class="section-head section-head--center reveal">
         <p class="eyebrow" data-i18n="services.eyebrow">Servizi</p>
-        <h2 data-i18n="services.title">Nove aree di competenza, un solo presidio.</h2>
+        <h2 data-i18n="services.title">Nove aree di competenza, sotto lo stesso tetto.</h2>
         <p class="lead mt-3" data-i18n="services.lead">Lo Studio Massimo Urbani, con risorse interne e in collaborazione con professionisti esperti, assicura i servizi nelle aree che seguono.</p>
       </div>
 
@@ -308,116 +421,18 @@
             <li data-i18n="srv.9.l2">Area riservata per la gestione della contabilità e l'emissione delle fatture elettroniche</li>
             <li data-i18n="srv.9.l3">Conservazione digitale dei documenti e scambio sicuro dei file</li>
           </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+        </article>      </div>
 
-  <!-- ============ FATTURAZIONE ============ -->
-  <section class="section section--dark" id="fatturazione">
-    <div class="wrap">
-      <div class="billing">
-        <div class="reveal">
+      <aside class="billing-note reveal" id="fatturazione">
+        <div>
           <p class="eyebrow" data-i18n="billing.eyebrow">Fatturazione elettronica</p>
-          <h2 data-i18n="billing.title">La fattura elettronica, senza attriti.</h2>
-          <p class="lead mt-3" data-i18n="billing.lead">In alternativa al metodo classico di gestione della contabilità e delle paghe, lo Studio opera in cloud e mette a disposizione un'area riservata per la gestione della contabilità e l'emissione delle fatture elettroniche.</p>
-
-          <ol class="steps mt-3">
-            <li>
-              <div>
-                <h4 data-i18n="billing.s1.t">Attivazione dell'area riservata</h4>
-                <p data-i18n="billing.s1.d">Lo Studio configura le credenziali, l'anagrafica e il canale di trasmissione verso il Sistema di Interscambio.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h4 data-i18n="billing.s2.t">Emissione e ricezione</h4>
-                <p data-i18n="billing.s2.d">Fatture attive e passive viaggiano in formato XML: compilazione guidata, invio, notifiche di consegna e scarto.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h4 data-i18n="billing.s3.t">Conservazione a norma</h4>
-                <p data-i18n="billing.s3.d">I documenti trasmessi sono raccolti, conservati digitalmente e sempre consultabili e stampabili.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h4 data-i18n="billing.s4.t">Contabilità aggiornata</h4>
-                <p data-i18n="billing.s4.d">I dati confluiscono nella contabilità dello Studio: meno consegne di carta, scadenze sotto controllo.</p>
-              </div>
-            </li>
-          </ol>
+          <h2 data-i18n="billing.title">Contabilità e fatture in cloud, se preferite.</h2>
+          <p data-i18n="billing.lead">In alternativa al metodo classico, lo Studio mette a disposizione un'area riservata per la gestione della contabilità e l'emissione delle fatture elettroniche: emissione e ricezione in XML, conservazione a norma, documenti sempre consultabili.</p>
         </div>
-
-        <aside class="panel reveal" data-delay="2">
-          <h3 data-i18n="billing.panel.t">Area riservata clienti</h3>
-          <p data-i18n="billing.panel.d">Accesso dedicato per emettere fatture, consultare i documenti trasmessi e scambiare file con lo Studio in sicurezza.</p>
-          <ul class="panel__meta">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 017 0V10"/></svg>
-              <span data-i18n="billing.panel.l1">Accesso con credenziali personali</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg>
-              <span data-i18n="billing.panel.l2">Documenti consultabili e stampabili</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
-              <span data-i18n="billing.panel.l3">Operativo 24/7, da qualsiasi dispositivo</span>
-            </li>
-          </ul>
-          <div class="btn-row">
-            <a class="btn btn--light" href="pages/contatti.html" data-i18n="billing.panel.cta">Richiedi informazioni</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TEAM ============ -->
-  <section class="section" id="team">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="team.eyebrow">Il team</p>
-        <h2 data-i18n="team.title">Le persone che seguono i vostri numeri.</h2>
-        <p class="lead mt-3" data-i18n="team.lead">Lo staff dello Studio Massimo Urbani è composto dai professionisti che seguono, ciascuno con un proprio portafoglio di clienti seguito in continuità.</p>
-      </div>
-
-      <div class="team reveal" data-delay="1">
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>MU</span></div>
-          <h4>Rag. Massimo Urbani</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>EU</span></div>
-          <h4>Rag. Edmondo Urbani</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>SU</span></div>
-          <h4>Rag. Silvia Urbani</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>GC</span></div>
-          <h4>Rag. Giuliano Cerasa</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>GF</span></div>
-          <h4>Rag. Giuseppe Forcinella</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>DC</span></div>
-          <h4>Rag. Daniela Carrarini</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>MS</span></div>
-          <h4>Rag. Massimiliano Sgamma</h4>
-        </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>MM</span></div>
-          <h4>Rag. Marco Modica</h4>
-        </article>
-      </div>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href="pages/contatti.html" data-i18n="billing.panel.cta">Richiedi informazioni</a>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -428,10 +443,24 @@
         <div>
           <p class="eyebrow" data-i18n="cta.eyebrow">Contatti</p>
           <h2 data-i18n="cta.title">Parliamo della vostra situazione.</h2>
-          <p class="lead mt-3" data-i18n="cta.lead">Via Cristoforo Colombo 348, Sc. D int. 3 — 00145 Roma. Lunedì-venerdì, 09:00-13:00 e 14:00-18:00.</p>
+          <ul class="cta__facts mt-3">
+            <li data-i18n="cta.f1">Via Cristoforo Colombo 348, Sc. D int. 3 — 00145 Roma</li>
+            <li data-i18n="cta.f2">Lunedì-venerdì, 09:00-13:00 e 14:00-18:00</li>
+          </ul>
         </div>
         <div class="btn-row">
-          <a class="btn" href="pages/contatti.html" data-i18n="cta.btn1">Vai ai contatti</a>
+          <a class="btn" href="tel:+39065123225">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
+            06 5123225
+          </a>
+          <a class="btn btn--ghost" href="mailto:info@studiourbani.it">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
+            <span data-i18n="cta.btn2">Scrivi allo Studio</span>
+          </a>
+          <a class="link-arrow" href="pages/contatti.html">
+            <span data-i18n="cta.btn1">Tutti i recapiti e la mappa</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -455,19 +484,19 @@
       </div>
 
       <div>
-        <h4 data-i18n="footer.nav">Navigazione</h4>
+        <h2 class="footer__title" data-i18n="footer.nav">Navigazione</h2>
         <ul class="footer__list">
           <li><a href="index.html#studio" data-i18n="nav.studio">Studio</a></li>
-          <li><a href="index.html#servizi" data-i18n="nav.servizi">Servizi</a></li>
-          <li><a href="index.html#fatturazione" data-i18n="nav.fatturazione">Fatturazione</a></li>
           <li><a href="index.html#team" data-i18n="nav.team">Team</a></li>
+          <li><a href="index.html#rapporto" data-i18n="nav.rapporto">Come lavoriamo</a></li>
+          <li><a href="index.html#servizi" data-i18n="nav.servizi">Servizi</a></li>
           <li><a href="pages/contatti.html" data-i18n="nav.contatti">Contatti</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 data-i18n="footer.contact">Contatti</h4>
-        <ul class="footer__list">
+        <h2 class="footer__title" data-i18n="footer.contact">Contatti</h2>
+        <ul class="footer__list footer__list--contact">
           <li>Via Cristoforo Colombo 348<br>Sc. D int. 3 — 00145 Roma</li>
           <li><a href="tel:+39065123225">(+39) 06 5123225</a></li>
           <li><a href="tel:+39065127516">(+39) 06 5127516</a></li>
@@ -476,7 +505,7 @@
       </div>
 
       <div>
-        <h4 data-i18n="footer.legalTitle">Informazioni legali</h4>
+        <h2 class="footer__title" data-i18n="footer.legalTitle">Informazioni legali</h2>
         <ul class="footer__list">
           <li><a href="pages/note-legali.html" data-i18n="footer.note">Note legali</a></li>
           <li><a href="pages/privacy-policy.html" data-i18n="footer.privacy">Privacy policy</a></li>
@@ -487,21 +516,16 @@
 
     <div class="footer__bottom">
       <p>© <span data-year>2026</span> Massimo Urbani (P.IVA 10600291008) - <span data-i18n="footer.rights">Tutti i diritti riservati</span></p>
-      <div class="footer__legal">
-        <a href="pages/note-legali.html" data-i18n="footer.note">Note legali</a>
-        <a href="pages/privacy-policy.html" data-i18n="footer.privacy">Privacy policy</a>
-        <a href="pages/cookie-policy.html" data-i18n="footer.cookie">Cookie policy</a>
-      </div>
     </div>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Torna su" data-i18n-aria-label="a11y.top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie">
-  <h4 data-i18n="cookiebar.t">Questo sito usa solo cookie tecnici</h4>
+  <h2 data-i18n="cookiebar.t">Questo sito usa solo cookie tecnici</h2>
   <p data-i18n="cookiebar.d">Non utilizziamo cookie di profilazione. La mappa di Google Maps viene caricata solo dopo un vostro consenso esplicito. Maggiori dettagli nella <a href="pages/cookie-policy.html">cookie policy</a>.</p>
   <div class="btn-row">
     <button class="btn" type="button" data-cookie-accept data-i18n="cookiebar.ok">Ho capito</button>

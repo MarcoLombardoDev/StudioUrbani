@@ -9,7 +9,8 @@ colors:
   brass-soft: "#d9c39c"
   ink: "#10141c"
   ink-soft: "#39424f"
-  muted: "#6d7684"
+  muted: "#5d6672"
+  brass-ink: "#7d6338"
   paper: "#f7f6f3"
   paper-2: "#efede8"
   white: "#ffffff"
@@ -18,7 +19,7 @@ colors:
 typography:
   display:
     fontFamily: "Jost, 'Century Gothic', Futura, 'Trebuchet MS', sans-serif"
-    fontSize: "clamp(2.15rem, 5.9vw, 5.1rem)"
+    fontSize: "clamp(2.05rem, 4.4vw, 3.7rem)"
     fontWeight: 300
     lineHeight: 1.1
     letterSpacing: "-0.015em"
@@ -108,7 +109,7 @@ components:
     padding: "clamp(26px, 3vw, 38px)"
   eyebrow:
     backgroundColor: "transparent"
-    textColor: "{colors.brass}"
+    textColor: "{colors.brass-ink}"
     typography: "{typography.label}"
 ---
 
@@ -129,7 +130,7 @@ tratta numeri e norme, ma il sito non deve sembrare un modulo: il fondo carta
 `#f7f6f3` invece del bianco clinico, l'ottone `#b3915f` come segnalibro che
 scalda il blu, e titoli in Jost Light — geometrici come il marchio, ma sottili,
 mai squadrati addosso al lettore. Il blu del marchio `#04507d` porta autorevolezza
-dove serve: numeri, azioni, la fascia della fatturazione. Gli elementi
+dove serve: numeri, azioni di contatto, la fascia del rapporto. Gli elementi
 interattivi sono **leggeri e nitidi**: si distinguono per allineamento e per
 filetti da un pixel, non per volume.
 
@@ -143,7 +144,7 @@ meno bordi, più aria, un solo accento.
 - Etichette in maiuscoletto d'ottone con filetto: aprono ogni sezione
 - Titoli geometrici in peso 300, corpo testo neutro e leggibile a 17px
 - Filetti da 1px al posto dei bordi pesanti; ombre solo come risposta a un gesto
-- Un'unica fascia scura in tutta la pagina, per la fatturazione elettronica
+- Un'unica fascia scura in tutta la pagina, per il percorso del rapporto
 - Nessuna terza parte: font locali, mappa a consenso, niente tracciamento
 
 ## Colors
@@ -157,23 +158,29 @@ inventato.
   Porta i numeri della hero, i bottoni primari, le voci attive, i link nei testi
   legali e la parola «Urbani» nel wordmark. È il colore delle azioni e delle
   cifre, non degli sfondi larghi.
-- **Blu profondo** (`#033a5c`): la fascia della fatturazione elettronica, il
+- **Blu profondo** (`#033a5c`): la fascia «Come lavoriamo», il
   footer, lo stato hover dei bottoni primari e il fondo della pagina 404. È il
   blu quando diventa ambiente invece di accento.
 - **Blu chiaro** (`#2a76a5`): usato con parsimonia sui fondi scuri e sulle
   iniziali dei ritratti in hover, dove il blu del marchio non avrebbe contrasto.
 
 ### Secondary
-- **Ottone** (`#b3915f`): l'accento caldo. Etichette in maiuscoletto, filetti
-  che le precedono, icone della striscia valori, barra della citazione, trattini
-  degli elenchi. È il segnalibro del fascicolo.
+- **Ottone** (`#b3915f`): l'accento caldo, riservato a ciò che non è testo:
+  filetti, icone della striscia valori, barra della citazione, trattini degli
+  elenchi. È il segnalibro del fascicolo.
+- **Ottone d'inchiostro** (`#7d6338`): la stessa voce quando diventa testo su
+  fondo chiaro — le etichette in maiuscoletto. L'ottone chiaro non raggiunge il
+  4,5:1 su carta (2,72:1 misurato), questo lo raggiunge (4,83:1 sul fondo più
+  scuro dei due). Sui fondi blu resta valido `--brass-soft`, che misura 6,94:1.
 - **Ottone chiaro** (`#d9c39c`): la stessa voce sui fondi scuri — numerazione
   dei passi, etichette nella fascia blu, hover dei bottoni chiari.
 
 ### Neutral
 - **Inchiostro** (`#10141c`): titoli e testo forte.
 - **Inchiostro morbido** (`#39424f`): il corpo dei paragrafi e delle liste.
-- **Grigio di servizio** (`#6d7684`): didascalie, etichette, note, breadcrumb.
+- **Grigio di servizio** (`#5d6672`): didascalie, etichette, note, breadcrumb.
+  Scurito dal precedente `#6d7684`, che restava sotto il 4,5:1 su ogni fondo
+  chiaro tranne il bianco puro.
 - **Carta** (`#f7f6f3`): il fondo di tutto il sito e del menu mobile.
 - **Carta scura** (`#efede8`): le sezioni alternate e i segnaposto dei ritratti.
 - **Bianco** (`#ffffff`): esclusivamente le superfici sollevate — card, striscia
@@ -183,17 +190,19 @@ inventato.
 
 ### Named Rules
 **La regola dell'unico accento.** L'ottone non colora superfici: solo testo di
-etichetta, filetti, icone e trattini, mai più del 5% di uno schermo. Se un
-elemento chiede di essere visto, si usa il blu; se chiede di essere annunciato,
-l'ottone.
+etichetta (in `--brass-ink`), filetti, icone e trattini, mai più del 5% di uno
+schermo — bagliori decorativi compresi, che è dove la regola era stata infranta.
+Se un elemento chiede di essere visto, si usa il blu; se chiede di essere
+annunciato, l'ottone.
 
 **La regola della carta.** Nessuna pagina ha fondo bianco. Il bianco è il
 materiale delle cose sollevate — card e pannelli — e perde significato se
 diventa lo sfondo.
 
-**La regola della fascia unica.** In tutto il sito esiste una sola sezione a
-fondo scuro. Aggiungerne una seconda toglie forza alla prima: chi vuole enfasi
-usa il fondo carta scura, non il blu.
+**La regola della fascia unica.** Nel corpo di una pagina esiste una sola
+sezione a fondo scuro, e nella landing è «Come lavoriamo»: il percorso del
+rapporto, non un servizio. Chi vuole enfasi altrove usa il fondo carta scura.
+Footer e pagina 404 sono cornice, non sezioni, e non contano nel conteggio.
 
 ## Typography
 
@@ -210,9 +219,10 @@ senza aggiungere personalità, così il carattere del sistema resta tutto nei
 titoli e nelle etichette.
 
 ### Hierarchy
-- **Display** (300, `clamp(2.15rem, 5.9vw, 5.1rem)`, 1.1): l'h1 della hero e
-  delle pagine interne. Spesso spezzato su due righe, con la seconda in peso 200
-  e colore più tenue: il titolo respira invece di gridare.
+- **Display** (300, `clamp(2.05rem, 4.4vw, 3.7rem)`, 1.1): l'h1 della hero e
+  delle pagine interne, spezzato su due righe con la seconda in peso 200 e
+  colore più tenue. Il massimo è volutamente contenuto: un titolo più grande
+  spingeva le azioni di contatto sotto la piega.
 - **Headline** (300, `clamp(2rem, 4.2vw, 3.1rem)`, 1.1): apre le sezioni.
 - **Title** (400, `clamp(1.25rem, 2vw, 1.5rem)`, 1.1): nomi delle aree di
   servizio, titoli delle card, intestazioni dei paragrafi legali.
@@ -236,6 +246,13 @@ etichetta in maiuscoletto d'ottone preceduta da un filetto di 28px, titolo,
 paragrafo lead. È l'elemento che rende il sito riconoscibile scorrendolo.
 
 ## Layout
+
+L'ordine delle sezioni della landing è esso stesso una scelta di sistema:
+hero con l'azione di contatto, striscia di quattro fatti, chi siamo, **le
+persone**, il percorso del rapporto sulla fascia scura, i servizi con la nota
+sulla fatturazione, chiusura con i recapiti. Le persone vengono prima della
+tassonomia, e la fatturazione elettronica è uno strumento dentro i servizi, non
+un capitolo a sé.
 
 Contenitore centrato da 1200px (`--wrap`), 820px per le colonne di sola lettura
 (`--wrap-narrow`), con gutter fluido `clamp(20px, 5vw, 48px)`. Il ritmo
@@ -275,9 +292,11 @@ decorazione a riposo.
   card dei servizi in hover e pulsante «torna su».
 
 ### Named Rules
-**La regola del piatto a riposo.** Nessuna superficie ha ombra prima di essere
-toccata. Chi vuole distinguere una superficie ferma cambia il tono del fondo o
-aggiunge un filetto.
+**La regola del piatto a riposo.** Nessuna superficie del contenuto ha ombra
+prima di essere toccata. Le due eccezioni sono dichiarate e chiuse: il riquadro
+della CTA e l'avviso cookie, che devono staccarsi dal fondo per essere letti
+come oggetti sovrapposti. Tutto il resto cambia tono di fondo o aggiunge un
+filetto.
 
 ## Shapes
 
@@ -286,6 +305,9 @@ per essere gentili, non tanto da sembrare morbidi. Le superfici minori — riqua
 di richiamo, celle di tabella — usano 4px (`--radius`). Tutti gli elementi
 azionabili sono pillole (`999px`): bottoni, switch di lingua, hamburger, «torna
 su». La forma dice cosa si può premere, prima del colore.
+
+L'anello di focus non introduce un quarto raggio: eredita quello dell'elemento
+che circonda.
 
 Il linguaggio dei bordi è sottrattivo: un filetto da 1px in trasparenza al posto
 del bordo, spesso su un solo lato — la barra d'ottone a sinistra della citazione,
@@ -302,9 +324,14 @@ ritratto è l'unico cerchio del sistema.
 - **Shape:** pillola piena (`999px`), testo in Jost 500 con `letter-spacing .04em`,
   mai a capo (`white-space: nowrap`).
 - **Primary:** blu del marchio su testo bianco, padding `.95rem 1.6rem`.
-- **Hover / Focus:** in hover scende al blu profondo, si solleva di 2px e prende
-  il sollevamento breve; la transizione è di 350ms con `cubic-bezier(.22,.61,.36,1)`.
-  Il focus è un anello d'ottone a 2px con offset 3px, mai rimosso.
+- **Hover:** scende al blu profondo, si solleva di 2px e prende il sollevamento
+  breve; transizione di 350ms con `cubic-bezier(.22,.61,.36,1)`.
+- **Focus:** un anello di 2px nel blu del marchio con offset 2px, più un alone
+  bianco di 4px che lo stacca da qualunque superficie; sui fondi scuri i due
+  anelli si invertono (bianco dentro, blu fuori). Compare senza transizione e
+  non viene mai rimosso. Misurato: 7,3-8,6:1 sui fondi chiari, 8,6-11,9:1 sui
+  fondi scuri, sempre oltre il 3:1 richiesto — l'anello d'ottone che questo
+  documento prescriveva prima restava fra 2,5 e 2,9:1.
 - **Ghost:** trasparente con filetto e testo inchiostro; in hover diventa blu
   pieno con testo bianco. Sui fondi scuri esistono le varianti *light* (bianco su
   blu profondo, hover ottone chiaro) e *outline-light*.
@@ -318,9 +345,10 @@ ritratto è l'unico cerchio del sistema.
 - **Shadow Strategy:** nessuna a riposo (vedi Elevation).
 - **Border:** filetto tenue da 1px.
 - **Internal Padding:** `clamp(24px, 2.6vw, 32px)`.
-- **Distinctive:** le card dei servizi hanno una barra da 2px sul bordo inferiore,
-  in gradiente ottone→blu, che si apre da sinistra in hover mentre la card sale di
-  4px e il bordo diventa trasparente.
+- **Distinctive:** le card dei servizi sono **descrittive e immobili**: nessun
+  sollevamento, nessuna ombra, nessuna barra che si apre, cursore normale. Non
+  sono link e non devono prometterlo. L'unica card che reagisce è il ritratto del
+  team, e reagisce sul ritratto, non sulla card.
 
 ### Navigation
 - Voci in Jost 400 su `.96rem`, colore inchiostro morbido, con un filetto
@@ -364,8 +392,10 @@ va sostituito con un caricamento automatico.
   spazio.
 - **Do** disegnare le divisioni con filetti da 1px in trasparenza
   (`rgba(16,20,28,.10)` e `.06`), non con bordi pieni.
-- **Do** dare a ogni elemento azionabile la forma a pillola e un focus visibile
-  in ottone.
+- **Do** dare a ogni elemento azionabile la forma a pillola e il focus a doppio
+  anello (blu del marchio più alone bianco; invertito sui fondi scuri).
+- **Do** tenere un contatto azionabile — `tel:` o `mailto:` — a un gesto di
+  distanza da qualunque sezione, menu mobile compreso.
 - **Do** far reagire gli elementi con transizioni lente (300-550ms) e la curva
   `cubic-bezier(.22,.61,.36,1)`, e azzerare i movimenti sotto
   `prefers-reduced-motion`.
@@ -380,6 +410,10 @@ va sostituito con un caricamento automatico.
 - **Don't** mettere ombre su superfici a riposo.
 - **Don't** usare grassetti sopra 500 nei titoli o maiuscolo fuori dalle
   etichette.
+- **Don't** usare `--brass` per il testo su fondi chiari: per quello esiste
+  `--brass-ink`.
+- **Don't** nascondere contenuto con l'animazione allo scroll senza la classe
+  `js` sull'elemento radice: senza JavaScript la pagina deve restare leggibile.
 - **Don't** far sembrare cliccabile ciò che non lo è: nessun cambio di sfondo o
   cursore su card che non portano da nessuna parte.
 - **Don't** caricare la mappa o qualunque risorsa esterna senza consenso

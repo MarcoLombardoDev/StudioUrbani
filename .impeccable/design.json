@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-03T20:21:51.624Z",
+  "generatedAt": "2026-09-03T21:05:50.960Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -64,6 +64,21 @@
           "oklch(95.0% 0.078 76.4)"
         ]
       },
+      "brass-ink": {
+        "role": "secondary",
+        "displayName": "Ottone d'inchiostro",
+        "canonical": "oklch(51.6% 0.069 78.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.069 78.9)",
+          "oklch(26.4% 0.069 78.9)",
+          "oklch(37.9% 0.069 78.9)",
+          "oklch(49.3% 0.069 78.9)",
+          "oklch(60.7% 0.069 78.9)",
+          "oklch(72.1% 0.069 78.9)",
+          "oklch(83.6% 0.069 78.9)",
+          "oklch(95.0% 0.069 78.9)"
+        ]
+      },
       "brass-soft": {
         "role": "secondary",
         "displayName": "Ottone chiaro",
@@ -112,16 +127,16 @@
       "muted": {
         "role": "neutral",
         "displayName": "Grigio di servizio",
-        "canonical": "oklch(56.3% 0.024 259.2)",
+        "canonical": "oklch(50.7% 0.022 255.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.024 259.2)",
-          "oklch(26.4% 0.024 259.2)",
-          "oklch(37.9% 0.024 259.2)",
-          "oklch(49.3% 0.024 259.2)",
-          "oklch(60.7% 0.024 259.2)",
-          "oklch(72.1% 0.024 259.2)",
-          "oklch(83.6% 0.024 259.2)",
-          "oklch(95.0% 0.024 259.2)"
+          "oklch(15.0% 0.022 255.6)",
+          "oklch(26.4% 0.022 255.6)",
+          "oklch(37.9% 0.022 255.6)",
+          "oklch(49.3% 0.022 255.6)",
+          "oklch(60.7% 0.022 255.6)",
+          "oklch(72.1% 0.022 255.6)",
+          "oklch(83.6% 0.022 255.6)",
+          "oklch(95.0% 0.022 255.6)"
         ]
       },
       "paper": {
@@ -197,6 +212,11 @@
         "purpose": "Card dei servizi in hover e pulsante torna su."
       },
       {
+        "name": "oggetti-sovrapposti",
+        "value": "0 1px 2px rgba(16,20,28,.04), 0 8px 24px -16px rgba(16,20,28,.18)",
+        "purpose": "Le due sole superfici con ombra a riposo: riquadro della CTA e avviso cookie."
+      },
+      {
         "name": "alone-ritratto",
         "value": "0 0 0 5px rgba(4,80,125,.10), 0 0 0 10px rgba(4,80,125,.05), 0 16px 30px -18px rgba(4,80,125,.55)",
         "purpose": "Doppio alone concentrico sul ritratto del team in hover."
@@ -261,7 +281,7 @@
       "refersTo": "button-primary",
       "description": "Azione principale: pillola blu, si solleva di 2px al passaggio.",
       "html": "<button class=\"ds-btn-primary\">Scopri i servizi <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.6rem; background: var(--navy, #04507d); color: #fff; border: 1px solid var(--navy, #04507d); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-primary svg { width: 17px; height: 17px; } .ds-btn-primary:hover { background: var(--navy-deep, #033a5c); border-color: var(--navy-deep, #033a5c); transform: translateY(-2px); box-shadow: 0 1px 2px rgba(16,20,28,.04), 0 8px 24px -16px rgba(16,20,28,.18); } .ds-btn-primary:focus-visible { outline: 2px solid var(--brass, #b3915f); outline-offset: 3px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.6rem; background: var(--navy, #04507d); color: #fff; border: 1px solid var(--navy, #04507d); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-primary svg { width: 17px; height: 17px; } .ds-btn-primary:hover { background: var(--navy-deep, #033a5c); border-color: var(--navy-deep, #033a5c); transform: translateY(-2px); box-shadow: 0 1px 2px rgba(16,20,28,.04), 0 8px 24px -16px rgba(16,20,28,.18); } .ds-btn-primary:focus-visible { outline: 2px solid var(--navy, #04507d); outline-offset: 2px; box-shadow: 0 0 0 4px rgba(255,255,255,.92); }"
     },
     {
       "name": "Ghost Button",
@@ -269,7 +289,7 @@
       "refersTo": "button-ghost",
       "description": "Azione secondaria: filetto a riposo, blu pieno al passaggio.",
       "html": "<button class=\"ds-btn-ghost\">Parla con lo Studio</button>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; padding: .95rem 1.6rem; background: transparent; color: var(--ink, #10141c); border: 1px solid rgba(16,20,28,.10); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), color .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-ghost:hover { background: var(--navy, #04507d); border-color: var(--navy, #04507d); color: #fff; transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--brass, #b3915f); outline-offset: 3px; }"
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; padding: .95rem 1.6rem; background: transparent; color: var(--ink, #10141c); border: 1px solid rgba(16,20,28,.10); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), color .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-ghost:hover { background: var(--navy, #04507d); border-color: var(--navy, #04507d); color: #fff; transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--navy, #04507d); outline-offset: 2px; box-shadow: 0 0 0 4px rgba(255,255,255,.92); }"
     },
     {
       "name": "Section Opener",
@@ -277,15 +297,15 @@
       "refersTo": "eyebrow",
       "description": "La tripletta che apre ogni sezione: etichetta d’ottone con filetto, titolo, lead.",
       "html": "<div class=\"ds-opener\"><p class=\"ds-eyebrow\">Servizi</p><h2>Nove aree di competenza, un solo presidio.</h2><p class=\"ds-lead\">Lo Studio assicura i servizi nelle aree che seguono.</p></div>",
-      "css": ".ds-opener { max-width: 700px; } .ds-eyebrow { display: inline-flex; align-items: center; gap: .7rem; margin: 0 0 1.1rem; font-family: Jost, sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--brass, #b3915f); } .ds-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--brass, #b3915f); opacity: .7; } .ds-opener h2 { margin: 0; font-family: Jost, sans-serif; font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -.015em; color: var(--ink, #10141c); } .ds-lead { margin: 2rem 0 0; font-family: Inter, sans-serif; font-size: 1.15rem; font-weight: 300; line-height: 1.62; color: var(--ink-soft, #39424f); }"
+      "css": ".ds-opener { max-width: 700px; } .ds-eyebrow { display: inline-flex; align-items: center; gap: .7rem; margin: 0 0 1.1rem; font-family: Jost, sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--brass-ink, #7d6338); } .ds-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--brass, #b3915f); opacity: .7; } .ds-opener h2 { margin: 0; font-family: Jost, sans-serif; font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -.015em; color: var(--ink, #10141c); } .ds-lead { margin: 2rem 0 0; font-family: Inter, sans-serif; font-size: 1.15rem; font-weight: 300; line-height: 1.62; color: var(--ink-soft, #39424f); }"
     },
     {
       "name": "Service Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Card di un’area di servizio: filetto tenue, barra ottone→blu che si apre in hover.",
+      "description": "Card di un’area di servizio: descrittiva e immobile, non è un link.",
       "html": "<article class=\"ds-card\"><div class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/></svg></div><h3>Area Contabilità</h3><ul><li>Contabilità semplificata e ordinaria</li><li>Adempimenti IVA e tenuta dei registri</li></ul></article>",
-      "css": ".ds-card { position: relative; overflow: hidden; background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(24px,2.6vw,32px); transition: transform .45s cubic-bezier(.22,.61,.36,1), box-shadow .45s cubic-bezier(.22,.61,.36,1), border-color .45s cubic-bezier(.22,.61,.36,1); } .ds-card::after { content: ''; position: absolute; inset: auto 0 0 0; height: 2px; background: linear-gradient(90deg, var(--brass, #b3915f), var(--navy, #04507d)); transform: scaleX(0); transform-origin: left; transition: transform .5s cubic-bezier(.22,.61,.36,1); } .ds-card:hover { transform: translateY(-4px); border-color: transparent; box-shadow: 0 2px 4px rgba(16,20,28,.04), 0 24px 48px -28px rgba(16,20,28,.28); } .ds-card:hover::after { transform: scaleX(1); } .ds-card-icon { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(150deg, rgba(4,80,125,.10), rgba(179,145,95,.12)); color: var(--navy, #04507d); margin-bottom: 1.25rem; } .ds-card-icon svg { width: 23px; height: 23px; } .ds-card h3 { margin: 0 0 .7rem; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; line-height: 1.1; color: var(--ink, #10141c); } .ds-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .ds-card li { position: relative; padding-left: 1.05rem; font-family: Inter, sans-serif; font-size: .945rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-card li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass, #b3915f); }"
+      "css": ".ds-card { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(24px,2.6vw,32px); cursor: default; } .ds-card-icon { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: rgba(4,80,125,.07); color: var(--navy, #04507d); margin-bottom: 1.25rem; } .ds-card-icon svg { width: 23px; height: 23px; } .ds-card h3 { margin: 0 0 .7rem; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; line-height: 1.1; color: var(--ink, #10141c); } .ds-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .ds-card li { position: relative; padding-left: 1.05rem; font-family: Inter, sans-serif; font-size: .945rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-card li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass, #b3915f); }"
     },
     {
       "name": "Team Portrait",
@@ -322,19 +342,19 @@
   ],
   "narrative": {
     "northStar": "Il fascicolo ben tenuto",
-    "overview": "L'ordine di uno studio che archivia bene. Ogni sezione è una cartella\nriconoscibile: un'etichetta minuta in maiuscoletto d'ottone la annuncia, un\ntitolo largo e leggero la apre, il contenuto sta dentro margini generosi su un\nfondo di carta caldo. Niente cresce a caso, niente è impilato per riempire: si\nscorre come si sfoglia, sapendo sempre dove si è.\n\nIl carattere da difendere è **caldo, umano, accogliente**. Il committente\ntratta numeri e norme, ma il sito non deve sembrare un modulo: il fondo carta\n`#f7f6f3` invece del bianco clinico, l'ottone `#b3915f` come segnalibro che\nscalda il blu, e titoli in Jost Light — geometrici come il marchio, ma sottili,\nmai squadrati addosso al lettore. Il blu del marchio `#04507d` porta autorevolezza\ndove serve: numeri, azioni, la fascia della fatturazione. Gli elementi\ninterattivi sono **leggeri e nitidi**: si distinguono per allineamento e per\nfiletti da un pixel, non per volume.\n\nAnti-riferimento confermato: l'estetica da portale istituzionale del sito\nprecedente — colonne dense, riquadri bordati, tipografia di sistema, notizie\nimpaginate come un bollettino. Il sistema attuale la rifiuta per sottrazione:\nmeno bordi, più aria, un solo accento.",
+    "overview": "L'ordine di uno studio che archivia bene. Ogni sezione è una cartella\nriconoscibile: un'etichetta minuta in maiuscoletto d'ottone la annuncia, un\ntitolo largo e leggero la apre, il contenuto sta dentro margini generosi su un\nfondo di carta caldo. Niente cresce a caso, niente è impilato per riempire: si\nscorre come si sfoglia, sapendo sempre dove si è.\n\nIl carattere da difendere è **caldo, umano, accogliente**. Il committente\ntratta numeri e norme, ma il sito non deve sembrare un modulo: il fondo carta\n`#f7f6f3` invece del bianco clinico, l'ottone `#b3915f` come segnalibro che\nscalda il blu, e titoli in Jost Light — geometrici come il marchio, ma sottili,\nmai squadrati addosso al lettore. Il blu del marchio `#04507d` porta autorevolezza\ndove serve: numeri, azioni di contatto, la fascia del rapporto. Gli elementi\ninterattivi sono **leggeri e nitidi**: si distinguono per allineamento e per\nfiletti da un pixel, non per volume.\n\nAnti-riferimento confermato: l'estetica da portale istituzionale del sito\nprecedente — colonne dense, riquadri bordati, tipografia di sistema, notizie\nimpaginate come un bollettino. Il sistema attuale la rifiuta per sottrazione:\nmeno bordi, più aria, un solo accento.",
     "keyCharacteristics": [
       "Fondo carta caldo su tutta la superficie, bianco riservato alle card",
       "Etichette in maiuscoletto d'ottone con filetto: aprono ogni sezione",
       "Titoli geometrici in peso 300, corpo testo neutro e leggibile a 17px",
       "Filetti da 1px al posto dei bordi pesanti; ombre solo come risposta a un gesto",
-      "Un'unica fascia scura in tutta la pagina, per la fatturazione elettronica",
+      "Un'unica fascia scura in tutta la pagina, per il percorso del rapporto",
       "Nessuna terza parte: font locali, mappa a consenso, niente tracciamento"
     ],
     "rules": [
       {
         "name": "La regola dell'unico accento",
-        "body": "L'ottone non colora superfici: solo testo di etichetta, filetti, icone e trattini, mai più del 5% di uno schermo. Se un elemento chiede di essere visto, si usa il blu; se chiede di essere annunciato, l'ottone.",
+        "body": "L'ottone non colora superfici: solo testo di etichetta (in `--brass-ink`), filetti, icone e trattini, mai più del 5% di uno schermo — bagliori decorativi compresi, che è dove la regola era stata infranta. Se un elemento chiede di essere visto, si usa il blu; se chiede di essere annunciato, l'ottone.",
         "section": "colors"
       },
       {
@@ -344,7 +364,7 @@
       },
       {
         "name": "La regola della fascia unica",
-        "body": "In tutto il sito esiste una sola sezione a fondo scuro. Aggiungerne una seconda toglie forza alla prima: chi vuole enfasi usa il fondo carta scura, non il blu.",
+        "body": "Nel corpo di una pagina esiste una sola sezione a fondo scuro, e nella landing è «Come lavoriamo»: il percorso del rapporto, non un servizio. Chi vuole enfasi altrove usa il fondo carta scura. Footer e pagina 404 sono cornice, non sezioni, e non contano nel conteggio.",
         "section": "colors"
       },
       {
@@ -359,7 +379,7 @@
       },
       {
         "name": "La regola del piatto a riposo",
-        "body": "Nessuna superficie ha ombra prima di essere toccata. Chi vuole distinguere una superficie ferma cambia il tono del fondo o aggiunge un filetto.",
+        "body": "Nessuna superficie del contenuto ha ombra prima di essere toccata. Le due eccezioni sono dichiarate e chiuse: il riquadro della CTA e l'avviso cookie, che devono staccarsi dal fondo per essere letti come oggetti sovrapposti. Tutto il resto cambia tono di fondo o aggiunge un filetto.",
         "section": "elevation"
       }
     ],
@@ -368,7 +388,8 @@
       "**Do** usare il fondo carta come default e il bianco solo per le superfici sollevate.",
       "**Do** tenere i titoli in peso 300-400 e affidare la gerarchia a dimensione e spazio.",
       "**Do** disegnare le divisioni con filetti da 1px in trasparenza (`rgba(16,20,28,.10)` e `.06`), non con bordi pieni.",
-      "**Do** dare a ogni elemento azionabile la forma a pillola e un focus visibile in ottone.",
+      "**Do** dare a ogni elemento azionabile la forma a pillola e il focus a doppio anello (blu del marchio più alone bianco; invertito sui fondi scuri).",
+      "**Do** tenere un contatto azionabile — `tel:` o `mailto:` — a un gesto di distanza da qualunque sezione, menu mobile compreso.",
       "**Do** far reagire gli elementi con transizioni lente (300-550ms) e la curva `cubic-bezier(.22,.61,.36,1)`, e azzerare i movimenti sotto `prefers-reduced-motion`.",
       "**Do** servire ogni risorsa dal dominio dello Studio: font in locale, icone SVG inline, nessuno script di terze parti."
     ],
@@ -378,6 +399,8 @@
       "**Don't** aggiungere una seconda sezione a fondo scuro.",
       "**Don't** mettere ombre su superfici a riposo.",
       "**Don't** usare grassetti sopra 500 nei titoli o maiuscolo fuori dalle etichette.",
+      "**Don't** usare `--brass` per il testo su fondi chiari: per quello esiste `--brass-ink`.",
+      "**Don't** nascondere contenuto con l'animazione allo scroll senza la classe `js` sull'elemento radice: senza JavaScript la pagina deve restare leggibile.",
       "**Don't** far sembrare cliccabile ciò che non lo è: nessun cambio di sfondo o cursore su card che non portano da nessuna parte.",
       "**Don't** caricare la mappa o qualunque risorsa esterna senza consenso esplicito.",
       "**Don't** ridurre il corpo del testo sotto i 17px o rimpicciolire i bersagli cliccabili: il pubblico include persone anziane e non tecniche."

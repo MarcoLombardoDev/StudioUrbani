@@ -3,5 +3,11 @@
     "commit": "",
     "pr": "",
     "sessionUrl": false
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npx impeccable *)",
+      "Bash(npx --yes impeccable *)"
+    ]
   }
 }

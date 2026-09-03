@@ -1,23 +1,31 @@
-# Studio Urbani — sito istituzionale
+# Studio Urbani — sito istituzionale / firm website
 
-Sito statico (HTML, CSS, JavaScript vanilla) per lo Studio Urbani — commercialisti,
-revisori legali e consulenti del lavoro, Roma. Nessuna dipendenza esterna, nessun
-build step: si pubblica copiando i file su qualunque hosting statico o web server.
+Sito statico bilingue (IT/EN), senza dipendenze e senza build: HTML, CSS e
+JavaScript vanilla. Per lo Studio Urbani — commercialisti, revisori legali e
+consulenti del lavoro, Roma.
 
-## Struttura
+Static bilingual site, no dependencies, no build step.
+
+## Struttura / Structure
 
 ```
-index.html                  Landing page unica: hero, valori, chi siamo,
-                            servizi, fatturazione elettronica, team, CTA
-pages/contatti.html         Contatti + mappa Google Maps (caricata su consenso)
-pages/note-legali.html      Note legali
-pages/privacy-policy.html   Informativa privacy (GDPR)
-pages/cookie-policy.html    Cookie policy + reset delle preferenze
-assets/css/style.css        Design system completo (token, componenti, responsive)
-assets/js/i18n.js           Motore bilingue IT/EN + dizionario inglese
-assets/js/main.js           Header, menu, animazioni, avviso cookie, mappa
-assets/fonts/               Font in locale (woff2)
-assets/img/                 Favicon e segnaposto del logo
+.
+├── index.html                  Landing unica: hero, valori, chi siamo,
+│                               servizi, fatturazione, team, CTA
+├── pages/
+│   ├── contatti.html           Contatti + mappa Google Maps (su consenso)
+│   ├── note-legali.html        Note legali
+│   ├── privacy-policy.html     Informativa privacy (GDPR)
+│   └── cookie-policy.html      Cookie policy + reset delle preferenze
+├── assets/
+│   ├── css/style.css           Design system (token, componenti, responsive)
+│   ├── js/i18n.js              Motore bilingue IT/EN + dizionario inglese
+│   ├── js/main.js              Header, menu, animazioni, avviso cookie, mappa
+│   ├── fonts/                  Jost e Inter in locale (woff2)
+│   └── img/                    Logo, favicon, manifest (vedi assets/img/README.md)
+├── robots.txt
+├── sitemap.xml
+└── .nojekyll
 ```
 
 ## Scelte principali
@@ -47,18 +55,17 @@ assets/img/                 Favicon e segnaposto del logo
 - **Accessibilità.** Skip link, focus visibile, `aria-*` su menu e switch lingua,
   rispetto di `prefers-reduced-motion`, contrasti verificati sui testi principali.
 
-## Logo
+## Logo e icone / Logo and icons
 
-Header e footer caricano `assets/img/logo.svg` accanto al wordmark «Studio Urbani»
-composto in Jost. **Per montare il file definitivo basta sovrascrivere
-`assets/img/logo.svg`**: nessuna modifica al markup, il percorso è già quello.
+Header e footer caricano il logo dello Studio accanto al wordmark «Studio Urbani»
+composto in Jost:
 
-Il file attualmente in repository è una **ricostruzione provvisoria** del marchio
-(il globo a rete), disegnata a mano in SVG in attesa dell'originale; da sostituire
-prima della pubblicazione. Sul footer scuro il logo è reso in bianco via
-`filter: brightness(0) invert(1)`, quindi funziona con qualsiasi versione monocroma
-del marchio. `assets/img/favicon.svg` riprende lo stesso disegno e va aggiornato
-insieme al logo.
+- `assets/img/logo.svg` nell'header, su fondo chiaro;
+- `assets/img/logo-light.svg` nel footer scuro — variante generata dal primo
+  (tratto bianco, vuoti nel colore del footer): se cambia il logo o il colore
+  del footer va rigenerata;
+- set completo di favicon, `apple-touch-icon` e `site.webmanifest` in
+  `assets/img/` (dettagli in `assets/img/README.md`).
 
 ## Fotografie del team
 
@@ -85,7 +92,7 @@ data di ultimo aggiornamento delle pagine legali e URL dell'area riservata clien
 Le sezioni *Fisco e normativa* e *Focus Lazio* del sito attuale, alimentate da feed
 RSS, non sono state riprodotte.
 
-## Sviluppo locale
+## Anteprima locale / Local preview
 
 Basta aprire `index.html` nel browser. Per un contesto più realistico (percorsi
 assoluti, header HTTP):
@@ -94,3 +101,27 @@ assoluti, header HTTP):
 python3 -m http.server 8000
 # http://localhost:8000
 ```
+
+## Pubblicazione / Publishing
+
+Tutto vive su `main`: nessun branch di sviluppo, nessun workflow di deploy. Il
+sito è servito così com'è dalla radice (`.nojekyll` disattiva l'elaborazione
+Jekyll su GitHub Pages), quindi ogni push su `main` ripubblica.
+
+Everything lives on `main` — no development branches, no deploy workflow: the
+site is served as-is from the root, so every push to `main` republishes.
+
+`robots.txt` e `sitemap.xml` puntano a `https://www.studiourbani.it/`, insieme
+ai `link rel="canonical"` e alle proprietà `og:` delle pagine: se il dominio di
+pubblicazione cambia, sono i tre punti da aggiornare.
+
+## Convenzioni / Conventions
+
+Le stesse del repository `MarcoLombardoDev.github.io`:
+
+- statico e bilingue, senza build step né dipendenze esterne;
+- `.claude/settings.json` disattiva l'attribuzione automatica nei commit;
+- `.nojekyll`, `robots.txt` e `sitemap.xml` nella radice;
+- `assets/{css,js,img,fonts}` con un `README.md` che documenta le immagini;
+- head delle pagine con `canonical`, `author`, proprietà `og:` e set completo di favicon;
+- README bilingue con struttura, anteprima locale e pubblicazione.

@@ -50,9 +50,9 @@
   --ink:        #10141c;
   --ink-soft:   #39424f;
   --muted:      #6d7684;
-  --navy:       #0b5480;
-  --navy-deep:  #07344f;
-  --navy-soft:  #2a7aa8;
+  --navy:       #04507d;   /* blu del marchio, rgb(4,80,125) */
+  --navy-deep:  #033a5c;
+  --navy-soft:  #2a76a5;
   --brass:      #b3915f;
   --brass-soft: #d9c39c;
   --paper:      #f7f6f3;
@@ -229,8 +229,8 @@ strong { font-weight: 600; }
 
 /* Wordmark (placeholder tipografico del logo) */
 .brand { display: inline-flex; align-items: center; gap: .8rem; margin-right: auto; }
-.brand__logo { width: auto; height: 42px; flex: none; transition: height .4s var(--ease); }
-.site-header.is-solid .brand__logo { height: 36px; }
+.brand__logo { width: auto; height: 46px; flex: none; transition: height .4s var(--ease); }
+.site-header.is-solid .brand__logo { height: 38px; }
 .wordmark { display: block; font-size: 1.42rem; font-weight: 300; letter-spacing: .005em; line-height: 1; color: var(--ink); }
 .wordmark em { font-style: normal; color: var(--navy); }
 .brand__payoff {
@@ -357,7 +357,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   position: absolute;
   top: -28%; right: -14%;
   width: 62vw; height: 62vw;
-  background: radial-gradient(circle at 50% 50%, rgba(11, 84, 128, .16), rgba(11, 84, 128, 0) 66%);
+  background: radial-gradient(circle at 50% 50%, rgba(4, 80, 125, .16), rgba(4, 80, 125, 0) 66%);
   border-radius: 50%;
 }
 .hero__bg::after {
@@ -453,7 +453,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   overflow: hidden;
   display: grid;
   place-items: center;
-  background: linear-gradient(150deg, var(--paper-2), rgba(11, 84, 128, .10));
+  background: linear-gradient(150deg, var(--paper-2), rgba(4, 80, 125, .10));
   border: 1px solid var(--line-soft);
 }
 .team__photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -489,7 +489,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .service__icon {
   width: 46px; height: 46px; border-radius: 10px;
   display: grid; place-items: center;
-  background: linear-gradient(150deg, rgba(11, 84, 128, .10), rgba(179, 145, 95, .12));
+  background: linear-gradient(150deg, rgba(4, 80, 125, .10), rgba(179, 145, 95, .12));
   color: var(--navy);
   margin-bottom: 1.25rem;
 }
@@ -593,7 +593,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .site-footer .wordmark { color: #fff; }
 .site-footer .wordmark em { color: var(--brass-soft); }
 .site-footer .brand__payoff { color: rgba(255, 255, 255, .5); }
-.site-footer .brand__logo { filter: brightness(0) invert(1); opacity: .92; }
+.site-footer .brand__logo { opacity: .95; }
 .footer__about { font-size: .93rem; margin-top: 1.4rem; max-width: 38ch; }
 .footer__list { list-style: none; display: grid; gap: .6rem; font-size: .93rem; }
 .footer__list a { transition: color .3s var(--ease); }

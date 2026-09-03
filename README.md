@@ -35,10 +35,11 @@ assets/img/                 Favicon e segnaposto del logo
   del logo, di ispirazione Futura), testi in **Inter**. I file `.woff2` sono serviti
   da `assets/fonts/`: nessuna chiamata a Google Fonts, quindi nessun cookie di terze
   parti e nessun trasferimento di dati fuori dal dominio dello Studio.
-- **Colori dal logo.** Blu notte `#1f3159` / `#141f38` del lettering, ottone `#b3915f`
-  come accento, fondo carta `#f7f6f3`.
-- **Anno di copyright dinamico**: ogni `<span data-year>` nel footer è aggiornato da
-  `main.js` con l'anno corrente.
+- **Colori dal logo.** Blu petrolio `#0b5480` / `#07344f` ripreso dal marchio, ottone
+  `#b3915f` come accento, fondo carta `#f7f6f3`.
+- **Anno di copyright dinamico**: la riga del footer è
+  «© *anno* Massimo Urbani (P.IVA 10600291008) - Tutti i diritti riservati» e ogni
+  `<span data-year>` è aggiornato da `main.js` con l'anno corrente.
 - **Mappa a consenso.** L'iframe di Google Maps viene creato solo dopo il click su
   «Carica la mappa» (consenso ricordato in `su_map_consent`), coerentemente con la
   cookie policy.
@@ -48,18 +49,28 @@ assets/img/                 Favicon e segnaposto del logo
 
 ## Logo
 
-L'header e il footer usano al momento un **segnaposto tipografico** (monogramma «SU»
-+ wordmark «Studio Urbani» composto in Jost). Per inserire il logo definitivo:
+Header e footer caricano `assets/img/logo.svg` accanto al wordmark «Studio Urbani»
+composto in Jost. **Per montare il file definitivo basta sovrascrivere
+`assets/img/logo.svg`**: nessuna modifica al markup, il percorso è già quello.
 
-1. salvare il file in `assets/img/logo.svg` (oppure `.png` a densità doppia);
-2. in `index.html` e nelle pagine in `pages/`, sostituire il blocco marcato
-   `<!-- PLACEHOLDER LOGO -->` con:
-   ```html
-   <img class="brand__logo" src="assets/img/logo.svg" alt="Studio Urbani">
-   ```
-   (dalle pagine in `pages/` il percorso è `../assets/img/logo.svg`).
+Il file attualmente in repository è una **ricostruzione provvisoria** del marchio
+(il globo a rete), disegnata a mano in SVG in attesa dell'originale; da sostituire
+prima della pubblicazione. Sul footer scuro il logo è reso in bianco via
+`filter: brightness(0) invert(1)`, quindi funziona con qualsiasi versione monocroma
+del marchio. `assets/img/favicon.svg` riprende lo stesso disegno e va aggiornato
+insieme al logo.
 
-`assets/img/logo-placeholder.svg` riproduce l'impostazione grafica di riferimento.
+## Fotografie del team
+
+Le card del team mostrano un segnaposto tondo con le iniziali. Per inserire i
+ritratti è sufficiente aggiungere un `<img>` dentro `.team__photo`:
+
+```html
+<div class="team__photo"><img src="../assets/img/team/massimo-urbani.jpg" alt="Rag. Massimo Urbani"></div>
+```
+
+Il ritaglio circolare e l'`object-fit: cover` sono già gestiti dal CSS; le immagini
+rendono meglio quadrate, almeno 320x320 px.
 
 ## Contenuti da validare
 

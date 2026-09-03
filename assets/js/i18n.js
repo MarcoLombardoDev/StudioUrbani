@@ -146,15 +146,12 @@
     'team.eyebrow': "The team",
     'team.title': "The people who look after your figures.",
     'team.lead': "The staff of Studio Massimo Urbani is made up of the professionals below, each following their own portfolio of clients over time.",
-    'team.r.lead': "Managing partner · Chartered accountant and statutory auditor",
-    'team.r.pro': "Professional at the firm",
 
     /* --- cta --- */
     'cta.eyebrow': "Contact",
     'cta.title': "Let's talk about your situation.",
     'cta.lead': "Via Cristoforo Colombo 348, Sc. D int. 3 — 00145 Rome. Monday to Friday, 9am-1pm and 2pm-6pm.",
     'cta.btn1': "Go to contact page",
-    'cta.btn2': "Email the firm",
 
     /* --- footer --- */
     'footer.about': "Assistance to companies, professionals and private clients in accounting, tax, employment and litigation matters.",
@@ -164,7 +161,7 @@
     'footer.note': "Legal notice",
     'footer.privacy': "Privacy policy",
     'footer.cookie': "Cookie policy",
-    'footer.rights': "All rights reserved.",
+    'footer.rights': "All rights reserved",
 
     /* --- cookie bar --- */
     'cookiebar.t': "This site only uses technical tools",

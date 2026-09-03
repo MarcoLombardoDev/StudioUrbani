@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina non trovata — Studio Urbani</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#033a5c">
+<!-- Pagina autoportante: nessun asset esterno, così funziona anche quando
+     GitHub Pages la serve per un percorso profondo (dove i link relativi
+     non risolverebbero). -->
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    background: #033a5c;
+    color: #fff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+  }
+  .box { max-width: 460px; display: grid; gap: 18px; justify-items: center; }
+  .mark {
+    font-family: 'Jost', 'Century Gothic', Futura, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem; font-weight: 300; letter-spacing: .01em;
+  }
+  .mark em { font-style: normal; color: #d9c39c; }
+  .code {
+    font-family: 'Jost', 'Century Gothic', Futura, 'Trebuchet MS', sans-serif;
+    font-size: clamp(3.4rem, 12vw, 5.4rem); font-weight: 200; line-height: 1; margin: 0;
+  }
+  h1 { font-family: 'Jost', 'Century Gothic', Futura, 'Trebuchet MS', sans-serif; font-size: 1.45rem; font-weight: 300; margin: 0; }
+  p { margin: 0; color: rgba(255, 255, 255, .72); font-size: .98rem; line-height: 1.6; }
+  a.btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    margin-top: 6px; padding: .85rem 1.5rem;
+    background: #fff; color: #033a5c; text-decoration: none;
+    border-radius: 999px; font-weight: 500; letter-spacing: .03em;
+    transition: background-color .3s ease;
+  }
+  a.btn:hover { background: #d9c39c; }
+  .sep { width: 34px; height: 1px; background: rgba(255, 255, 255, .3); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <span class="mark">Studio <em>Urbani</em></span>
+    <span class="sep"></span>
+    <p class="code">404</p>
+    <h1>Questa pagina non c'è.</h1>
+    <p>L'indirizzo potrebbe essere cambiato o contenere un errore di battitura.
+       Dalla home si raggiungono studio, servizi, fatturazione e contatti.</p>
+    <a class="btn" id="home" href="/">Torna alla home</a>
+  </div>
+<script>
+  /* La radice del sito cambia fra dominio finale (/) e anteprima GitHub Pages
+     (/<nome-repo>/): la calcolo dal percorso corrente. */
+  (function () {
+    var link = document.getElementById('home');
+    if (location.hostname.endsWith('github.io')) {
+      var first = location.pathname.split('/')[1];
+      if (first) link.href = '/' + first + '/';
+    }
+  })();
+</script>
+</body>
+</html>

@@ -23,6 +23,7 @@ Static bilingual site, no dependencies, no build step.
 │   ├── js/main.js              Header, menu, animazioni, avviso cookie, mappa
 │   ├── fonts/                  Jost e Inter in locale (woff2)
 │   └── img/                    Logo, favicon, manifest (vedi assets/img/README.md)
+├── 404.html                    Pagina di errore autoportante
 ├── robots.txt
 ├── sitemap.xml
 └── .nojekyll
@@ -114,6 +115,21 @@ site is served as-is from the root, so every push to `main` republishes.
 `robots.txt` e `sitemap.xml` puntano a `https://www.studiourbani.it/`, insieme
 ai `link rel="canonical"` e alle proprietà `og:` delle pagine: se il dominio di
 pubblicazione cambia, sono i tre punti da aggiornare.
+
+### Anteprima su GitHub Pages / GitHub Pages preview
+
+*Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`*. Il sito
+viene servito da `https://marcolombardodev.github.io/StudioUrbani/`: tutti i
+percorsi interni sono relativi, quindi funziona anche da sottocartella, e
+`404.html` calcola da sé la radice del sito.
+
+I riferimenti assoluti restano volutamente sul dominio finale: l'anteprima non
+va indicizzata al suo posto, e i `canonical` la riconducono a
+`https://www.studiourbani.it/`.
+
+Attenzione: il sito pubblicato da un repository privato **resta pubblico** per
+chi ha l'URL (limitarne l'accesso richiede GitHub Enterprise Cloud), e la
+pubblicazione da repository privato richiede un piano GitHub Pro o superiore.
 
 ## Convenzioni / Conventions
 

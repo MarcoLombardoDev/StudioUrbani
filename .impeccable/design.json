@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-03T20:21:51.624Z",
+  "title": "Design System: Studio Urbani",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Blu del marchio",
+        "canonical": "oklch(41.5% 0.099 243.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.099 243.5)",
+          "oklch(26.4% 0.099 243.5)",
+          "oklch(37.9% 0.099 243.5)",
+          "oklch(49.3% 0.099 243.5)",
+          "oklch(60.7% 0.099 243.5)",
+          "oklch(72.1% 0.099 243.5)",
+          "oklch(83.6% 0.099 243.5)",
+          "oklch(95.0% 0.099 243.5)"
+        ]
+      },
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Blu profondo",
+        "canonical": "oklch(33.5% 0.079 243.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.079 243.4)",
+          "oklch(26.4% 0.079 243.4)",
+          "oklch(37.9% 0.079 243.4)",
+          "oklch(49.3% 0.079 243.4)",
+          "oklch(60.7% 0.079 243.4)",
+          "oklch(72.1% 0.079 243.4)",
+          "oklch(83.6% 0.079 243.4)",
+          "oklch(95.0% 0.079 243.4)"
+        ]
+      },
+      "navy-soft": {
+        "role": "primary",
+        "displayName": "Blu chiaro",
+        "canonical": "oklch(54.1% 0.104 240.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.104 240.1)",
+          "oklch(26.4% 0.104 240.1)",
+          "oklch(37.9% 0.104 240.1)",
+          "oklch(49.3% 0.104 240.1)",
+          "oklch(60.7% 0.104 240.1)",
+          "oklch(72.1% 0.104 240.1)",
+          "oklch(83.6% 0.104 240.1)",
+          "oklch(95.0% 0.104 240.1)"
+        ]
+      },
+      "brass": {
+        "role": "secondary",
+        "displayName": "Ottone",
+        "canonical": "oklch(67.7% 0.078 76.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.078 76.4)",
+          "oklch(26.4% 0.078 76.4)",
+          "oklch(37.9% 0.078 76.4)",
+          "oklch(49.3% 0.078 76.4)",
+          "oklch(60.7% 0.078 76.4)",
+          "oklch(72.1% 0.078 76.4)",
+          "oklch(83.6% 0.078 76.4)",
+          "oklch(95.0% 0.078 76.4)"
+        ]
+      },
+      "brass-soft": {
+        "role": "secondary",
+        "displayName": "Ottone chiaro",
+        "canonical": "oklch(82.6% 0.058 81.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.058 81.8)",
+          "oklch(26.4% 0.058 81.8)",
+          "oklch(37.9% 0.058 81.8)",
+          "oklch(49.3% 0.058 81.8)",
+          "oklch(60.7% 0.058 81.8)",
+          "oklch(72.1% 0.058 81.8)",
+          "oklch(83.6% 0.058 81.8)",
+          "oklch(95.0% 0.058 81.8)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Inchiostro",
+        "canonical": "oklch(19.1% 0.017 264.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.017 264.0)",
+          "oklch(26.4% 0.017 264.0)",
+          "oklch(37.9% 0.017 264.0)",
+          "oklch(49.3% 0.017 264.0)",
+          "oklch(60.7% 0.017 264.0)",
+          "oklch(72.1% 0.017 264.0)",
+          "oklch(83.6% 0.017 264.0)",
+          "oklch(95.0% 0.017 264.0)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Inchiostro morbido",
+        "canonical": "oklch(37.6% 0.025 257.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.025 257.5)",
+          "oklch(26.4% 0.025 257.5)",
+          "oklch(37.9% 0.025 257.5)",
+          "oklch(49.3% 0.025 257.5)",
+          "oklch(60.7% 0.025 257.5)",
+          "oklch(72.1% 0.025 257.5)",
+          "oklch(83.6% 0.025 257.5)",
+          "oklch(95.0% 0.025 257.5)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Grigio di servizio",
+        "canonical": "oklch(56.3% 0.024 259.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.024 259.2)",
+          "oklch(26.4% 0.024 259.2)",
+          "oklch(37.9% 0.024 259.2)",
+          "oklch(49.3% 0.024 259.2)",
+          "oklch(60.7% 0.024 259.2)",
+          "oklch(72.1% 0.024 259.2)",
+          "oklch(83.6% 0.024 259.2)",
+          "oklch(95.0% 0.024 259.2)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Carta",
+        "canonical": "oklch(97.3% 0.004 91.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 91.4)",
+          "oklch(26.4% 0.004 91.4)",
+          "oklch(37.9% 0.004 91.4)",
+          "oklch(49.3% 0.004 91.4)",
+          "oklch(60.7% 0.004 91.4)",
+          "oklch(72.1% 0.004 91.4)",
+          "oklch(83.6% 0.004 91.4)",
+          "oklch(95.0% 0.004 91.4)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Carta scura",
+        "canonical": "oklch(94.6% 0.007 88.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.007 88.6)",
+          "oklch(26.4% 0.007 88.6)",
+          "oklch(37.9% 0.007 88.6)",
+          "oklch(49.3% 0.007 88.6)",
+          "oklch(60.7% 0.007 88.6)",
+          "oklch(72.1% 0.007 88.6)",
+          "oklch(83.6% 0.007 88.6)",
+          "oklch(95.0% 0.007 88.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "H1 di hero e pagine interne, spesso su due righe con la seconda più tenue."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Apre le sezioni."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nomi delle aree di servizio, titoli delle card, paragrafi legali."
+      },
+      "title-small": {
+        "displayName": "Title small",
+        "purpose": "Titoli brevi dentro le card, nomi delle persone, voci del footer."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Paragrafo di apertura di ogni sezione, in inchiostro morbido."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Testo corrente a 17px; colonna a 74ch nei documenti legali."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etichetta d’ottone in maiuscoletto che annuncia le sezioni."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sollevamento-breve",
+        "value": "0 1px 2px rgba(16,20,28,.04), 0 8px 24px -16px rgba(16,20,28,.18)",
+        "purpose": "Bottoni in hover e riquadro della CTA: stacco di due pixel, non fluttuazione."
+      },
+      {
+        "name": "sollevamento-ampio",
+        "value": "0 2px 4px rgba(16,20,28,.04), 0 24px 48px -28px rgba(16,20,28,.28)",
+        "purpose": "Card dei servizi in hover e pulsante torna su."
+      },
+      {
+        "name": "alone-ritratto",
+        "value": "0 0 0 5px rgba(4,80,125,.10), 0 0 0 10px rgba(4,80,125,.05), 0 16px 30px -18px rgba(4,80,125,.55)",
+        "purpose": "Doppio alone concentrico sul ritratto del team in hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(.22, .61, .36, 1)",
+        "purpose": "Curva unica del sistema: nessuna transizione usa altre curve."
+      },
+      {
+        "name": "durata-stato",
+        "value": "300ms",
+        "purpose": "Cambi di colore su link, voci di menu, switch."
+      },
+      {
+        "name": "durata-superficie",
+        "value": "350-550ms",
+        "purpose": "Sollevamenti di bottoni, card e ritratti; comparsa dei blocchi allo scroll: 800ms."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "520px"
+      },
+      {
+        "name": "map",
+        "value": "700px"
+      },
+      {
+        "name": "brand",
+        "value": "760px"
+      },
+      {
+        "name": "cta",
+        "value": "820px"
+      },
+      {
+        "name": "strip",
+        "value": "860px"
+      },
+      {
+        "name": "split",
+        "value": "900px"
+      },
+      {
+        "name": "nav",
+        "value": "940px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Azione principale: pillola blu, si solleva di 2px al passaggio.",
+      "html": "<button class=\"ds-btn-primary\">Scopri i servizi <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.6rem; background: var(--navy, #04507d); color: #fff; border: 1px solid var(--navy, #04507d); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-primary svg { width: 17px; height: 17px; } .ds-btn-primary:hover { background: var(--navy-deep, #033a5c); border-color: var(--navy-deep, #033a5c); transform: translateY(-2px); box-shadow: 0 1px 2px rgba(16,20,28,.04), 0 8px 24px -16px rgba(16,20,28,.18); } .ds-btn-primary:focus-visible { outline: 2px solid var(--brass, #b3915f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Azione secondaria: filetto a riposo, blu pieno al passaggio.",
+      "html": "<button class=\"ds-btn-ghost\">Parla con lo Studio</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; padding: .95rem 1.6rem; background: transparent; color: var(--ink, #10141c); border: 1px solid rgba(16,20,28,.10); border-radius: 999px; font-family: Jost, 'Century Gothic', sans-serif; font-size: .95rem; font-weight: 500; letter-spacing: .04em; white-space: nowrap; cursor: pointer; transition: transform .35s cubic-bezier(.22,.61,.36,1), background-color .35s cubic-bezier(.22,.61,.36,1), color .35s cubic-bezier(.22,.61,.36,1); } .ds-btn-ghost:hover { background: var(--navy, #04507d); border-color: var(--navy, #04507d); color: #fff; transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--brass, #b3915f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Opener",
+      "kind": "custom",
+      "refersTo": "eyebrow",
+      "description": "La tripletta che apre ogni sezione: etichetta d’ottone con filetto, titolo, lead.",
+      "html": "<div class=\"ds-opener\"><p class=\"ds-eyebrow\">Servizi</p><h2>Nove aree di competenza, un solo presidio.</h2><p class=\"ds-lead\">Lo Studio assicura i servizi nelle aree che seguono.</p></div>",
+      "css": ".ds-opener { max-width: 700px; } .ds-eyebrow { display: inline-flex; align-items: center; gap: .7rem; margin: 0 0 1.1rem; font-family: Jost, sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--brass, #b3915f); } .ds-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--brass, #b3915f); opacity: .7; } .ds-opener h2 { margin: 0; font-family: Jost, sans-serif; font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -.015em; color: var(--ink, #10141c); } .ds-lead { margin: 2rem 0 0; font-family: Inter, sans-serif; font-size: 1.15rem; font-weight: 300; line-height: 1.62; color: var(--ink-soft, #39424f); }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card di un’area di servizio: filetto tenue, barra ottone→blu che si apre in hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/></svg></div><h3>Area Contabilità</h3><ul><li>Contabilità semplificata e ordinaria</li><li>Adempimenti IVA e tenuta dei registri</li></ul></article>",
+      "css": ".ds-card { position: relative; overflow: hidden; background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(24px,2.6vw,32px); transition: transform .45s cubic-bezier(.22,.61,.36,1), box-shadow .45s cubic-bezier(.22,.61,.36,1), border-color .45s cubic-bezier(.22,.61,.36,1); } .ds-card::after { content: ''; position: absolute; inset: auto 0 0 0; height: 2px; background: linear-gradient(90deg, var(--brass, #b3915f), var(--navy, #04507d)); transform: scaleX(0); transform-origin: left; transition: transform .5s cubic-bezier(.22,.61,.36,1); } .ds-card:hover { transform: translateY(-4px); border-color: transparent; box-shadow: 0 2px 4px rgba(16,20,28,.04), 0 24px 48px -28px rgba(16,20,28,.28); } .ds-card:hover::after { transform: scaleX(1); } .ds-card-icon { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(150deg, rgba(4,80,125,.10), rgba(179,145,95,.12)); color: var(--navy, #04507d); margin-bottom: 1.25rem; } .ds-card-icon svg { width: 23px; height: 23px; } .ds-card h3 { margin: 0 0 .7rem; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; line-height: 1.1; color: var(--ink, #10141c); } .ds-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .ds-card li { position: relative; padding-left: 1.05rem; font-family: Inter, sans-serif; font-size: .945rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-card li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass, #b3915f); }"
+    },
+    {
+      "name": "Team Portrait",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Ritratto di un professionista: cerchio con alone blu in hover, card non cliccabile.",
+      "html": "<article class=\"ds-person\"><div class=\"ds-person-photo\"><span>MU</span></div><h4>Rag. Massimo Urbani</h4></article>",
+      "css": ".ds-person { background: #fff; padding: clamp(26px,3vw,36px) 1.4rem clamp(24px,2.6vw,32px); text-align: center; cursor: default; } .ds-person-photo { width: clamp(104px,10vw,132px); aspect-ratio: 1; margin: 0 auto 1.2rem; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, var(--paper-2, #efede8), rgba(4,80,125,.10)); border: 1px solid rgba(16,20,28,.06); transition: transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .55s cubic-bezier(.22,.61,.36,1); } .ds-person-photo span { font-family: Jost, sans-serif; font-size: 1.7rem; font-weight: 300; letter-spacing: .04em; color: var(--navy, #04507d); transition: color .55s cubic-bezier(.22,.61,.36,1); } .ds-person h4 { margin: 0; font-family: Jost, sans-serif; font-size: 1.04rem; font-weight: 400; color: var(--ink, #10141c); transition: color .45s cubic-bezier(.22,.61,.36,1); } .ds-person:hover .ds-person-photo { transform: translateY(-4px) scale(1.04); box-shadow: 0 0 0 5px rgba(4,80,125,.10), 0 0 0 10px rgba(4,80,125,.05), 0 16px 30px -18px rgba(4,80,125,.55); } .ds-person:hover .ds-person-photo span { color: var(--navy-soft, #2a76a5); } .ds-person:hover h4 { color: var(--navy, #04507d); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Voce di navigazione: filetto d’ottone che si apre da sinistra, resta sulla pagina corrente.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Studio</a><a href=\"#\">Servizi</a><a href=\"#\">Contatti</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 30px; } .ds-nav a { position: relative; padding-block: 4px; font-family: Jost, sans-serif; font-size: .96rem; letter-spacing: .015em; color: var(--ink-soft, #39424f); text-decoration: none; transition: color .3s cubic-bezier(.22,.61,.36,1); } .ds-nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--brass, #b3915f); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.22,.61,.36,1); } .ds-nav a:hover, .ds-nav a[aria-current=\"page\"] { color: var(--ink, #10141c); } .ds-nav a:hover::after, .ds-nav a[aria-current=\"page\"]::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "chip",
+      "refersTo": "button-ghost",
+      "description": "L’unico chip del sistema: due pillole dentro una pillola, lingua attiva in blu pieno.",
+      "html": "<div class=\"ds-lang\" role=\"group\" aria-label=\"Lingua\"><button type=\"button\" aria-pressed=\"true\">IT</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-lang { display: inline-flex; align-items: center; padding: 3px; border: 1px solid rgba(16,20,28,.10); border-radius: 999px; background: rgba(255,255,255,.5); } .ds-lang button { border: 0; background: transparent; border-radius: 999px; padding: .32rem .62rem; font-family: Jost, sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .09em; color: var(--muted, #6d7684); cursor: pointer; transition: background-color .3s cubic-bezier(.22,.61,.36,1), color .3s cubic-bezier(.22,.61,.36,1); } .ds-lang button:hover { color: var(--ink, #10141c); } .ds-lang button[aria-pressed=\"true\"] { background: var(--navy, #04507d); color: #fff; }"
+    },
+    {
+      "name": "Map Consent Gate",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Sostituisce l’iframe di Google Maps finché l’utente non acconsente. Componente di conformità: non rimuovere.",
+      "html": "<div class=\"ds-map\"><div class=\"ds-map-inner\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.6\"/></svg><h3>Mappa interattiva Google Maps</h3><p>Caricando la mappa alcuni dati verranno trasmessi a Google.</p><button class=\"ds-btn-primary\" type=\"button\">Carica la mappa</button></div></div>",
+      "css": ".ds-map { position: relative; aspect-ratio: 16/9; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; overflow: hidden; display: grid; place-items: center; text-align: center; background: linear-gradient(150deg, var(--paper-2, #efede8), #e6e3dc); } .ds-map-inner { max-width: 460px; display: grid; gap: 1rem; justify-items: center; padding: 2rem; } .ds-map svg { width: 30px; height: 30px; color: var(--navy, #04507d); } .ds-map h3 { margin: 0; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; color: var(--ink, #10141c); } .ds-map p { margin: 0; font-family: Inter, sans-serif; font-size: .93rem; color: var(--ink-soft, #39424f); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Il fascicolo ben tenuto",
+    "overview": "L'ordine di uno studio che archivia bene. Ogni sezione è una cartella\nriconoscibile: un'etichetta minuta in maiuscoletto d'ottone la annuncia, un\ntitolo largo e leggero la apre, il contenuto sta dentro margini generosi su un\nfondo di carta caldo. Niente cresce a caso, niente è impilato per riempire: si\nscorre come si sfoglia, sapendo sempre dove si è.\n\nIl carattere da difendere è **caldo, umano, accogliente**. Il committente\ntratta numeri e norme, ma il sito non deve sembrare un modulo: il fondo carta\n`#f7f6f3` invece del bianco clinico, l'ottone `#b3915f` come segnalibro che\nscalda il blu, e titoli in Jost Light — geometrici come il marchio, ma sottili,\nmai squadrati addosso al lettore. Il blu del marchio `#04507d` porta autorevolezza\ndove serve: numeri, azioni, la fascia della fatturazione. Gli elementi\ninterattivi sono **leggeri e nitidi**: si distinguono per allineamento e per\nfiletti da un pixel, non per volume.\n\nAnti-riferimento confermato: l'estetica da portale istituzionale del sito\nprecedente — colonne dense, riquadri bordati, tipografia di sistema, notizie\nimpaginate come un bollettino. Il sistema attuale la rifiuta per sottrazione:\nmeno bordi, più aria, un solo accento.",
+    "keyCharacteristics": [
+      "Fondo carta caldo su tutta la superficie, bianco riservato alle card",
+      "Etichette in maiuscoletto d'ottone con filetto: aprono ogni sezione",
+      "Titoli geometrici in peso 300, corpo testo neutro e leggibile a 17px",
+      "Filetti da 1px al posto dei bordi pesanti; ombre solo come risposta a un gesto",
+      "Un'unica fascia scura in tutta la pagina, per la fatturazione elettronica",
+      "Nessuna terza parte: font locali, mappa a consenso, niente tracciamento"
+    ],
+    "rules": [
+      {
+        "name": "La regola dell'unico accento",
+        "body": "L'ottone non colora superfici: solo testo di etichetta, filetti, icone e trattini, mai più del 5% di uno schermo. Se un elemento chiede di essere visto, si usa il blu; se chiede di essere annunciato, l'ottone.",
+        "section": "colors"
+      },
+      {
+        "name": "La regola della carta",
+        "body": "Nessuna pagina ha fondo bianco. Il bianco è il materiale delle cose sollevate — card e pannelli — e perde significato se diventa lo sfondo.",
+        "section": "colors"
+      },
+      {
+        "name": "La regola della fascia unica",
+        "body": "In tutto il sito esiste una sola sezione a fondo scuro. Aggiungerne una seconda toglie forza alla prima: chi vuole enfasi usa il fondo carta scura, non il blu.",
+        "section": "colors"
+      },
+      {
+        "name": "La regola del peso leggero",
+        "body": "Nessun titolo supera il peso 500. In un sistema geometrico il grassetto legge come pesantezza, non come importanza: la gerarchia si fa con la dimensione e con l'aria.",
+        "section": "typography"
+      },
+      {
+        "name": "La regola dell'etichetta",
+        "body": "Ogni sezione si apre con la stessa tripletta — etichetta in maiuscoletto d'ottone preceduta da un filetto di 28px, titolo, paragrafo lead. È l'elemento che rende il sito riconoscibile scorrendolo.",
+        "section": "typography"
+      },
+      {
+        "name": "La regola del piatto a riposo",
+        "body": "Nessuna superficie ha ombra prima di essere toccata. Chi vuole distinguere una superficie ferma cambia il tono del fondo o aggiunge un filetto.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** aprire ogni sezione con la tripletta etichetta d'ottone, titolo, lead.",
+      "**Do** usare il fondo carta come default e il bianco solo per le superfici sollevate.",
+      "**Do** tenere i titoli in peso 300-400 e affidare la gerarchia a dimensione e spazio.",
+      "**Do** disegnare le divisioni con filetti da 1px in trasparenza (`rgba(16,20,28,.10)` e `.06`), non con bordi pieni.",
+      "**Do** dare a ogni elemento azionabile la forma a pillola e un focus visibile in ottone.",
+      "**Do** far reagire gli elementi con transizioni lente (300-550ms) e la curva `cubic-bezier(.22,.61,.36,1)`, e azzerare i movimenti sotto `prefers-reduced-motion`.",
+      "**Do** servire ogni risorsa dal dominio dello Studio: font in locale, icone SVG inline, nessuno script di terze parti."
+    ],
+    "donts": [
+      "**Don't** introdurre un terzo colore di accento: il sistema ha blu e ottone.",
+      "**Don't** colorare superfici con l'ottone, che vive solo su testo, filetti e icone.",
+      "**Don't** aggiungere una seconda sezione a fondo scuro.",
+      "**Don't** mettere ombre su superfici a riposo.",
+      "**Don't** usare grassetti sopra 500 nei titoli o maiuscolo fuori dalle etichette.",
+      "**Don't** far sembrare cliccabile ciò che non lo è: nessun cambio di sfondo o cursore su card che non portano da nessuna parte.",
+      "**Don't** caricare la mappa o qualunque risorsa esterna senza consenso esplicito.",
+      "**Don't** ridurre il corpo del testo sotto i 17px o rimpicciolire i bersagli cliccabili: il pubblico include persone anziane e non tecniche."
+    ]
+  }
+}

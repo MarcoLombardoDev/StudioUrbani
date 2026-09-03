@@ -61,10 +61,13 @@ Static bilingual site, no dependencies, no build step.
 Header e footer caricano il logo dello Studio accanto al wordmark «Studio Urbani»
 composto in Jost:
 
-- `assets/img/logo.svg` nell'header, su fondo chiaro;
-- `assets/img/logo-light.svg` nel footer scuro — variante generata dal primo
-  (tratto bianco, vuoti nel colore del footer): se cambia il logo o il colore
-  del footer va rigenerata;
+- `assets/img/logo.svg` nell'header: tratto blu su **fondo trasparente**;
+- `assets/img/logo-light.svg` nel footer scuro: stesso disegno in bianco;
+- entrambi sono derivati dal file consegnato dallo Studio (in cronologia git,
+  commit `cb1248f`), che disegna il marchio come una macchia piena più un
+  tracciato bianco sovrapposto da cui si ricava la rete. Nelle due varianti
+  quel tracciato diventa una `<mask>`: il bianco non viene disegnato e lo
+  sfondo resta trasparente. Sostituendo il logo, vanno rigenerate entrambe.
 - set completo di favicon, `apple-touch-icon` e `site.webmanifest` in
   `assets/img/` (dettagli in `assets/img/README.md`).
 

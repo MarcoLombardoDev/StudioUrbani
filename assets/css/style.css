@@ -184,7 +184,7 @@ strong { font-weight: 600; }
 .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); background: var(--navy-deep); border-color: var(--navy-deep); }
 .btn svg { width: 17px; height: 17px; flex: none; }
 .btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); border-color: var(--line); }
-.btn--ghost:hover { --btn-fg: #fff; background: var(--ink); border-color: var(--ink); }
+.btn--ghost:hover { --btn-fg: #fff; background: var(--navy); border-color: var(--navy); }
 .btn--light { --btn-bg: #fff; --btn-fg: var(--navy-deep); }
 .btn--light:hover { background: var(--brass-soft); border-color: var(--brass-soft); color: var(--navy-deep); }
 .btn--sm { padding: .66rem 1.1rem; font-size: .86rem; gap: .45rem; }
@@ -312,6 +312,18 @@ strong { font-weight: 600; }
 }
 .burger span::before { top: -5.5px; }
 .burger span::after { top: 5.5px; }
+/* Un antenato con backdrop-filter fa da contenitore per i discendenti
+   position: fixed: con l'header compatto il pannello del menu finiva dentro
+   la barra invece di coprire lo schermo. Aperto il menu, lo disattivo. */
+body.nav-open .site-header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: var(--paper);
+}
+/* Il pannello del menu è position: fixed e coprirebbe marchio e switch
+   lingua: mentre è aperto li tengo sopra, così restano leggibili e usabili. */
+body.nav-open .brand,
+body.nav-open .header__actions { position: relative; z-index: 1; }
 body.nav-open .burger span { background: transparent; }
 body.nav-open .burger span::before { transform: translateY(5.5px) rotate(45deg); }
 body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg); }
@@ -537,7 +549,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .contact-card h3 { font-size: 1.12rem; margin-bottom: .8rem; }
 .contact-card ul { list-style: none; display: grid; gap: .4rem; }
 .contact-card li, .contact-card a { overflow-wrap: anywhere; }
-.contact-card a:hover { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.contact-card a:not(.btn):hover { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
 .contact-card .label { display: block; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: .7rem; }
 .contact-card .label:first-child { margin-top: 0; }
 

@@ -140,7 +140,7 @@
     'billing.panel.l1': "Access with personal credentials",
     'billing.panel.l2': "Documents available to consult and print",
     'billing.panel.l3': "Available 24/7, from any device",
-    'billing.panel.cta': "Request activation",
+    'billing.panel.cta': "Request information",
 
     /* --- team --- */
     'team.eyebrow': "The team",

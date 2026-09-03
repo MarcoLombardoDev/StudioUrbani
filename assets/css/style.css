@@ -451,9 +451,8 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   background: var(--white);
   padding: clamp(26px, 3vw, 36px) 1.4rem clamp(24px, 2.6vw, 32px);
   text-align: center;
-  transition: background-color .35s var(--ease);
+  cursor: default;
 }
-.team__card:hover { background: var(--paper); }
 
 /* Ritratto: segnaposto in attesa delle fotografie dello Studio.
    Per inserirle basta un <img> dentro .team__photo. */
@@ -467,16 +466,28 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   place-items: center;
   background: linear-gradient(150deg, var(--paper-2), rgba(4, 80, 125, .10));
   border: 1px solid var(--line-soft);
+  /* Le card non sono link: l'effetto sta sul ritratto (alone del marchio e
+     leggero avvicinamento), non sulla card, per non suggerire un click. */
+  transition: transform .55s var(--ease), box-shadow .55s var(--ease);
+  will-change: transform;
 }
-.team__photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.team__photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; filter: grayscale(.25); transition: filter .55s var(--ease); }
+.team__card:hover .team__photo {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 0 5px rgba(4, 80, 125, .10), 0 0 0 10px rgba(4, 80, 125, .05), 0 16px 30px -18px rgba(4, 80, 125, .55);
+}
+.team__card:hover .team__photo img { filter: grayscale(0); }
+.team__card:hover .team__photo span { color: var(--navy-soft); }
 .team__photo span {
+  transition: color .55s var(--ease);
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   font-weight: 300;
   letter-spacing: .04em;
   color: var(--navy);
 }
-.team__card h4 { font-size: 1.04rem; font-weight: 400; }
+.team__card h4 { font-size: 1.04rem; font-weight: 400; transition: color .45s var(--ease); }
+.team__card:hover h4 { color: var(--navy); }
 
 /* ---------- Servizi ---------- */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); gap: clamp(14px, 1.6vw, 20px); }
@@ -659,7 +670,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .reveal[data-delay='4'] { transition-delay: .32s; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .btn:hover, .service:hover { transform: none; }
+  .btn:hover, .service:hover, .team__card:hover .team__photo { transform: none; }
 }
 
 /* ---------- Utility ---------- */

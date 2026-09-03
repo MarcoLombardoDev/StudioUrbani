@@ -127,9 +127,14 @@ I riferimenti assoluti restano volutamente sul dominio finale: l'anteprima non
 va indicizzata al suo posto, e i `canonical` la riconducono a
 `https://www.studiourbani.it/`.
 
-Attenzione: il sito pubblicato da un repository privato **resta pubblico** per
-chi ha l'URL (limitarne l'accesso richiede GitHub Enterprise Cloud), e la
-pubblicazione da repository privato richiede un piano GitHub Pro o superiore.
+L'anteprima è pubblica come il repository: per tenerla fuori dai motori di
+ricerca, oltre ai `canonical`, il `robots.txt` alla radice del dominio
+(`MarcoLombardoDev.github.io`) contiene `Disallow: /StudioUrbani/` — il
+`robots.txt` di un *project site* viene ignorato dai crawler, che leggono solo
+quello della radice.
+
+Il repository non dichiara una licenza: tutti i diritti sui contenuti restano
+in capo allo Studio, come indicato nel footer del sito.
 
 ## Convenzioni / Conventions
 

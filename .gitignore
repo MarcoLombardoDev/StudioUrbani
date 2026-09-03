@@ -2,3 +2,7 @@
 Thumbs.db
 node_modules/
 *.log
+
+# Stato di runtime della live mode di impeccable: pid, porta e token di
+# sessione del server locale. Effimero e per macchina, non va versionato.
+.impeccable/live/server.json

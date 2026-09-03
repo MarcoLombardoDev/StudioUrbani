@@ -127,11 +127,12 @@ I riferimenti assoluti restano volutamente sul dominio finale: l'anteprima non
 va indicizzata al suo posto, e i `canonical` la riconducono a
 `https://www.studiourbani.it/`.
 
-L'anteprima è pubblica come il repository: per tenerla fuori dai motori di
-ricerca, oltre ai `canonical`, il `robots.txt` alla radice del dominio
-(`MarcoLombardoDev.github.io`) contiene `Disallow: /StudioUrbani/` — il
-`robots.txt` di un *project site* viene ignorato dai crawler, che leggono solo
-quello della radice.
+L'anteprima è pubblica come il repository, ma non va indicizzata al posto del
+sito vero: uno script inline nell'head aggiunge `<meta name="robots"
+content="noindex, nofollow">` **solo** quando l'host termina con `github.io`,
+mentre sul dominio finale non fa nulla. Il `robots.txt` non basterebbe: quello
+di un *project site* viene ignorato dai crawler, che leggono solo quello alla
+radice del dominio.
 
 Il repository non dichiara una licenza: tutti i diritti sui contenuti restano
 in capo allo Studio, come indicato nel footer del sito.

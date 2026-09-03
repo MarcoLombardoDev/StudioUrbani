@@ -150,3 +150,21 @@ Le stesse del repository `MarcoLombardoDev.github.io`:
 - `assets/{css,js,img,fonts}` con un `README.md` che documenta le immagini;
 - head delle pagine con `canonical`, `author`, proprietà `og:` e set completo di favicon;
 - README bilingue con struttura, anteprima locale e pubblicazione.
+
+### Strumenti per agenti / Agent tooling
+
+`npx impeccable install` ha aggiunto in `.claude/` lo skill *impeccable*
+(rilevamento di anti-pattern di design), quattro agenti e due hook — un
+controllo rapido dopo ogni `Edit`/`Write` su file di interfaccia e una
+passata completa allo `Stop`. Gli hook stanno in `.claude/settings.local.json`,
+dove li scrive il CLI, e sono versionati di proposito: le sessioni remote
+clonano il repository da zero, quindi ciò che non è committato andrebbe perso.
+Usano `${CLAUDE_PROJECT_DIR}` e una guardia sull'esistenza dello script, quindi
+non si rompono se lo skill non c'è.
+
+Il rilevatore gira in **modalità ridotta**: i suoi moduli parser
+(`htmlparser2`, `css-select`, `css-tree`, `domutils`) non sono risolvibili in un
+progetto senza dipendenze, quindi ricade sulle espressioni regolari e i risultati
+sono per sua stessa ammissione un sottoinsieme. Per la modalità piena servirebbe
+installarli come dipendenze di sviluppo, cosa che contraddice il «senza
+dipendenze» di questo repository: scelta rimandata.

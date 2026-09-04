@@ -30,21 +30,16 @@
     'nav.team': "Team",
     'nav.contatti': "Contact",
     'nav.rapporto': "How we work",
-    'nav.call': "Call",
     'bc.home': "Home",
 
     /* --- hero --- */
     'hero.eyebrow': "Chartered accountants · Statutory auditors · Labour consultants",
     'hero.title1': "Accounting, tax and labour.",
     'hero.title2': "One point of contact, for every decision.",
-    'hero.lead': "We assist companies, professionals and private clients: whoever knows your case is the same person who follows its figures, filings and deadlines.",
-    'hero.cta1': "Call the firm",
-    'hero.cta2': "Explore our services",
-    'hero.fact1': "Integrated practice areas",
-    'hero.fact2': "Professionals on the team",
-    'hero.fact3dt': "Rome",
-    'hero.fact3': "Via Cristoforo Colombo 348",
-    'hero.hours': "Monday to Friday, 9am-1pm and 2pm-6pm · or <a href='mailto:info@studiourbani.it'>info@studiourbani.it</a>",
+    'hero.link1': "About the firm",
+    'hero.link2': "The people",
+    'hero.link3': "How we work",
+    'hero.link4': "Our services",
 
     /* --- valori --- */
     'values.1.t': "A stable contact person",
@@ -69,7 +64,7 @@
     'about.quoteRole': "Managing partner",
 
     /* --- servizi --- */
-    'services.eyebrow': "Services",
+    'services.eyebrow': "Our services",
     'services.title': "Nine practice areas, under one roof.",
     'services.lead': "Studio Massimo Urbani, with its own resources and in cooperation with experienced professionals, provides services in the areas below.",
 
@@ -155,11 +150,9 @@
 
     /* --- cta --- */
     'cta.eyebrow': "Contact",
-    'cta.title': "Let's talk about your situation.",
-    'cta.f1': "Via Cristoforo Colombo 348, Sc. D int. 3 — 00145 Rome, Italy",
-    'cta.f2': "Monday to Friday, 9am-1pm and 2pm-6pm",
-    'cta.btn2': "Email the firm",
-    'cta.btn1': "All contact details and the map",
+    'cta.title': "Let's talk about you.",
+    'cta.lead': "Ask for an appointment: we will be glad to understand what you need and to give you all the help required.",
+    'cta.btn1': "How to reach us",
 
     /* --- footer --- */
     'footer.about': "Assistance to companies, professionals and private clients in accounting, tax, employment and litigation matters.",

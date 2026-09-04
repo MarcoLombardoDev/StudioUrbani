@@ -155,9 +155,9 @@ inventato.
 
 ### Primary
 - **Blu del marchio** (`#04507d`): il colore prelevato dal logo, `rgb(4,80,125)`.
-  Porta i numeri della hero, i bottoni primari, le voci attive, i link nei testi
-  legali e la parola «Urbani» nel wordmark. È il colore delle azioni e delle
-  cifre, non degli sfondi larghi.
+  Porta i bottoni primari, le icone dei collegamenti della hero, le voci attive,
+  i link nei testi legali e la parola «Urbani» nel wordmark. È il colore delle
+  azioni, non degli sfondi larghi.
 - **Blu profondo** (`#033a5c`): la fascia «Come lavoriamo», il
   footer, lo stato hover dei bottoni primari e il fondo della pagina 404. È il
   blu quando diventa ambiente invece di accento.
@@ -248,11 +248,16 @@ paragrafo lead. È l'elemento che rende il sito riconoscibile scorrendolo.
 ## Layout
 
 L'ordine delle sezioni della landing è esso stesso una scelta di sistema:
-hero con l'azione di contatto, striscia di quattro fatti, chi siamo, **le
-persone**, il percorso del rapporto sulla fascia scura, i servizi con la nota
-sulla fatturazione, chiusura con i recapiti. Le persone vengono prima della
-tassonomia, e la fatturazione elettronica è uno strumento dentro i servizi, non
-un capitolo a sé.
+hero, striscia di quattro fatti, chi siamo, **le persone**, il percorso del
+rapporto sulla fascia scura, i servizi con la nota sulla fatturazione, chiusura
+con l'invito al contatto. Le persone vengono prima della tassonomia, e la
+fatturazione elettronica è uno strumento dentro i servizi, non un capitolo a sé.
+
+La hero non argomenta e non elenca: etichetta, titolo e **quattro collegamenti
+con icona** verso le sezioni della pagina — chi siamo, le persone, come
+lavoriamo, i nostri servizi. Sono l'unico indice del sito e stanno tutti dentro
+la prima schermata. I recapiti azionabili vivono nel pannello della fascia
+scura e nella pagina contatti, non nella hero.
 
 Contenitore centrato da 1200px (`--wrap`), 820px per le colonne di sola lettura
 (`--wrap-narrow`), con gutter fluido `clamp(20px, 5vw, 48px)`. Il ritmo
@@ -394,8 +399,8 @@ va sostituito con un caricamento automatico.
   (`rgba(16,20,28,.10)` e `.06`), non con bordi pieni.
 - **Do** dare a ogni elemento azionabile la forma a pillola e il focus a doppio
   anello (blu del marchio più alone bianco; invertito sui fondi scuri).
-- **Do** tenere un contatto azionabile — `tel:` o `mailto:` — a un gesto di
-  distanza da qualunque sezione, menu mobile compreso.
+- **Do** tenere un contatto azionabile — `tel:` o `mailto:` — nel pannello della
+  fascia scura e in ogni footer, che sono identici su tutte le pagine.
 - **Do** far reagire gli elementi con transizioni lente (300-550ms) e la curva
   `cubic-bezier(.22,.61,.36,1)`, e azzerare i movimenti sotto
   `prefers-reduced-motion`.

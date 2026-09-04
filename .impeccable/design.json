@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-03T21:05:50.960Z",
+  "generatedAt": "2026-09-04T06:08:15.669Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -389,7 +389,7 @@
       "**Do** tenere i titoli in peso 300-400 e affidare la gerarchia a dimensione e spazio.",
       "**Do** disegnare le divisioni con filetti da 1px in trasparenza (`rgba(16,20,28,.10)` e `.06`), non con bordi pieni.",
       "**Do** dare a ogni elemento azionabile la forma a pillola e il focus a doppio anello (blu del marchio più alone bianco; invertito sui fondi scuri).",
-      "**Do** tenere un contatto azionabile — `tel:` o `mailto:` — a un gesto di distanza da qualunque sezione, menu mobile compreso.",
+      "**Do** tenere un contatto azionabile — `tel:` o `mailto:` — nel pannello della fascia scura e in ogni footer, che sono identici su tutte le pagine.",
       "**Do** far reagire gli elementi con transizioni lente (300-550ms) e la curva `cubic-bezier(.22,.61,.36,1)`, e azzerare i movimenti sotto `prefers-reduced-motion`.",
       "**Do** servire ogni risorsa dal dominio dello Studio: font in locale, icone SVG inline, nessuno script di terze parti."
     ],

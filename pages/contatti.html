@@ -60,7 +60,6 @@
       <a href="../index.html#rapporto" data-i18n="nav.rapporto">Come lavoriamo</a>
       <a href="../index.html#servizi" data-i18n="nav.servizi">Servizi</a>
       <a href="contatti.html" aria-current="page" data-i18n="nav.contatti">Contatti</a>
-      <a class="btn nav__call" href="tel:+39065123225"><span data-i18n="nav.call">Chiama</span> · 06 5123225</a>
     </nav>
     <div class="header__actions">
       <div class="lang-switch" role="group" aria-label="Lingua / Language">
@@ -102,8 +101,16 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </article>
-
         <article class="contact-card reveal" data-delay="1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2.2"/></svg>
+          <h2 data-i18n="contatti.hours.t">Orari</h2>
+          <ul>
+            <li><span class="label" data-i18n="contatti.hours.l1">Lunedì - Venerdì</span>09:00 - 13:00</li>
+            <li>14:00 - 18:00</li>
+            <li><span class="label" data-i18n="contatti.hours.l2">Sabato e domenica</span><span data-i18n="contatti.hours.closed">Chiuso</span></li>
+          </ul>
+        </article>
+        <article class="contact-card reveal" data-delay="2">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
           <h2 data-i18n="contatti.tel.t">Telefono e fax</h2>
           <ul>
@@ -112,24 +119,13 @@
             <li><a href="tel:+39065127516">(+39) 06 5127516</a></li>
           </ul>
         </article>
-
-        <article class="contact-card reveal" data-delay="2">
+        <article class="contact-card reveal" data-delay="3">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
           <h2 data-i18n="contatti.mail.t">Email</h2>
           <ul>
             <li><span class="label" data-i18n="contatti.mail.l1">Comunicazioni generiche</span><a href="mailto:info@studiourbani.it">info@studiourbani.it</a></li>
             <li><span class="label" data-i18n="contatti.mail.l2">Comunicazioni amministrative</span><a href="mailto:amministrazione@studiourbani.it">amministrazione@studiourbani.it</a></li>
             <li><span class="label" data-i18n="contatti.mail.l3">Comunicazioni inerenti la privacy</span><a href="mailto:privacy@studiourbani.it">privacy@studiourbani.it</a></li>
-          </ul>
-        </article>
-
-        <article class="contact-card reveal" data-delay="3">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2.2"/></svg>
-          <h2 data-i18n="contatti.hours.t">Orari</h2>
-          <ul>
-            <li><span class="label" data-i18n="contatti.hours.l1">Lunedì - Venerdì</span>09:00 - 13:00</li>
-            <li>14:00 - 18:00</li>
-            <li><span class="label" data-i18n="contatti.hours.l2">Sabato e domenica</span><span data-i18n="contatti.hours.closed">Chiuso</span></li>
           </ul>
         </article>
       </div>
@@ -176,6 +172,7 @@
         </a>
         <p class="footer__about" data-i18n="footer.about">Assistenza a imprese, professionisti e privati nell'ambito contabile, fiscale, del lavoro e del contenzioso.</p>
       </div>
+
       <div>
         <h2 class="footer__title" data-i18n="footer.nav">Navigazione</h2>
         <ul class="footer__list">
@@ -186,6 +183,7 @@
           <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
         </ul>
       </div>
+
       <div>
         <h2 class="footer__title" data-i18n="footer.contact">Contatti</h2>
         <ul class="footer__list footer__list--contact">
@@ -194,6 +192,7 @@
           <li><a href="mailto:info@studiourbani.it">info@studiourbani.it</a></li>
         </ul>
       </div>
+
       <div>
         <h2 class="footer__title" data-i18n="footer.legalTitle">Informazioni legali</h2>
         <ul class="footer__list">
@@ -203,6 +202,7 @@
         </ul>
       </div>
     </div>
+
     <div class="footer__bottom">
       <p>© <span data-year>2026</span> Massimo Urbani (P.IVA 10600291008) - <span data-i18n="footer.rights">Tutti i diritti riservati</span></p>
     </div>

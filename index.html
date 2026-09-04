@@ -426,7 +426,10 @@
           <p data-i18n="billing.lead">In alternativa al metodo classico, lo Studio mette a disposizione un'area riservata per la gestione della contabilità e l'emissione delle fatture elettroniche: emissione e ricezione in XML, conservazione a norma, documenti sempre consultabili.</p>
         </div>
         <div class="btn-row">
-          <a class="btn btn--ghost" href="pages/contatti.html" data-i18n="billing.panel.cta">Richiedi informazioni</a>
+          <a class="btn btn--ghost" href="pages/contatti.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
+            <span data-i18n="billing.panel.cta">Richiedi informazioni</span>
+          </a>
         </div>
       </aside>
     </div>
@@ -447,12 +450,14 @@
               <span class="reviews__avg" data-reviews-avg></span>
               <span class="reviews__stars" data-reviews-stars role="img"></span>
             </p>
-            <p class="reviews__meta" data-reviews-meta></p>
+            <div class="reviews__side">
+              <p class="reviews__meta" data-reviews-meta></p>
+              <a class="btn btn--ghost btn--sm" data-reviews-link href="https://www.google.com/maps/place/Studio+Massimo+Urbani" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="reviews.all">Leggile tutte</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
           </div>
-          <a class="btn btn--ghost btn--sm" data-reviews-link href="https://www.google.com/maps/place/Studio+Massimo+Urbani" target="_blank" rel="noopener noreferrer">
-            <span data-i18n="reviews.all">Leggile su Google</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
         </div>
 
         <div class="reviews__carousel" role="group" aria-roledescription="carousel" aria-label="Recensioni Google" data-i18n-aria-label="reviews.carousel">

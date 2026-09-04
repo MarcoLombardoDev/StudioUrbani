@@ -115,7 +115,7 @@ Serve una cosa sola, da configurare nel repository:
 | Dove | Nome | Valore |
 |---|---|---|
 | *Settings → Secrets and variables → Actions → Secrets* | `GOOGLE_MAPS_API_KEY` | chiave di un progetto Google Cloud con **Places API (New)** abilitata |
-| *…→ Variables* | `GOOGLE_PLACE_ID` | `ChIJW62YZ2SKJRMRzBp1lx-ugsQ` (scheda «Studio Massimo Urbani») |
+| *…→ Variables* (non è un segreto) | `GOOGLE_PLACE_ID` | `ChIJW62YZ2SKJRMRzBp1lx-ugsQ` (scheda «Studio Massimo Urbani») |
 | *…→ Variables* (solo se la chiave ammette un dominio diverso) | `GOOGLE_API_REFERER` | referrer da dichiarare, es. `https://www.studiourbani.it/` |
 
 Senza chiave il workflow termina senza fare nulla e la sezione resta nascosta:
@@ -139,7 +139,10 @@ pulita resta una chiave dedicata al workflow con *Application restrictions:
 None* e *API restrictions: Places API (New)*: vive solo nei segreti del
 repository e non è esposta a nessuna pagina.
 
-Il place id è già noto (`ChIJW62YZ2SKJRMRzBp1lx-ugsQ`). Se manca, lo script lo
+Il place id è un dato pubblico — sta scritto nell'URL della scheda Google — e
+va fra le *Variables*; il workflow lo legge anche dai segreti, se è stato messo
+là, per non ricadere sulla ricerca per nome. Il place id è già noto
+(`ChIJW62YZ2SKJRMRzBp1lx-ugsQ`). Se manca, lo script lo
 cerca per nome e indirizzo e lo stampa nel log del workflow; il nome usato per
 la ricerca si cambia con la variabile `GOOGLE_PLACE_NAME`.
 

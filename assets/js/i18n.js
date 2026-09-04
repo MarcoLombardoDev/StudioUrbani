@@ -147,7 +147,7 @@
     /* --- dicono di noi --- */
     'reviews.eyebrow': "What they say",
     'reviews.title': "Our Google reviews.",
-    'reviews.all': "Read them on Google",
+    'reviews.all': "Read them all",
     'reviews.carousel': "Google reviews",
     'reviews.prev': "Previous review",
     'reviews.next': "Next review",

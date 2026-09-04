@@ -514,11 +514,17 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 /* Voto e stelle in colonna, il conteggio accanto: due blocchi affiancati,
    separati da un filetto, cosi' il numero grande resta l'unico protagonista. */
 .reviews__figures { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 22px); }
+/* Il filetto separa le due colonne per intero, non solo l'etichetta. */
+.reviews__side {
+  display: grid;
+  justify-items: start;
+  gap: .9rem;
+  padding-left: clamp(14px, 1.6vw, 22px);
+  border-left: 1px solid var(--line);
+}
 .reviews__score { display: grid; justify-items: start; gap: .5rem; flex: none; }
 .reviews__avg { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 3.4rem); font-weight: 300; line-height: 1; color: var(--navy); }
 .reviews__meta {
-  padding-left: clamp(14px, 1.6vw, 22px);
-  border-left: 1px solid var(--line);
   font-size: .92rem;
   line-height: 1.5;
   color: var(--muted);
@@ -528,10 +534,11 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 /* Sotto i 560px non c'e' spazio per due colonne: voto e etichetta si
    impilano e il filetto verticale non serve piu'. */
 @media (max-width: 560px) {
-  .reviews__figures { display: grid; justify-items: start; gap: .7rem; }
-  .reviews__meta { padding-left: 0; border-left: 0; max-width: none; }
+  .reviews__figures { display: grid; justify-items: start; gap: .9rem; }
+  .reviews__side { padding-left: 0; border-left: 0; }
+  .reviews__meta { max-width: none; }
 }
-.reviews__aside .btn { margin-top: 1.4rem; }
+
 
 /* Le stelle: fila vuota in filetto, fila piena ritagliata sulla frazione. */
 .stars { position: relative; display: inline-block; line-height: 0; white-space: nowrap; flex: none; }

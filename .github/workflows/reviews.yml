@@ -53,7 +53,10 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
+          # Il place id non e' un segreto e sta bene fra le variabili; se pero'
+          # e' stato messo fra i segreti, va letto da la' invece di ricadere
+          # sulla ricerca per nome.
+          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID || secrets.GOOGLE_PLACE_ID }}
           GOOGLE_PLACE_NAME: ${{ vars.GOOGLE_PLACE_NAME }}
           GOOGLE_API_REFERER: ${{ vars.GOOGLE_API_REFERER }}
         run: |

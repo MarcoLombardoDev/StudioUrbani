@@ -394,8 +394,9 @@ Una sola card, attaccata a quella della fatturazione elettronica: appartiene a
 quel blocco, quindi la sezione azzera il proprio riempimento superiore e i due
 riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
 A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
-sotto, e accanto — oltre un filetto verticale — l'etichetta con numero di
-valutazioni e data dell'ultimo aggiornamento; sotto i 560px le due parti si
+sotto, e accanto — oltre un filetto verticale che separa le due colonne per
+intero — l'etichetta con numero di valutazioni e data dell'ultimo aggiornamento
+e, sotto di essa, il rimando alla scheda Google; sotto i 560px le due parti si
 impilano e il filetto sparisce. A destra il carosello delle singole recensioni,
 una per schermata, su fondo carta dentro la card bianca. Ogni recensione porta
 la fotografia del profilo dell'autore, scaricata e servita in locale, con le

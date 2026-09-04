@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-04T06:08:15.669Z",
+  "generatedAt": "2026-09-04T07:04:22.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -173,7 +173,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "H1 di hero e pagine interne, spesso su due righe con la seconda più tenue."
+        "purpose": "H1 di hero e pagine interne, spesso su due righe con la seconda più tenue; il massimo è tarato perché ogni riga stia su una riga sola."
       },
       "headline": {
         "displayName": "Headline",

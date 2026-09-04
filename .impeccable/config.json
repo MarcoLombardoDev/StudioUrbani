@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "undersized-ui-text",
+        "value": "*",
+        "files": [
+          "assets/css/style.css"
+        ],
+        "createdAt": "2026-09-04T06:59:48.249Z",
+        "reason": "user confirmed: il payoff del marchio a .6rem e' una scelta del committente, ribadita dopo la segnalazione"
+      }
+    ]
+  }
+}

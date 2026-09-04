@@ -19,7 +19,7 @@ colors:
 typography:
   display:
     fontFamily: "Jost, 'Century Gothic', Futura, 'Trebuchet MS', sans-serif"
-    fontSize: "clamp(2.05rem, 4.4vw, 3.7rem)"
+    fontSize: "clamp(1.95rem, 2.9vw, 2.6rem)"
     fontWeight: 300
     lineHeight: 1.1
     letterSpacing: "-0.015em"
@@ -219,10 +219,12 @@ senza aggiungere personalità, così il carattere del sistema resta tutto nei
 titoli e nelle etichette.
 
 ### Hierarchy
-- **Display** (300, `clamp(2.05rem, 4.4vw, 3.7rem)`, 1.1): l'h1 della hero e
+- **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 della hero e
   delle pagine interne, spezzato su due righe con la seconda in peso 200 e
-  colore più tenue. Il massimo è volutamente contenuto: un titolo più grande
-  spingeva le azioni di contatto sotto la piega.
+  colore più tenue. Il massimo è volutamente contenuto e misurato: 2.6rem è la
+  dimensione più grande alla quale ciascuna delle due righe del titolo della
+  hero resta su una riga sola: un titolo più grande le manda a capo e spinge il
+  paragrafo di apertura sotto la piega.
 - **Headline** (300, `clamp(2rem, 4.2vw, 3.1rem)`, 1.1): apre le sezioni.
 - **Title** (400, `clamp(1.25rem, 2vw, 1.5rem)`, 1.1): nomi delle aree di
   servizio, titoli delle card, intestazioni dei paragrafi legali.
@@ -253,10 +255,10 @@ rapporto sulla fascia scura, i servizi con la nota sulla fatturazione, chiusura
 con l'invito al contatto. Le persone vengono prima della tassonomia, e la
 fatturazione elettronica è uno strumento dentro i servizi, non un capitolo a sé.
 
-La hero non argomenta e non elenca: etichetta, titolo e **quattro collegamenti
-con icona** verso le sezioni della pagina — chi siamo, le persone, come
-lavoriamo, i nostri servizi. Sono l'unico indice del sito e stanno tutti dentro
-la prima schermata. I recapiti azionabili vivono nel pannello della fascia
+La hero non argomenta e non elenca: etichetta, titolo, una sola frase di
+apertura e **quattro collegamenti con icona** verso le sezioni della pagina —
+chi siamo, le persone, metodo, i nostri servizi. Sono l'unico indice del sito e
+stanno tutti dentro la prima schermata. I recapiti azionabili vivono nel pannello della fascia
 scura e nella pagina contatti, non nella hero.
 
 Contenitore centrato da 1200px (`--wrap`), 820px per le colonne di sola lettura
@@ -358,7 +360,10 @@ ritratto è l'unico cerchio del sistema.
 ### Navigation
 - Voci in Jost 400 su `.96rem`, colore inchiostro morbido, con un filetto
   d'ottone che si apre da sinistra in hover e resta sulla pagina corrente
-  (`aria-current`). Sotto i 940px la navigazione diventa un pannello fisso a
+  (`aria-current`). Ogni voce è una parola sola — studio, persone, metodo,
+  servizi, contatti — perché la fila resti leggibile a colpo d'occhio: la
+  sezione del percorso del rapporto si chiama «Come lavoriamo» nel titolo e
+  «Metodo» in navigazione. Sotto i 940px la navigazione diventa un pannello fisso a
   schermo intero su fondo carta, con le voci in 1.6rem peso 300; marchio, switch
   di lingua e chiusura restano sopra il pannello. L'header a menu aperto rinuncia
   alla sfocatura, che altrimenti diventerebbe il contenitore del pannello.

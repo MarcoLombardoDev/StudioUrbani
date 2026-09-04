@@ -1,10 +1,61 @@
 {
   "source": "google-places",
-  "note": "Segnaposto: nessun dato ancora scaricato, quindi la sezione «Dicono di noi» resta nascosta. Lo sovrascrive .github/workflows/reviews.yml appena e' configurato il segreto GOOGLE_MAPS_API_KEY.",
-  "placeId": null,
-  "updatedAt": null,
-  "rating": null,
-  "total": null,
-  "url": null,
-  "reviews": []
+  "placeId": "ChIJW62YZ2SKJRMRzBp1lx-ugsQ",
+  "place": "Studio Massimo Urbani",
+  "updatedAt": "2026-09-04T09:23:11.062Z",
+  "rating": 4.8,
+  "total": 6,
+  "url": "https://maps.google.com/?cid=14160071629114514124",
+  "reviews": [
+    {
+      "author": "Emma Angele",
+      "rating": 5,
+      "relative": "3 mesi fa",
+      "relativeEn": "3 months ago",
+      "text": "Grazie Dott. urbani per i suoi consigli, ma soprattutto per la gentilezza e professionalità del suo staff. Grazie per aver risolto alcuni dei miei problemi!",
+      "textEn": "Thank you, Dr. Urbani, for your advice, but above all for the kindness and professionalism of your staff. Thank you for solving some of my problems!",
+      "publishedAt": "2026-05-31T11:42:03.343677052Z",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tkcVRVWXdOV2xrVWxJMFZVcExMV1JKV0dzemFHYxAB!2m1!1s0x13258a646798ad5b:0xc482ae1f97751acc"
+    },
+    {
+      "author": "ACRR mazzulatoro",
+      "rating": 5,
+      "relative": "4 mesi fa",
+      "relativeEn": "4 months ago",
+      "text": "Finalmente ! Personale preparato,qualificato, tutto quello che serve per l'assistenza fiscale.\nGrazie.",
+      "textEn": "Finally! Trained, qualified staff, everything you need for tax assistance.\nThank you.",
+      "publishedAt": "2026-05-07T08:15:42.416890839Z",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pRd2RUWkRValUyWlVGNU5rbE9kbnBNU0MxTmVVRRAB!2m1!1s0x13258a646798ad5b:0xc482ae1f97751acc"
+    },
+    {
+      "author": "alessio d'alo",
+      "rating": 5,
+      "relative": "3 anni fa",
+      "relativeEn": "3 years ago",
+      "text": "Il dott.Urbani persona squisita, estremamente competente con oltre 25 anni di esperienza nella gestione societaria e d’impresa. Consigliatissimo!!",
+      "textEn": "Dr. Urbani is a delightful, extremely competent person with over 25 years of experience in corporate and business management. Highly recommended!",
+      "publishedAt": "2023-01-09T09:20:00.495348Z",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURCb1BIOWdRRRAB!2m1!1s0x13258a646798ad5b:0xc482ae1f97751acc"
+    },
+    {
+      "author": "ppgo",
+      "rating": 4,
+      "relative": "7 anni fa",
+      "relativeEn": "7 years ago",
+      "text": "cortesi e tempestivi",
+      "textEn": "courteous and timely",
+      "publishedAt": "2019-05-29T19:02:19.124003Z",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNvMnYzMXVnRRAB!2m1!1s0x13258a646798ad5b:0xc482ae1f97751acc"
+    },
+    {
+      "author": "cladom65",
+      "rating": 5,
+      "relative": "8 anni fa",
+      "relativeEn": "8 years ago",
+      "text": "seri e competenti",
+      "textEn": "serious and competent",
+      "publishedAt": "2018-05-16T08:49:03.048Z",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURBX0lIWG1BRRAB!2m1!1s0x13258a646798ad5b:0xc482ae1f97751acc"
+    }
+  ]
 }

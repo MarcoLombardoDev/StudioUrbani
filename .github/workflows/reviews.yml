@@ -6,6 +6,8 @@ name: Recensioni Google
 #
 # Serve il segreto GOOGLE_MAPS_API_KEY (chiave con Places API abilitata).
 # Facoltativa ma consigliata la variabile GOOGLE_PLACE_ID.
+# Se la chiave e' limitata per referrer HTTP (chiave "browser"), serve anche la
+# variabile GOOGLE_API_REFERER con uno dei domini ammessi.
 # Senza il segreto il job termina senza fare nulla, senza segnalare errori.
 
 on:
@@ -36,6 +38,7 @@ jobs:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
           GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
           GOOGLE_PLACE_NAME: ${{ vars.GOOGLE_PLACE_NAME }}
+          GOOGLE_API_REFERER: ${{ vars.GOOGLE_API_REFERER }}
         run: |
           set +e
           node scripts/fetch-reviews.mjs

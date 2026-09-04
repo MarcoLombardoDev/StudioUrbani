@@ -114,16 +114,23 @@ Serve una cosa sola, da configurare nel repository:
 | Dove | Nome | Valore |
 |---|---|---|
 | *Settings → Secrets and variables → Actions → Secrets* | `GOOGLE_MAPS_API_KEY` | chiave di un progetto Google Cloud con **Places API (New)** abilitata |
-| *…→ Variables* (facoltativo, consigliato) | `GOOGLE_PLACE_ID` | place id della scheda |
+| *…→ Variables* | `GOOGLE_PLACE_ID` | `ChIJW62YZ2SKJRMRzBp1lx-ugsQ` (scheda «Studio Massimo Urbani») |
+| *…→ Variables* (solo con chiavi browser) | `GOOGLE_API_REFERER` | uno dei referrer ammessi dalla chiave, es. `https://www.studiourbani.it/` |
 
 Senza il segreto il workflow termina senza fare nulla e la sezione resta
 nascosta: nessuna cornice vuota, nessuna recensione inventata.
 
-Il place id: alla prima esecuzione, se `GOOGLE_PLACE_ID` non c'è, lo script lo
-cerca per nome e indirizzo e lo stampa nel log del workflow — conviene copiarlo
-nelle *Variables*, così ogni esecuzione fa una chiamata in meno e non può
-agganciare la scheda sbagliata. Il nome usato per la ricerca si può cambiare con
-la variabile `GOOGLE_PLACE_NAME`.
+**Restrizioni della chiave.** Una chiave limitata per *referrer HTTP* è pensata
+per il browser: da un server, che non manda alcun referrer, Google la rifiuta
+con `API_KEY_HTTP_REFERRER_BLOCKED`. Due strade: creare una chiave dedicata al
+workflow con *Application restrictions: None* e *API restrictions: Places API
+(New)* — la via pulita, perché la chiave vive solo nei segreti del repository —
+oppure valorizzare `GOOGLE_API_REFERER` con un dominio già ammesso dalla chiave
+esistente, che lo script inoltra come header `Referer`.
+
+Il place id è già noto (`ChIJW62YZ2SKJRMRzBp1lx-ugsQ`). Se manca, lo script lo
+cerca per nome e indirizzo e lo stampa nel log del workflow; il nome usato per
+la ricerca si cambia con la variabile `GOOGLE_PLACE_NAME`.
 
 Costi: una esecuzione al giorno sono ~60 chiamate al mese (una per lingua),
 dentro la quota gratuita mensile di Places API; il progetto Google Cloud deve

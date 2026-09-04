@@ -5,7 +5,8 @@
  * statico: il browser del visitatore non contatta mai Google.
  *
  * Uso (locale o da GitHub Actions):
- *   GOOGLE_MAPS_API_KEY=... [GOOGLE_PLACE_ID=...] node scripts/fetch-reviews.mjs
+ *   GOOGLE_MAPS_API_KEY=... [GOOGLE_PLACE_ID=...] [GOOGLE_API_REFERER=...] \
+ *     node scripts/fetch-reviews.mjs
  *
  * Senza GOOGLE_PLACE_ID il place id viene risolto una volta per nome e
  * indirizzo e stampato a schermo: conviene fissarlo come variabile del repo,
@@ -26,6 +27,11 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'assets/data/reviews.json');
 
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
+/* Le chiavi "browser" sono limitate per referrer HTTP e da un server, che non
+   ne manda nessuno, verrebbero rifiutate: GOOGLE_API_REFERER permette di
+   dichiarare uno dei domini ammessi dalla chiave. Con una chiave dedicata al
+   server (nessuna restrizione di applicazione) non serve. */
+const REFERER = process.env.GOOGLE_API_REFERER;
 const NAME = process.env.GOOGLE_PLACE_NAME || 'Studio Massimo Urbani, Via Cristoforo Colombo 348, Roma';
 const MAX = Number(process.env.GOOGLE_REVIEWS_MAX || 5);
 
@@ -40,6 +46,7 @@ async function places(path, { method = 'GET', fields, body } = {}) {
     headers: {
       'X-Goog-Api-Key': KEY,
       'X-Goog-FieldMask': fields,
+      ...(REFERER ? { Referer: REFERER } : {}),
       ...(body ? { 'Content-Type': 'application/json' } : {})
     },
     body: body ? JSON.stringify(body) : undefined
@@ -111,7 +118,9 @@ const payload = {
   updatedAt: new Date().toISOString(),
   rating: typeof it.rating === 'number' ? it.rating : null,
   total: typeof it.userRatingCount === 'number' ? it.userRatingCount : null,
-  url: it.googleMapsUri || null,
+  /* googleMapsUri porta in coda un parametro di tracciamento interno di
+     Google (g_mp): via, l'indirizzo con il solo cid e' stabile. */
+  url: it.googleMapsUri ? it.googleMapsUri.replace(/([?&])g_mp=[^&]*&?/, '$1').replace(/[?&]$/, '') : null,
   reviews
 };
 

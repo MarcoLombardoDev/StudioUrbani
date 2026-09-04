@@ -21,18 +21,25 @@ Static bilingual site, no dependencies, no build step.
 │   ├── css/style.css           Design system (token, componenti, responsive)
 │   ├── js/i18n.js              Motore bilingue IT/EN + dizionario inglese
 │   ├── js/main.js              Header, menu, animazioni, avviso cookie, mappa
-│   ├── js/reviews.js           Card «Dicono di noi» (recensioni Google)
+│   ├── js/reviews.js           Card «Dicono di noi» e carosello
 │   ├── data/reviews.json       Recensioni scaricate (le scrive GitHub Actions)
-│   ├── img/reviews/            Fotografie dei profili, scaricate dallo stesso
+│   ├── data/reviews.example.json  Dati finti per l'anteprima (?reviews=demo)
 │   ├── fonts/                  Jost e Inter in locale (woff2)
-│   └── img/                    Logo, favicon, manifest (vedi assets/img/README.md)
+│   ├── img/                    Logo, favicon, manifest, ritratto del titolare
+│   └── img/reviews/            Fotografie dei profili, scaricate dal workflow
 ├── scripts/fetch-reviews.mjs   Scarica valutazione e recensioni da Google
-├── .github/workflows/reviews.yml  Le aggiorna ogni giorno
+├── .github/workflows/reviews.yml  Le aggiorna ogni notte
+├── DESIGN.md                   Sistema visivo (token, componenti, regole)
+├── PRODUCT.md                  Verità di prodotto: utenti, vincoli, materiali
 ├── 404.html                    Pagina di errore autoportante
 ├── robots.txt
 ├── sitemap.xml
 └── .nojekyll
 ```
+
+I due documenti `DESIGN.md` e `PRODUCT.md` non sono decorativi: registrano
+perché il sistema è fatto così e cosa non si può inventare. Se cambi una
+scelta di fondo, aggiornali insieme al codice.
 
 ## Scelte principali
 
@@ -58,6 +65,15 @@ Static bilingual site, no dependencies, no build step.
   «Carica la mappa» (consenso ricordato in `su_map_consent`), coerentemente con la
   cookie policy.
 - **Niente social.** I collegamenti ai profili social sono stati esclusi, come richiesto.
+- **Le card dei servizi non sono link.** Nove riquadri descrittivi senza
+  sollevamento né ombra in hover: non portano da nessuna parte e non devono
+  prometterlo. Vale anche per le card delle persone, dove reagisce solo il
+  ritratto.
+- **Un solo indice.** La hero non elenca argomenti: etichetta, titolo, una
+  frase e quattro collegamenti con icona alle sezioni della pagina, tutti
+  dentro la prima schermata. Le voci di navigazione sono di una parola sola
+  (Studio, Team, Metodo, Servizi, Contatti); la sezione «Come lavoriamo» in
+  navigazione si chiama «Metodo».
 - **Accessibilità.** Skip link, focus visibile, `aria-*` su menu e switch lingua,
   rispetto di `prefers-reduced-motion`, contrasti verificati sui testi principali.
 
@@ -97,8 +113,10 @@ hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
 ## Recensioni Google / Google reviews
 
 La sezione «Dicono di noi» mostra la valutazione media della scheda Google dello
-Studio e le ultime recensioni in un carosello che avanza da sé ogni sette
-secondi, con comando di pausa. **Non** è un widget di terze parti: il browser
+Studio e le ultime recensioni in un carosello che avanza da sé ogni cinque
+secondi e mezzo, con comando di pausa (si ferma anche col mouse sopra, col
+fuoco dentro, fuori schermo e a scheda nascosta; con `prefers-reduced-motion`
+non parte). **Non** è un widget di terze parti: il browser
 del visitatore non contatta Google e la sezione non richiede alcun consenso.
 
 Come funziona:
@@ -201,12 +219,13 @@ python3 -m http.server 8000
 
 ## Pubblicazione / Publishing
 
-Tutto vive su `main`: nessun branch di sviluppo, nessun workflow di deploy. Il
-sito è servito così com'è dalla radice (`.nojekyll` disattiva l'elaborazione
-Jekyll su GitHub Pages), quindi ogni push su `main` ripubblica.
+Tutto vive su `main`: nessun branch di sviluppo. Il sito è servito così com'è
+dalla radice (`.nojekyll` disattiva l'elaborazione Jekyll su GitHub Pages),
+quindi ogni push su `main` ripubblica. L'unico workflow è quello delle
+recensioni, che scrive anch'esso su `main`.
 
-Everything lives on `main` — no development branches, no deploy workflow: the
-site is served as-is from the root, so every push to `main` republishes.
+Everything lives on `main` — no development branches: the site is served as-is
+from the root, so every push to `main` republishes.
 
 `robots.txt` e `sitemap.xml` puntano a `https://www.studiourbani.it/`, insieme
 ai `link rel="canonical"` e alle proprietà `og:` delle pagine: se il dominio di
@@ -231,7 +250,36 @@ di un *project site* viene ignorato dai crawler, che leggono solo quello alla
 radice del dominio.
 
 Il repository non dichiara una licenza: tutti i diritti sui contenuti restano
-in capo allo Studio, come indicato nel footer del sito.
+in capo allo Studio, come indicato nel footer del sito. Non si accettano
+contributi esterni: il repository è pubblico solo per rendere possibile
+l'anteprima su GitHub Pages.
+
+### Portare il sito su un hosting tradizionale / Moving to classic hosting
+
+Il sito non ha nulla da migrare: 0,9 MB di file statici, **nessun PHP e nessun
+database**. Su un hosting Linux basta l'accesso FTP, `.htaccess` abilitato, un
+certificato SSL incluso e un centinaio di MB di spazio; i piani venduti su
+database, PHP e risorse dedicate non aggiungono niente a un sito statico.
+
+L'unica cosa che non si sposta da sé è l'aggiornamento notturno delle
+recensioni, che vive in GitHub Actions. La strada scelta è tenere GitHub come
+sorgente — il job continua a girare dov'è, con la chiave nei segreti — e
+aggiungere un secondo workflow che carica i file sull'hosting via FTP a ogni
+push su `main`. Portare invece lo scaricamento sull'hosting significherebbe
+riscrivere lo script in PHP (Aruba non offre Node), tenere la chiave in un file
+fuori dalla webroot e dipendere dai cron job del piano.
+
+Da preparare al momento del passaggio: un `.htaccess` con HTTPS forzato,
+canonicalizzazione su `www`, `ErrorDocument 404 /404.html` e cache lunga su
+font e immagini — regole che oggi dà GitHub Pages. Non c'è invece nulla da
+cambiare nei riferimenti assoluti: `canonical`, `og:`, `robots.txt` e
+`sitemap.xml` puntano già al dominio finale, e lo script che aggiunge
+`noindex` si attiva solo su host `github.io`.
+
+Due verifiche prima di toccare il piano di hosting: **dove sono le caselle di
+posta** `@studiourbani.it` (per uno studio il cui primo contatto è l'email, è
+il rischio più serio dell'intera migrazione) e il fatto che il dominio sia già
+sullo stesso provider, così al passaggio non si toccano i nameserver.
 
 ## Convenzioni / Conventions
 
@@ -240,7 +288,7 @@ Le stesse del repository `MarcoLombardoDev.github.io`:
 - statico e bilingue, senza build step né dipendenze esterne;
 - `.claude/settings.json` disattiva l'attribuzione automatica nei commit;
 - `.nojekyll`, `robots.txt` e `sitemap.xml` nella radice;
-- `assets/{css,js,img,fonts}` con un `README.md` che documenta le immagini;
+- `assets/{css,js,data,img,fonts}` con un `README.md` che documenta le immagini;
 - head delle pagine con `canonical`, `author`, proprietà `og:` e set completo di favicon;
 - README bilingue con struttura, anteprima locale e pubblicazione.
 

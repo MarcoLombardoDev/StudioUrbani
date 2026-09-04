@@ -18,11 +18,11 @@
   var next = root.querySelector('[data-reviews-next]');
   var toggle = root.querySelector('[data-reviews-toggle]');
 
-  /* Avanzamento automatico lento: sette secondi per recensione. Si ferma al
+  /* Avanzamento automatico: cinque secondi e mezzo per recensione. Si ferma al
      passaggio del mouse, quando il fuoco entra nel carosello, quando la
      sezione non e' a schermo o la scheda passa in secondo piano, e su
      richiesta col comando di pausa. Con prefers-reduced-motion non parte. */
-  var AUTO_MS = 7000;
+  var AUTO_MS = 5500;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var timer = null;
   var paused = false;   // scelta esplicita di chi guarda

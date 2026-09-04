@@ -327,8 +327,16 @@ la linea superiore dei numeri della hero, i separatori della striscia valori. Le
 griglie di card si disegnano con un gap da 1px su fondo filetto, così le celle
 sono divise da linee vere e non da spazi.
 
-Le icone sono SVG inline in tratto da 1.2px su griglia 24, mai riempimenti. Il
-ritratto è l'unico cerchio del sistema.
+Le icone sono SVG inline in tratto da 1.2px su griglia 24, mai riempimenti —
+salvo i due casi in cui la forma piena è il segno stesso: le stelle delle
+recensioni e il triangolo di «riprendi». Il ritratto è l'unico cerchio del
+sistema.
+
+Ogni icona significa una cosa sola e non si ripete con un altro senso: la busta
+è l'email, la cornetta il telefono, il cerchio con la «i» la richiesta di
+informazioni, la freccia il proseguire. Riusare la busta per «richiedi
+informazioni» — che porta alla pagina contatti, non a un indirizzo — la
+svuotava di significato.
 
 ## Components
 
@@ -406,9 +414,9 @@ arrotondato. I comandi stanno sotto il carosello: indicatori a sinistra, a destr
 comando di pausa e le due frecce, in pillole da 44px; le frecce sono
 disabilitate agli estremi.
 
-L'avanzamento e' automatico ma lento — sette secondi per recensione, e
-tornando in testa un salto secco invece di uno scorrimento lungo quanto tutta
-la fila. Si ferma da se' col mouse sopra la card, quando il fuoco entra nel
+L'avanzamento e' automatico ma senza fretta — cinque secondi e mezzo per
+recensione, e tornando in testa un salto secco invece di uno scorrimento lungo
+quanto tutta la fila. Si ferma da se' col mouse sopra la card, quando il fuoco entra nel
 carosello, quando la sezione non e' a schermo e quando la scheda passa in
 secondo piano; con `prefers-reduced-motion` non parte affatto e il comando di
 pausa non compare, perche' non c'e' nulla da fermare. Chi usa frecce o

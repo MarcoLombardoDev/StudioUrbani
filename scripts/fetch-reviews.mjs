@@ -5,8 +5,7 @@
  * statico: il browser del visitatore non contatta mai Google.
  *
  * Uso (locale o da GitHub Actions):
- *   GOOGLE_MAPS_API_KEY=... [GOOGLE_PLACE_ID=...] [GOOGLE_API_REFERER=...] \
- *     node scripts/fetch-reviews.mjs
+ *   GOOGLE_MAPS_API_KEY=... [GOOGLE_PLACE_ID=...] node scripts/fetch-reviews.mjs
  *
  * Senza GOOGLE_PLACE_ID il place id viene risolto una volta per nome e
  * indirizzo e stampato a schermo: conviene fissarlo come variabile del repo,
@@ -28,10 +27,13 @@ const OUT = resolve(ROOT, 'assets/data/reviews.json');
 
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
 /* Le chiavi "browser" sono limitate per referrer HTTP e da un server, che non
-   ne manda nessuno, verrebbero rifiutate: GOOGLE_API_REFERER permette di
-   dichiarare uno dei domini ammessi dalla chiave. Con una chiave dedicata al
-   server (nessuna restrizione di applicazione) non serve. */
-const REFERER = process.env.GOOGLE_API_REFERER;
+   ne manda nessuno, verrebbero rifiutate. Se Google risponde
+   API_KEY_HTTP_REFERRER_BLOCKED la richiesta viene ripetuta una volta
+   dichiarando il dominio del sito; GOOGLE_API_REFERER serve solo a usarne un
+   altro. Con una chiave dedicata al server (nessuna restrizione di
+   applicazione) nulla di tutto questo entra in gioco. */
+const SITE = 'https://www.studiourbani.it/';
+let referer = process.env.GOOGLE_API_REFERER || null;
 const NAME = process.env.GOOGLE_PLACE_NAME || 'Studio Massimo Urbani, Via Cristoforo Colombo 348, Roma';
 const MAX = Number(process.env.GOOGLE_REVIEWS_MAX || 5);
 
@@ -40,20 +42,36 @@ if (!KEY) {
   process.exit(78); // EX_CONFIG: il workflow lo tratta come "salta", non come errore
 }
 
-async function places(path, { method = 'GET', fields, body } = {}) {
+async function call(path, { method, fields, body }) {
   const res = await fetch('https://places.googleapis.com/v1/' + path, {
     method,
     headers: {
       'X-Goog-Api-Key': KEY,
       'X-Goog-FieldMask': fields,
-      ...(REFERER ? { Referer: REFERER } : {}),
+      ...(referer ? { Referer: referer } : {}),
       ...(body ? { 'Content-Type': 'application/json' } : {})
     },
     body: body ? JSON.stringify(body) : undefined
   });
-  const text = await res.text();
-  if (!res.ok) throw new Error('Places API ' + res.status + ': ' + text.slice(0, 600));
-  return JSON.parse(text);
+  return { ok: res.ok, status: res.status, text: await res.text() };
+}
+
+async function places(path, { method = 'GET', fields, body } = {}) {
+  let res = await call(path, { method, fields, body });
+
+  /* Un solo tentativo in piu', e sempre: le chiamate partono in parallelo e
+     controllare qui lo stato globale del referer farebbe saltare il tentativo
+     a chi arriva secondo. */
+  if (!res.ok && res.text.includes('API_KEY_HTTP_REFERRER_BLOCKED')) {
+    if (!referer) {
+      referer = SITE;
+      console.log('Chiave limitata per referrer: riprovo dichiarando', SITE);
+    }
+    res = await call(path, { method, fields, body });
+  }
+
+  if (!res.ok) throw new Error('Places API ' + res.status + ': ' + res.text.slice(0, 600));
+  return JSON.parse(res.text);
 }
 
 async function resolvePlaceId() {

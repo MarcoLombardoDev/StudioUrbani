@@ -4,11 +4,13 @@ name: Recensioni Google
 # Google dello Studio. Il sito legge quel file statico: nessuna chiamata a
 # Google dal browser dei visitatori.
 #
-# Serve il segreto GOOGLE_MAPS_API_KEY (chiave con Places API abilitata).
+# Serve la chiave Places API: come segreto GOOGLE_MAPS_API_KEY (consigliato) o,
+# in mancanza, come variabile con lo stesso nome.
 # Facoltativa ma consigliata la variabile GOOGLE_PLACE_ID.
-# Se la chiave e' limitata per referrer HTTP (chiave "browser"), serve anche la
-# variabile GOOGLE_API_REFERER con uno dei domini ammessi.
-# Senza il segreto il job termina senza fare nulla, senza segnalare errori.
+# Se la chiave e' limitata per referrer HTTP, lo script se ne accorge e ripete
+# la richiesta dichiarando il dominio del sito; GOOGLE_API_REFERER serve solo a
+# indicarne un altro.
+# Senza chiave il job termina senza fare nulla, senza segnalare errori.
 
 on:
   schedule:
@@ -35,7 +37,10 @@ jobs:
       - name: Scarica le recensioni
         id: fetch
         env:
-          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          # Il posto giusto e' il segreto: Actions maschera i segreti nei log,
+          # e i log di un repository pubblico li legge chiunque. La variabile
+          # e' accettata come ripiego per non lasciare il job fermo.
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY || vars.GOOGLE_MAPS_API_KEY }}
           GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
           GOOGLE_PLACE_NAME: ${{ vars.GOOGLE_PLACE_NAME }}
           GOOGLE_API_REFERER: ${{ vars.GOOGLE_API_REFERER }}

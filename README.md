@@ -115,18 +115,25 @@ Serve una cosa sola, da configurare nel repository:
 |---|---|---|
 | *Settings → Secrets and variables → Actions → Secrets* | `GOOGLE_MAPS_API_KEY` | chiave di un progetto Google Cloud con **Places API (New)** abilitata |
 | *…→ Variables* | `GOOGLE_PLACE_ID` | `ChIJW62YZ2SKJRMRzBp1lx-ugsQ` (scheda «Studio Massimo Urbani») |
-| *…→ Variables* (solo con chiavi browser) | `GOOGLE_API_REFERER` | uno dei referrer ammessi dalla chiave, es. `https://www.studiourbani.it/` |
+| *…→ Variables* (solo se la chiave ammette un dominio diverso) | `GOOGLE_API_REFERER` | referrer da dichiarare, es. `https://www.studiourbani.it/` |
 
-Senza il segreto il workflow termina senza fare nulla e la sezione resta
-nascosta: nessuna cornice vuota, nessuna recensione inventata.
+Senza chiave il workflow termina senza fare nulla e la sezione resta nascosta:
+nessuna cornice vuota, nessuna recensione inventata.
+
+**La chiave va nei *Secrets*, non nelle *Variables*.** Il workflow accetta
+entrambi (`secrets.GOOGLE_MAPS_API_KEY || vars.GOOGLE_MAPS_API_KEY`) per non
+restare fermo, ma Actions maschera nei log solo i segreti, e i log di un
+repository pubblico sono leggibili da tutti: una variabile che finisse stampata
+da un qualsiasi comando diventerebbe pubblica.
 
 **Restrizioni della chiave.** Una chiave limitata per *referrer HTTP* è pensata
 per il browser: da un server, che non manda alcun referrer, Google la rifiuta
-con `API_KEY_HTTP_REFERRER_BLOCKED`. Due strade: creare una chiave dedicata al
-workflow con *Application restrictions: None* e *API restrictions: Places API
-(New)* — la via pulita, perché la chiave vive solo nei segreti del repository —
-oppure valorizzare `GOOGLE_API_REFERER` con un dominio già ammesso dalla chiave
-esistente, che lo script inoltra come header `Referer`.
+con `API_KEY_HTTP_REFERRER_BLOCKED`. Lo script se ne accorge e ripete la
+richiesta una volta dichiarando `https://www.studiourbani.it/`; se la chiave
+ammette un dominio diverso, lo si indica con `GOOGLE_API_REFERER`. La via più
+pulita resta una chiave dedicata al workflow con *Application restrictions:
+None* e *API restrictions: Places API (New)*: vive solo nei segreti del
+repository e non è esposta a nessuna pagina.
 
 Il place id è già noto (`ChIJW62YZ2SKJRMRzBp1lx-ugsQ`). Se manca, lo script lo
 cerca per nome e indirizzo e lo stampa nel log del workflow; il nome usato per

@@ -120,11 +120,14 @@ Serve una cosa sola, da configurare nel repository:
 Senza chiave il workflow termina senza fare nulla e la sezione resta nascosta:
 nessuna cornice vuota, nessuna recensione inventata.
 
-**La chiave va nei *Secrets*, non nelle *Variables*.** Il workflow accetta
-entrambi (`secrets.GOOGLE_MAPS_API_KEY || vars.GOOGLE_MAPS_API_KEY`) per non
-restare fermo, ma Actions maschera nei log solo i segreti, e i log di un
-repository pubblico sono leggibili da tutti: una variabile che finisse stampata
-da un qualsiasi comando diventerebbe pubblica.
+**La chiave va nei *Secrets*, mai nelle *Variables*.** Actions stampa nel log il
+gruppo `env` di ogni passo e maschera i soli segreti: una chiave messa fra le
+variabili del repository finisce **in chiaro** in un log che, su un repository
+pubblico, è leggibile da tutti. Non c'è un modo sicuro di aggirarlo — anche
+l'interpolazione dentro un `run` viene ristampata — quindi il workflow, se
+trova la chiave fra le variabili e non fra i segreti, si ferma con un errore
+esplicito invece di eseguirla. Se è già successo: ruota la chiave su Google
+Cloud e cancella i log dei run che l'hanno stampata.
 
 **Restrizioni della chiave.** Una chiave limitata per *referrer HTTP* è pensata
 per il browser: da un server, che non manda alcun referrer, Google la rifiuta

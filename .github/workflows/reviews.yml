@@ -4,8 +4,8 @@ name: Recensioni Google
 # Google dello Studio. Il sito legge quel file statico: nessuna chiamata a
 # Google dal browser dei visitatori.
 #
-# Serve la chiave Places API: come segreto GOOGLE_MAPS_API_KEY (consigliato) o,
-# in mancanza, come variabile con lo stesso nome.
+# Serve la chiave Places API come SEGRETO GOOGLE_MAPS_API_KEY (non come
+# variabile: le variabili vengono stampate in chiaro nei log).
 # Facoltativa ma consigliata la variabile GOOGLE_PLACE_ID.
 # Se la chiave e' limitata per referrer HTTP, lo script se ne accorge e ripete
 # la richiesta dichiarando il dominio del sito; GOOGLE_API_REFERER serve solo a
@@ -34,13 +34,22 @@ jobs:
         with:
           node-version: '20'
 
+      # La chiave puo' arrivare SOLO da un segreto. Actions stampa nel log il
+      # gruppo env di ogni passo e maschera i soli segreti: una chiave messa
+      # nelle variabili del repository finirebbe in chiaro in un log che, su un
+      # repository pubblico, e' leggibile da tutti. Non esiste un modo sicuro di
+      # usare una variabile qui, perche' anche l'interpolazione dentro un run
+      # viene ristampata: quindi si avvisa e si esce.
+      - name: Verifica che la chiave sia un segreto
+        if: vars.GOOGLE_MAPS_API_KEY != '' && secrets.GOOGLE_MAPS_API_KEY == ''
+        run: |
+          echo "::error::GOOGLE_MAPS_API_KEY e' una variabile del repository. Spostala in Settings -> Secrets and variables -> Actions -> Secrets, e ruota la chiave su Google Cloud: una variabile viene stampata in chiaro nei log."
+          exit 1
+
       - name: Scarica le recensioni
         id: fetch
         env:
-          # Il posto giusto e' il segreto: Actions maschera i segreti nei log,
-          # e i log di un repository pubblico li legge chiunque. La variabile
-          # e' accettata come ripiego per non lasciare il job fermo.
-          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY || vars.GOOGLE_MAPS_API_KEY }}
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
           GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
           GOOGLE_PLACE_NAME: ${{ vars.GOOGLE_PLACE_NAME }}
           GOOGLE_API_REFERER: ${{ vars.GOOGLE_API_REFERER }}

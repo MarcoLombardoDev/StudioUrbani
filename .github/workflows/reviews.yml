@@ -34,23 +34,20 @@ jobs:
         with:
           node-version: '20'
 
-      # La chiave puo' arrivare SOLO da un segreto. Actions stampa nel log il
-      # gruppo env di ogni passo e maschera i soli segreti: una chiave messa
-      # nelle variabili del repository finirebbe in chiaro in un log che, su un
-      # repository pubblico, e' leggibile da tutti. Non esiste un modo sicuro di
-      # usare una variabile qui, perche' anche l'interpolazione dentro un run
-      # viene ristampata: quindi il job avvisa e non fa nulla. Non e' un errore,
-      # il sito continua a mostrare i dati gia' pubblicati.
-      - name: La chiave deve essere un segreto
-        id: guard
-        if: vars.GOOGLE_MAPS_API_KEY != '' && secrets.GOOGLE_MAPS_API_KEY == ''
+      # La chiave viene letta solo dal segreto: Actions stampa nel log il gruppo
+      # env di ogni passo e maschera i soli segreti, quindi una chiave messa
+      # nelle variabili finirebbe in chiaro in un log che, su un repository
+      # pubblico, e' leggibile da tutti. Una variabile con lo stesso nome non
+      # entra mai nell'ambiente, ma resta scritta in chiaro nelle impostazioni:
+      # va cancellata. Il contesto secrets non e' usabile in un if, percio' qui
+      # si guarda soltanto la variabile.
+      - name: Avvisa se resta una variabile con la chiave
+        if: vars.GOOGLE_MAPS_API_KEY != ''
         run: |
-          echo "skip=true" >> "$GITHUB_OUTPUT"
-          echo "::warning::GOOGLE_MAPS_API_KEY e' una variabile del repository e non viene usata: le variabili finiscono in chiaro nei log. Spostala in Settings -> Secrets and variables -> Actions -> Secrets."
+          echo "::warning::Esiste ancora una variabile GOOGLE_MAPS_API_KEY. Non viene usata, la chiave si legge dal segreto, ma il valore resta scritto in chiaro. Cancellala da Settings -> Secrets and variables -> Actions -> Variables."
 
       - name: Scarica le recensioni
         id: fetch
-        if: steps.guard.outputs.skip != 'true'
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
           # Il place id non e' un segreto e sta bene fra le variabili; se pero'
@@ -72,7 +69,7 @@ jobs:
           exit $code
 
       - name: Commit se qualcosa e' cambiato
-        if: steps.guard.outputs.skip != 'true' && steps.fetch.outputs.skipped != 'true'
+        if: steps.fetch.outputs.skipped != 'true'
         run: |
           git add -A assets/data/reviews.json assets/img/reviews
           if git diff --cached --quiet; then

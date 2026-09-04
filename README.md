@@ -23,6 +23,7 @@ Static bilingual site, no dependencies, no build step.
 │   ├── js/main.js              Header, menu, animazioni, avviso cookie, mappa
 │   ├── js/reviews.js           Card «Dicono di noi» (recensioni Google)
 │   ├── data/reviews.json       Recensioni scaricate (le scrive GitHub Actions)
+│   ├── img/reviews/            Fotografie dei profili, scaricate dallo stesso
 │   ├── fonts/                  Jost e Inter in locale (woff2)
 │   └── img/                    Logo, favicon, manifest (vedi assets/img/README.md)
 ├── scripts/fetch-reviews.mjs   Scarica valutazione e recensioni da Google
@@ -156,9 +157,11 @@ Vincoli che il codice rispetta e che è meglio non aggirare:
   dell'API, non del componente;
 - l'aggiornamento quotidiano tiene la copia locale entro i 30 giorni di cache
   ammessi;
-- gli avatar degli autori non vengono usati (al loro posto le iniziali): sono
-  ospitati su `googleusercontent.com` e sarebbero una chiamata a terze parti dal
-  browser del visitatore.
+- le fotografie dei profili vengono **scaricate** in `assets/img/reviews/` e
+  servite dal dominio dello Studio: linkarle da `googleusercontent.com` sarebbe
+  una chiamata a terze parti dal browser del visitatore. Dove Google non le
+  fornisce, la card mostra le iniziali. Lo script cancella da sé le fotografie
+  di recensioni che non compaiono più.
 
 Per vedere la card prima di avere la chiave: `index.html?reviews=demo` carica
 `assets/data/reviews.example.json`, con testi dichiaratamente inventati.

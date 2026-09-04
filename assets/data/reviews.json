@@ -2,13 +2,14 @@
   "source": "google-places",
   "placeId": "ChIJW62YZ2SKJRMRzBp1lx-ugsQ",
   "place": "Studio Massimo Urbani",
-  "updatedAt": "2026-09-04T09:35:30.764Z",
+  "updatedAt": "2026-09-04T11:02:58.947Z",
   "rating": 4.8,
   "total": 6,
   "url": "https://maps.google.com/?cid=14160071629114514124",
   "reviews": [
     {
       "author": "Emma Angele",
+      "photo": null,
       "rating": 5,
       "relative": "3 mesi fa",
       "relativeEn": "3 months ago",
@@ -19,6 +20,7 @@
     },
     {
       "author": "ACRR mazzulatoro",
+      "photo": null,
       "rating": 5,
       "relative": "4 mesi fa",
       "relativeEn": "4 months ago",
@@ -29,6 +31,7 @@
     },
     {
       "author": "alessio d'alo",
+      "photo": null,
       "rating": 5,
       "relative": "3 anni fa",
       "relativeEn": "3 years ago",
@@ -39,6 +42,7 @@
     },
     {
       "author": "ppgo",
+      "photo": null,
       "rating": 4,
       "relative": "7 anni fa",
       "relativeEn": "7 years ago",
@@ -49,6 +53,7 @@
     },
     {
       "author": "cladom65",
+      "photo": null,
       "rating": 5,
       "relative": "8 anni fa",
       "relativeEn": "8 years ago",

@@ -18,12 +18,18 @@
  * copia locale entro i 30 giorni di cache consentiti.
  */
 
-import { writeFile, readFile, mkdir } from 'node:fs/promises';
+import { writeFile, readFile, mkdir, readdir, unlink } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'assets/data/reviews.json');
+/* Le fotografie degli autori vengono scaricate qui e servite dal dominio dello
+   Studio: linkarle da googleusercontent.com sarebbe una richiesta a terzi dal
+   browser di chi visita il sito. */
+const PHOTO_DIR = 'assets/img/reviews';
+const EXT = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp' };
 
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
 /* Le chiavi "browser" sono limitate per referrer HTTP e da un server, che non
@@ -102,32 +108,69 @@ function normalize(review) {
     text: review.text?.text || review.originalText?.text || '',
     relative: review.relativePublishTimeDescription || null,
     publishedAt: review.publishTime || null,
-    url: review.googleMapsUri || review.authorAttribution?.uri || null
+    url: review.googleMapsUri || review.authorAttribution?.uri || null,
+    photoUri: review.authorAttribution?.photoUri || null
   };
+}
+
+/* Scarica la fotografia del profilo e restituisce il percorso locale, o null
+   se manca o non e' un'immagine: in quel caso la card mostra le iniziali. */
+async function savePhoto(review) {
+  if (!review.photoUri) return null;
+  try {
+    const res = await fetch(review.photoUri, { redirect: 'follow' });
+    if (!res.ok) return null;
+    const type = (res.headers.get('content-type') || '').split(';')[0].trim();
+    if (!type.startsWith('image/')) return null;
+    const bytes = Buffer.from(await res.arrayBuffer());
+    if (!bytes.length) return null;
+    const name = createHash('sha1').update(review.id || review.photoUri).digest('hex').slice(0, 12) + (EXT[type] || '.jpg');
+    await mkdir(resolve(ROOT, PHOTO_DIR), { recursive: true });
+    await writeFile(resolve(ROOT, PHOTO_DIR, name), bytes);
+    return PHOTO_DIR + '/' + name;
+  } catch {
+    return null;
+  }
+}
+
+/* Via le fotografie di recensioni che Google non restituisce piu'. */
+async function prunePhotos(keep) {
+  try {
+    const files = await readdir(resolve(ROOT, PHOTO_DIR));
+    for (const f of files) {
+      if (f === 'README.md' || keep.has(PHOTO_DIR + '/' + f)) continue;
+      await unlink(resolve(ROOT, PHOTO_DIR, f));
+      console.log('Rimossa la fotografia non piu\' referenziata:', f);
+    }
+  } catch { /* la cartella non esiste ancora */ }
 }
 
 const placeId = await resolvePlaceId();
 const [it, en] = await Promise.all([detail(placeId, 'it'), detail(placeId, 'en')]);
 
 const enById = new Map((en.reviews || []).map((r) => [r.name, normalize(r)]));
-const reviews = (it.reviews || [])
+const picked = (it.reviews || [])
   .map(normalize)
   .filter((r) => r.author && r.text)
   .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)))
-  .slice(0, MAX)
-  .map((r) => {
-    const twin = enById.get(r.id);
-    return {
-      author: r.author,
-      rating: r.rating,
-      relative: r.relative,
-      relativeEn: twin?.relative || null,
-      text: r.text,
-      textEn: twin && twin.text !== r.text ? twin.text : null,
-      publishedAt: r.publishedAt,
-      url: r.url
-    };
-  });
+  .slice(0, MAX);
+
+const reviews = await Promise.all(picked.map(async (r) => {
+  const twin = enById.get(r.id);
+  return {
+    author: r.author,
+    photo: await savePhoto(r),
+    rating: r.rating,
+    relative: r.relative,
+    relativeEn: twin?.relative || null,
+    text: r.text,
+    textEn: twin && twin.text !== r.text ? twin.text : null,
+    publishedAt: r.publishedAt,
+    url: r.url
+  };
+}));
+
+await prunePhotos(new Set(reviews.map((r) => r.photo).filter(Boolean)));
 
 const payload = {
   source: 'google-places',

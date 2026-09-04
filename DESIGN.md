@@ -390,10 +390,16 @@ dove non esiste ancora, il cerchio porta le iniziali del nome. Sotto il nome, il
 ruolo in `.86rem` inchiostro tenue, in ottone d'inchiostro per il titolare.
 
 ### Google reviews card
-Una sola card in fondo alla pagina: a sinistra la media in Jost 300 nel corpo
-del display, le cinque stelle e il conteggio delle valutazioni; a destra il
-carosello delle singole recensioni, una per schermata, su fondo carta dentro la
-card bianca. Le stelle sono due file sovrapposte, quella piena ritagliata in
+Una sola card, attaccata a quella della fatturazione elettronica: appartiene a
+quel blocco, quindi la sezione azzera il proprio riempimento superiore e i due
+riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
+A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
+sotto, e accanto — oltre un filetto verticale — l'etichetta con numero di
+valutazioni e data dell'ultimo aggiornamento; sotto i 560px le due parti si
+impilano e il filetto sparisce. A destra il carosello delle singole recensioni,
+una per schermata, su fondo carta dentro la card bianca. Ogni recensione porta
+la fotografia del profilo dell'autore, scaricata e servita in locale, con le
+iniziali come ripiego dove Google non la fornisce. Le stelle sono due file sovrapposte, quella piena ritagliata in
 larghezza sulla frazione esatta del voto: il mezzo voto e' misurato, non
 arrotondato. I comandi stanno sotto il carosello: indicatori a sinistra, le due
 frecce affiancate a destra in pillole da 44px, disabilitate agli estremi.
@@ -404,11 +410,11 @@ Tre vincoli che non sono estetici e vanno rispettati:
 
 - **Il testo delle recensioni non si riscrive.** Le condizioni di Google Maps
   Platform impongono di mostrarlo integro e attribuito: a schermo e' accorciato
-  a sei righe con il rimando alla recensione completa, mai riassunto.
+  a sei righe, mai riassunto.
 - **Nessuna richiesta a Google dal browser.** I dati arrivano da un JSON
-  statico dello stesso dominio, quindi la sezione non ha bisogno di consenso;
-  gli avatar Google non vengono usati (iniziali al loro posto) perche'
-  sarebbero una chiamata a `googleusercontent`.
+  statico dello stesso dominio e le fotografie dei profili da
+  `assets/img/reviews/`, scaricate dal workflow: la sezione non ha bisogno di
+  consenso perche' non contatta nessuno.
 - **Senza dati la sezione non esiste.** Il `<section>` nasce `hidden` e viene
   mostrato solo con dati validi: niente cornice vuota, niente recensioni
   inventate.

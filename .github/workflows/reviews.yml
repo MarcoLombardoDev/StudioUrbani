@@ -39,15 +39,18 @@ jobs:
       # nelle variabili del repository finirebbe in chiaro in un log che, su un
       # repository pubblico, e' leggibile da tutti. Non esiste un modo sicuro di
       # usare una variabile qui, perche' anche l'interpolazione dentro un run
-      # viene ristampata: quindi si avvisa e si esce.
-      - name: Verifica che la chiave sia un segreto
+      # viene ristampata: quindi il job avvisa e non fa nulla. Non e' un errore,
+      # il sito continua a mostrare i dati gia' pubblicati.
+      - name: La chiave deve essere un segreto
+        id: guard
         if: vars.GOOGLE_MAPS_API_KEY != '' && secrets.GOOGLE_MAPS_API_KEY == ''
         run: |
-          echo "::error::GOOGLE_MAPS_API_KEY e' una variabile del repository. Spostala in Settings -> Secrets and variables -> Actions -> Secrets, e ruota la chiave su Google Cloud: una variabile viene stampata in chiaro nei log."
-          exit 1
+          echo "skip=true" >> "$GITHUB_OUTPUT"
+          echo "::warning::GOOGLE_MAPS_API_KEY e' una variabile del repository e non viene usata: le variabili finiscono in chiaro nei log. Spostala in Settings -> Secrets and variables -> Actions -> Secrets."
 
       - name: Scarica le recensioni
         id: fetch
+        if: steps.guard.outputs.skip != 'true'
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
           GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
@@ -65,15 +68,15 @@ jobs:
           fi
           exit $code
 
-      - name: Commit se il file e' cambiato
-        if: steps.fetch.outputs.skipped != 'true'
+      - name: Commit se qualcosa e' cambiato
+        if: steps.guard.outputs.skip != 'true' && steps.fetch.outputs.skipped != 'true'
         run: |
-          if git diff --quiet -- assets/data/reviews.json; then
+          git add -A assets/data/reviews.json assets/img/reviews
+          if git diff --cached --quiet; then
             echo "Nessuna variazione da pubblicare."
             exit 0
           fi
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/data/reviews.json
           git commit -m 'Aggiorna le recensioni Google'
           git push

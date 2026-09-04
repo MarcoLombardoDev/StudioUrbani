@@ -19,21 +19,23 @@
 
   var T = {
     it: {
-      count: function (n) { return n === 1 ? '1 valutazione su Google' : n.toLocaleString('it-IT') + ' valutazioni su Google'; },
+      locale: 'it-IT',
+      count: function (n) { return n === 1 ? '1 valutazione' : n.toLocaleString('it-IT') + ' valutazioni'; },
       stars: function (r) { return r.toLocaleString('it-IT', { maximumFractionDigits: 1 }) + ' stelle su 5'; },
       slide: function (i, n) { return 'Recensione ' + i + ' di ' + n; },
       dot: function (i) { return 'Vai alla recensione ' + i; },
-      updated: function (d) { return 'Aggiornate il ' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }); },
-      full: 'Leggi su Google',
+      updated: function (d) { return 'ultimo aggiornamento ' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }); },
+      photoAlt: function (a) { return 'Fotografia del profilo di ' + a; },
       translated: 'Traduzione di Google'
     },
     en: {
-      count: function (n) { return n === 1 ? '1 rating on Google' : n.toLocaleString('en-GB') + ' ratings on Google'; },
+      locale: 'en-GB',
+      count: function (n) { return n === 1 ? '1 rating' : n.toLocaleString('en-GB') + ' ratings'; },
       stars: function (r) { return r.toLocaleString('en-GB', { maximumFractionDigits: 1 }) + ' stars out of 5'; },
       slide: function (i, n) { return 'Review ' + i + ' of ' + n; },
       dot: function (i) { return 'Go to review ' + i; },
-      updated: function (d) { return 'Updated on ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); },
-      full: 'Read on Google',
+      updated: function (d) { return 'last updated ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); },
+      photoAlt: function (a) { return 'Profile photo of ' + a; },
       translated: 'Translated by Google'
     }
   };
@@ -80,42 +82,46 @@
   function renderAside() {
     var avg = root.querySelector('[data-reviews-avg]');
     var box = root.querySelector('[data-reviews-stars]');
-    var count = root.querySelector('[data-reviews-count]');
+    var meta = root.querySelector('[data-reviews-meta]');
     var link = root.querySelector('[data-reviews-link]');
-    var updated = root.querySelector('[data-reviews-updated]');
 
     if (typeof data.rating === 'number') {
-      avg.textContent = data.rating.toLocaleString(lang() === 'en' ? 'en-GB' : 'it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      avg.textContent = data.rating.toLocaleString(t().locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
       box.innerHTML = stars(data.rating);
       box.setAttribute('aria-label', t().stars(data.rating));
+      root.querySelector('.reviews__score').hidden = false;
     } else {
-      avg.closest('.reviews__score').hidden = true;
-      box.hidden = true;
+      root.querySelector('.reviews__score').hidden = true;
     }
 
-    if (typeof data.total === 'number') count.textContent = t().count(data.total);
-    else count.hidden = true;
+    /* Un'unica etichetta: quante valutazioni e quando sono state prese. */
+    var parts = [];
+    if (typeof data.total === 'number') parts.push(t().count(data.total));
+    var d = data.updatedAt ? new Date(data.updatedAt) : null;
+    if (d && !isNaN(d)) parts.push(t().updated(d));
+    meta.textContent = parts.join(', ');
+    meta.hidden = parts.length === 0;
 
     if (data.url) link.href = data.url;
-
-    var d = data.updatedAt ? new Date(data.updatedAt) : null;
-    if (d && !isNaN(d)) updated.textContent = t().updated(d);
   }
 
   function renderSlides() {
     var list = data.reviews || [];
     track.innerHTML = list.map(function (r, i) {
       var body = text(r);
+      var avatar = r.photo
+        ? '<span class="review__avatar"><img src="' + escape(r.photo) + '" alt="' + escape(t().photoAlt(r.author)) +
+          '" width="42" height="42" loading="lazy" decoding="async"></span>'
+        : '<span class="review__avatar" aria-hidden="true">' + escape(initials(r.author)) + '</span>';
       return '<li class="review" role="group" aria-roledescription="slide" aria-label="' + escape(t().slide(i + 1, list.length)) + '">' +
         '<div class="review__head">' +
-          '<span class="review__avatar" aria-hidden="true">' + escape(initials(r.author)) + '</span>' +
+          avatar +
           '<span class="review__who"><span class="review__author">' + escape(r.author) + '</span>' +
             (when(r) ? '<span class="review__when">' + escape(when(r)) + '</span>' : '') +
           '</span>' +
           (typeof r.rating === 'number' ? stars(r.rating, 'stars--sm') : '') +
         '</div>' +
         '<blockquote class="review__text">' + escape(body.body) + '</blockquote>' +
-        (r.url ? '<a class="review__link" href="' + escape(r.url) + '" target="_blank" rel="noopener noreferrer">' + escape(t().full) + '</a>' : '') +
         (body.translated ? '<p class="review__note">' + escape(t().translated) + '</p>' : '') +
         '</li>';
     }).join('');

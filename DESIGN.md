@@ -257,7 +257,7 @@ fatturazione elettronica è uno strumento dentro i servizi, non un capitolo a s�
 
 La hero non argomenta e non elenca: etichetta, titolo, una sola frase di
 apertura e **quattro collegamenti con icona** verso le sezioni della pagina —
-chi siamo, le persone, metodo, i nostri servizi. Sono l'unico indice del sito e
+chi siamo, le persone, metodo, cosa facciamo. Sono l'unico indice del sito e
 stanno tutti dentro la prima schermata. I recapiti azionabili vivono nel pannello della fascia
 scura e nella pagina contatti, non nella hero.
 
@@ -269,8 +269,8 @@ caso per caso.
 
 Le griglie sono `auto-fit`/`auto-fill` con minimi espliciti (288px per le card
 dei servizi, 266px per i recapiti), tranne il team, che usa 4 colonne fisse sopra
-i 900px e 2 sotto: otto persone stanno così in righe sempre complete, mai con
-celle vuote. Le sezioni a due colonne (chi siamo, fatturazione) usano frazioni
+i 900px e 2 sotto, con la card del titolare su due celle: sette persone stanno
+così in righe sempre complete a entrambe le larghezze, mai con celle vuote. Le sezioni a due colonne (chi siamo, fatturazione) usano frazioni
 asimmetriche — `.9fr / 1.1fr`, `1fr / .92fr` — e collassano a colonna singola a
 900px.
 
@@ -371,15 +371,18 @@ ritratto è l'unico cerchio del sistema.
 ### Chips
 - Lo switch di lingua è l'unico chip: due bottoni in pillola dentro una pillola
   con filetto, la lingua attiva in blu pieno su testo bianco, `aria-pressed` a
-  segnalarne lo stato.
+  segnalarne lo stato. Le due pastiglie hanno `min-width` fissa: IT ed EN hanno
+  glifi di larghezza diversa e devono restare identiche.
 
 ### Team portrait (signature)
 Cerchio da `clamp(104px, 10vw, 132px)` con gradiente carta scura→blu al 10% e
-filetto. In hover il ritratto sale di 4px, scala a 1.04 e prende un doppio alone
+filetto, `clamp(124px, 12vw, 156px)` nella card del titolare. In hover il ritratto sale di 4px, scala a 1.04 e prende un doppio alone
 concentrico nel blu del marchio (5px al 10%, 10px al 5%) più una diffusione bassa;
 le iniziali passano al blu chiaro e il nome al blu del marchio. La card sotto non
-cambia sfondo: le persone non sono link e non devono sembrarlo. Con le fotografie
-il ritratto parte da `grayscale(.25)` e va al colore pieno.
+cambia sfondo: le persone non sono link e non devono sembrarlo. Dove la
+fotografia esiste il ritratto parte da `grayscale(.25)` e va al colore pieno;
+dove non esiste ancora, il cerchio porta le iniziali del nome. Sotto il nome, il
+ruolo in `.86rem` inchiostro tenue, in ottone d'inchiostro per il titolare.
 
 ### Section opener (signature)
 La tripletta etichetta-titolo-lead descritta in Typography, con l'etichetta in

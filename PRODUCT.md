@@ -93,11 +93,14 @@ strumento, non come promessa centrale.
 ## Evidence on Hand
 
 Reale e verificabile: indirizzo, tre numeri di telefono e fax, tre email per
-tipologia, orari, partita IVA, nomi degli otto professionisti dello staff
-(Massimo Urbani titolare responsabile, commercialista e revisore legale;
-Edmondo Urbani, Silvia Urbani, Giuliano Cerasa, Giuseppe Forcinella, Daniela
-Carrarini, Massimiliano Sgamma, Marco Modica), logo in SVG e PNG, set completo
-di favicon.
+tipologia, orari, partita IVA, elenco definitivo dei sette professionisti dello
+staff con il rispettivo ruolo — Rag. Massimo Urbani (titolare responsabile,
+commercialista e revisore legale), Rag. Giuliano Cerasa (commercialista),
+Dott. Giuseppe Forcinella (commercialista revisore legale), Dott.ssa Monica
+Lagna (consulente del lavoro), Rag. Alessandro Urbani (tributarista),
+Rag. Daniela Petrocelli e Rag. Alessandra Picone (collaboratori) —, logo in SVG
+e PNG, set completo di favicon, fotografia del titolare
+(`assets/img/massimo_urbani_face.png`).
 
 Da non inventare, perché non esiste materiale: testimonianze, casi di studio,
 numero di clienti o di pratiche, anni di attività e data di fondazione,
@@ -107,14 +110,14 @@ Attenzione alla provenienza dei testi: i contenuti sono stati ricostruiti dagli
 snapshot dei motori di ricerca del sito precedente, perché il dominio è
 irraggiungibile dall'ambiente di sviluppo. Da validare con lo Studio prima
 della pubblicazione: l'elenco puntuale delle aree *Consulenza Aziendale*,
-*Associazioni* e *Legale*, i ruoli dei singoli professionisti e le date di
-aggiornamento delle pagine legali.
+*Associazioni* e *Legale* e le date di aggiornamento delle pagine legali. Nomi e
+ruoli dello staff sono invece stati forniti direttamente dallo Studio.
 
 Decisioni aperte, da non risolvere per conto dello Studio:
 
-- **Fotografie del team.** In arrivo. Le card mostrano un segnaposto tondo con
-  le iniziali; il ritaglio circolare e l'`object-fit` sono già pronti, basta un
-  `<img>` dentro `.team__photo`.
+- **Fotografie del team.** Fornita quella del titolare; per le altre sei
+  persone la card mostra un segnaposto tondo con le iniziali. Per inserirne una
+  basta un `<img>` dentro `.team__photo`, come nella card di Massimo Urbani.
 - **Versione inglese.** Requisito reale, legato a clienti e operazioni
   internazionali: l'inglese va mantenuto allineato all'italiano a ogni
   modifica dei contenuti, non trattato come un extra.

@@ -40,7 +40,7 @@
     'hero.link1': "About the firm",
     'hero.link2': "The people",
     'hero.link3': "How we work",
-    'hero.link4': "Our services",
+    'hero.link4': "What we do",
 
     /* --- valori --- */
     'values.1.t': "A stable contact person",
@@ -65,7 +65,7 @@
     'about.quoteRole': "Managing partner",
 
     /* --- servizi --- */
-    'services.eyebrow': "Our services",
+    'services.eyebrow': "What we do",
     'services.title': "Nine practice areas, under one roof.",
     'services.lead': "Studio Massimo Urbani, with its own resources and in cooperation with experienced professionals, provides services in the areas below.",
 
@@ -147,7 +147,14 @@
     /* --- team --- */
     'team.eyebrow': "The people",
     'team.title': "The person who answers is the person on your file.",
-    'team.lead': "The staff of Studio Massimo Urbani is made up of the eight professionals below, each following their own portfolio of clients over time.",
+    'team.lead': "The staff of Studio Massimo Urbani is made up of the professionals below, each following their own portfolio of clients over time.",
+    'team.role1': "Managing partner · Chartered accountant, statutory auditor",
+    'team.role2': "Chartered accountant",
+    'team.role3': "Chartered accountant, statutory auditor",
+    'team.role4': "Labour consultant",
+    'team.role5': "Tax adviser",
+    'team.role6': "Associate",
+    'team.role7': "Associate",
 
     /* --- cta --- */
     'cta.eyebrow': "Contact",

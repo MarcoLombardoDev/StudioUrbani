@@ -301,7 +301,11 @@ strong { font-weight: 600; }
   border: 0;
   background: transparent;
   border-radius: 999px;
-  padding: .32rem .62rem;
+  /* Larghezza fissa: IT ed EN hanno glifi di larghezza diversa e senza questo
+     le due pastiglie risulterebbero disuguali. */
+  min-width: 2.5rem;
+  padding: .32rem .3rem;
+  text-align: center;
   font-family: var(--font-display);
   font-size: .78rem;
   font-weight: 500;
@@ -545,8 +549,8 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   cursor: default;
 }
 
-/* Ritratto: segnaposto in attesa delle fotografie dello Studio.
-   Per inserirle basta un <img> dentro .team__photo. */
+/* Ritratto: <img> dentro .team__photo dove la fotografia esiste, iniziali del
+   nome come segnaposto per le persone di cui lo Studio non l'ha ancora fornita. */
 .team__photo {
   width: clamp(104px, 10vw, 132px);
   aspect-ratio: 1;
@@ -579,6 +583,21 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 }
 .team__card h3 { font-size: 1.04rem; font-weight: 400; letter-spacing: normal; transition: color .45s var(--ease); }
 .team__card:hover h3 { color: var(--navy); }
+.team__role {
+  margin-top: .3rem;
+  /* .86rem = 13.8px: il ruolo e' testo secondario ma il pubblico include
+     persone anziane, quindi non scende sotto questa misura. */
+  font-size: .86rem;
+  line-height: 1.45;
+  color: var(--muted);
+  text-wrap: balance;
+}
+
+/* Il titolare occupa due celle: con sette persone la griglia resta piena
+   sia a due sia a quattro colonne, senza buchi in fondo. */
+.team__card--lead { grid-column: span 2; }
+.team__card--lead .team__photo { width: clamp(124px, 12vw, 156px); }
+.team__card--lead .team__role { color: var(--brass-ink); }
 
 /* ---------- Servizi ---------- */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); gap: clamp(14px, 1.6vw, 20px); }

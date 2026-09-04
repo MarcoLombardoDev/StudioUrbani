@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-04T07:04:22.000Z",
+  "generatedAt": "2026-09-04T08:23:25.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -167,6 +167,21 @@
           "oklch(72.1% 0.007 88.6)",
           "oklch(83.6% 0.007 88.6)",
           "oklch(95.0% 0.007 88.6)"
+        ]
+      },
+      "star": {
+        "role": "accent",
+        "displayName": "Oro delle stelle",
+        "canonical": "oklch(63.8% 0.083 77.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.083 77.2)",
+          "oklch(26.4% 0.083 77.2)",
+          "oklch(37.9% 0.083 77.2)",
+          "oklch(49.3% 0.083 77.2)",
+          "oklch(60.7% 0.083 77.2)",
+          "oklch(72.1% 0.083 77.2)",
+          "oklch(83.6% 0.083 77.2)",
+          "oklch(95.0% 0.083 77.2)"
         ]
       }
     },
@@ -338,6 +353,15 @@
       "description": "Sostituisce l’iframe di Google Maps finché l’utente non acconsente. Componente di conformità: non rimuovere.",
       "html": "<div class=\"ds-map\"><div class=\"ds-map-inner\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.6\"/></svg><h3>Mappa interattiva Google Maps</h3><p>Caricando la mappa alcuni dati verranno trasmessi a Google.</p><button class=\"ds-btn-primary\" type=\"button\">Carica la mappa</button></div></div>",
       "css": ".ds-map { position: relative; aspect-ratio: 16/9; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; overflow: hidden; display: grid; place-items: center; text-align: center; background: linear-gradient(150deg, var(--paper-2, #efede8), #e6e3dc); } .ds-map-inner { max-width: 460px; display: grid; gap: 1rem; justify-items: center; padding: 2rem; } .ds-map svg { width: 30px; height: 30px; color: var(--navy, #04507d); } .ds-map h3 { margin: 0; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; color: var(--ink, #10141c); } .ds-map p { margin: 0; font-family: Inter, sans-serif; font-size: .93rem; color: var(--ink-soft, #39424f); }"
+    },
+    {
+      "name": "Google Reviews Card",
+      "kind": "card",
+      "refersTo": "reviews",
+      "description": "«Dicono di noi»: media e conteggio della scheda Google a sinistra, carosello delle singole recensioni a destra. Nessuna chiamata a Google dal browser: i dati arrivano da un JSON statico aggiornato ogni giorno. Senza dati la sezione non compare.",
+      "html": "<article class=\"ds-reviews\"><div><p class=\"ds-eyebrow\">Dicono di noi</p><h2>Le recensioni su Google.</h2><p class=\"ds-reviews-score\"><span class=\"ds-reviews-avg\">4,7</span> su 5</p><p class=\"ds-stars\" role=\"img\" aria-label=\"4,7 stelle su 5\"></p><p class=\"ds-reviews-count\">24 valutazioni su Google</p></div><div class=\"ds-reviews-carousel\"><ul class=\"ds-reviews-track\"><li class=\"ds-review\">…</li></ul><div class=\"ds-reviews-nav\"><ol class=\"ds-reviews-dots\"></ol><button aria-label=\"Recensione precedente\"></button><button aria-label=\"Recensione successiva\"></button></div></div></article>",
+      "css": ".ds-reviews { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(26px, 3vw, 40px); display: grid; grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: clamp(24px, 3.4vw, 52px); align-items: center; } .ds-reviews-avg { font-family: Jost, sans-serif; font-size: clamp(2.6rem, 4vw, 3.4rem); font-weight: 300; color: var(--navy, #04507d); } .ds-reviews-track { list-style: none; display: flex; gap: clamp(16px,2vw,24px); overflow-x: auto; scroll-snap-type: x mandatory; } .ds-review { flex: 0 0 100%; scroll-snap-align: start; background: var(--paper, #f7f6f3); border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(20px,2.4vw,28px); } @media (max-width: 900px) { .ds-reviews { grid-template-columns: 1fr; } }",
+      "notes": "Le stelle sono due file sovrapposte: quella piena, in oro var(--star), e' ritagliata in larghezza sulla frazione esatta del voto. Il testo delle recensioni non viene riscritto (condizioni di Google Maps Platform): a schermo e' accorciato a sei righe con il rimando alla recensione integrale. Nessuna riproduzione dell'avatar Google: iniziali, per non chiamare googleusercontent."
     }
   ],
   "narrative": {

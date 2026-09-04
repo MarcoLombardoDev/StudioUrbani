@@ -216,33 +216,27 @@
           <h3>Rag. Massimo Urbani</h3>
           <p class="team__role" data-i18n="team.role1">Titolare · Commercialista Revisore Legale</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>GC</span></div>
+        <article class="team__card team__card--plain">
           <h3>Rag. Giuliano Cerasa</h3>
           <p class="team__role" data-i18n="team.role2">Commercialista</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>GF</span></div>
+        <article class="team__card team__card--plain">
           <h3>Dott. Giuseppe Forcinella</h3>
           <p class="team__role" data-i18n="team.role3">Commercialista Revisore Legale</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>ML</span></div>
+        <article class="team__card team__card--plain">
           <h3>Dott.ssa Monica Lagna</h3>
           <p class="team__role" data-i18n="team.role4">Consulente del Lavoro</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>AU</span></div>
+        <article class="team__card team__card--plain">
           <h3>Rag. Alessandro Urbani</h3>
           <p class="team__role" data-i18n="team.role5">Tributarista</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>DP</span></div>
+        <article class="team__card team__card--plain">
           <h3>Rag. Daniela Petrocelli</h3>
           <p class="team__role" data-i18n="team.role6">Collaboratore</p>
         </article>
-        <article class="team__card">
-          <div class="team__photo" aria-hidden="true"><span>AP</span></div>
+        <article class="team__card team__card--plain">
           <h3>Rag. Alessandra Picone</h3>
           <p class="team__role" data-i18n="team.role7">Collaboratore</p>
         </article>
@@ -438,6 +432,45 @@
     </div>
   </section>
 
+  <!-- ============ Dicono di noi ============
+       La sezione resta nascosta finche' assets/data/reviews.json non esiste:
+       nessuna recensione inventata, nessuna cornice vuota. Il file lo aggiorna
+       ogni giorno il workflow .github/workflows/reviews.yml. -->
+  <section class="section section--tight" id="dicono" hidden>
+    <div class="wrap">
+      <article class="reviews reveal" data-reviews>
+        <div class="reviews__aside">
+          <p class="eyebrow" data-i18n="reviews.eyebrow">Dicono di noi</p>
+          <h2 data-i18n="reviews.title">Le recensioni su Google.</h2>
+          <p class="reviews__score">
+            <span class="reviews__avg" data-reviews-avg></span>
+            <span class="reviews__outof" data-i18n="reviews.outof">su 5</span>
+          </p>
+          <p class="reviews__stars" data-reviews-stars role="img"></p>
+          <p class="reviews__count" data-reviews-count></p>
+          <a class="btn btn--ghost btn--sm" data-reviews-link href="https://www.google.com/maps/place/Studio+Massimo+Urbani" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="reviews.all">Leggile su Google</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="reviews__updated" data-reviews-updated></p>
+        </div>
+
+        <div class="reviews__carousel" role="group" aria-roledescription="carousel" aria-label="Recensioni Google" data-i18n-aria-label="reviews.carousel">
+          <ul class="reviews__track" data-reviews-track></ul>
+          <div class="reviews__nav">
+            <ol class="reviews__dots" data-reviews-dots></ol>
+            <button class="reviews__arrow" type="button" data-reviews-prev aria-label="Recensione precedente" data-i18n-aria-label="reviews.prev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="reviews__arrow" type="button" data-reviews-next aria-label="Recensione successiva" data-i18n-aria-label="reviews.next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- ============ CTA ============ -->
   <section class="section section--tight section--paper2">
     <div class="wrap">
@@ -525,5 +558,6 @@
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/reviews.js"></script>
 </body>
 </html>

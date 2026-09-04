@@ -68,11 +68,18 @@ strumento, non come promessa centrale.
   vanilla. Vincolo dichiarato del progetto, non un accidente.
 - Nessun servizio di terze parti a runtime: font serviti in locale, nessun
   cookie di profilazione o analytics, mappa Google Maps caricata solo dopo
-  consenso esplicito.
+  consenso esplicito. Le recensioni Google arrivano da un JSON statico
+  (`assets/data/reviews.json`) aggiornato ogni giorno da GitHub Actions: il
+  browser del visitatore non contatta Google.
 - Pubblicazione da `main`; anteprima su GitHub Pages
   (`marcolombardodev.github.io/StudioUrbani/`), dominio finale previsto
   `www.studiourbani.it`. L'anteprima porta un `noindex` condizionato all'host.
 - Nessun form di contatto: si scrive o si telefona. Nessun backend.
+- Sezione «Dicono di noi» con media e recensioni della scheda Google dello
+  Studio. Richiede un segreto `GOOGLE_MAPS_API_KEY` nel repository: finche' non
+  c'e', la sezione resta nascosta. Il testo delle recensioni va mostrato integro
+  e attribuito al suo autore, non riassunto: e' una condizione di Google Maps
+  Platform, non una scelta editoriale.
 - L'area riservata clienti non ha un indirizzo pubblico sul sito: la richiesta
   di informazioni passa dalla pagina contatti. Decisione confermata, non lacuna.
 - Le sezioni di notizie da feed RSS del sito precedente (*Fisco e normativa*,
@@ -101,6 +108,9 @@ Lagna (consulente del lavoro), Rag. Alessandro Urbani (tributarista),
 Rag. Daniela Petrocelli e Rag. Alessandra Picone (collaboratori) —, logo in SVG
 e PNG, set completo di favicon, fotografia del titolare
 (`assets/img/massimo_urbani_face.png`).
+
+Le recensioni pubblicate sulla scheda Google dello Studio sono l'unica prova
+sociale disponibile e sono reali: si mostrano come Google le restituisce.
 
 Da non inventare, perché non esiste materiale: testimonianze, casi di studio,
 numero di clienti o di pratiche, anni di attività e data di fondazione,

@@ -1,0 +1,42 @@
+{
+  "source": "esempio",
+  "note": "File di sola anteprima, con testi inventati. Il sito lo carica solo aprendo index.html?reviews=demo; i dati reali stanno in reviews.json, scritto da .github/workflows/reviews.yml.",
+  "placeId": "ESEMPIO",
+  "place": "Studio Massimo Urbani",
+  "updatedAt": "2026-09-04T04:17:00.000Z",
+  "rating": 4.7,
+  "total": 24,
+  "url": "https://www.google.com/maps/place/Studio+Massimo+Urbani",
+  "reviews": [
+    {
+      "author": "Recensione di esempio 1",
+      "rating": 5,
+      "relative": "2 settimane fa",
+      "relativeEn": "2 weeks ago",
+      "text": "Testo di esempio, non una recensione reale: serve soltanto a vedere come si presenta la card prima che il workflow scarichi le recensioni vere dalla scheda Google dello Studio.",
+      "textEn": "Sample text, not a real review: it only shows how the card looks before the workflow downloads the actual reviews from the firm's Google listing.",
+      "publishedAt": "2026-08-21T09:00:00Z",
+      "url": "https://www.google.com/maps/place/Studio+Massimo+Urbani"
+    },
+    {
+      "author": "Recensione di esempio 2",
+      "rating": 4,
+      "relative": "un mese fa",
+      "relativeEn": "a month ago",
+      "text": "Secondo testo di esempio, piu' lungo, per controllare che il taglio a sei righe e il rimando «Leggi su Google» funzionino anche quando la recensione e' molto estesa e non entra nello spazio della card. Nessuno di questi contenuti proviene da un cliente dello Studio.",
+      "textEn": "A second, longer sample text, to check that the six-line clamp and the «Read on Google» link work when a review is long and does not fit the card. None of this content comes from a client of the firm.",
+      "publishedAt": "2026-07-30T09:00:00Z",
+      "url": "https://www.google.com/maps/place/Studio+Massimo+Urbani"
+    },
+    {
+      "author": "Recensione di esempio 3",
+      "rating": 5,
+      "relative": "3 mesi fa",
+      "relativeEn": "3 months ago",
+      "text": "Terzo testo di esempio, breve.",
+      "textEn": "A third, short sample text.",
+      "publishedAt": "2026-06-04T09:00:00Z",
+      "url": "https://www.google.com/maps/place/Studio+Massimo+Urbani"
+    }
+  ]
+}

@@ -144,6 +144,15 @@
     'rel.panel.l2': "Via Cristoforo Colombo 348, Sc. D int. 3 — Rome",
     'rel.panel.l3': "Meeting at the office or by video call",
 
+    /* --- dicono di noi --- */
+    'reviews.eyebrow': "What they say",
+    'reviews.title': "Our Google reviews.",
+    'reviews.outof': "out of 5",
+    'reviews.all': "Read them on Google",
+    'reviews.carousel': "Google reviews",
+    'reviews.prev': "Previous review",
+    'reviews.next': "Next review",
+
     /* --- team --- */
     'team.eyebrow': "The people",
     'team.title': "The person who answers is the person on your file.",

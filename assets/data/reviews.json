@@ -1,0 +1,10 @@
+{
+  "source": "google-places",
+  "note": "Segnaposto: nessun dato ancora scaricato, quindi la sezione «Dicono di noi» resta nascosta. Lo sovrascrive .github/workflows/reviews.yml appena e' configurato il segreto GOOGLE_MAPS_API_KEY.",
+  "placeId": null,
+  "updatedAt": null,
+  "rating": null,
+  "total": null,
+  "url": null,
+  "reviews": []
+}

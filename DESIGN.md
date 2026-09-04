@@ -7,6 +7,7 @@ colors:
   navy-soft: "#2a76a5"
   brass: "#b3915f"
   brass-soft: "#d9c39c"
+  star: "#a8854f"
   ink: "#10141c"
   ink-soft: "#39424f"
   muted: "#5d6672"
@@ -172,6 +173,10 @@ inventato.
   fondo chiaro — le etichette in maiuscoletto. L'ottone chiaro non raggiunge il
   4,5:1 su carta (2,72:1 misurato), questo lo raggiunge (4,83:1 sul fondo più
   scuro dei due). Sui fondi blu resta valido `--brass-soft`, che misura 6,94:1.
+- **Oro delle stelle** (`#a8854f`): solo le stelle delle recensioni. L'ottone
+  del sistema si ferma a 2,94:1 sul bianco, sotto la soglia 3:1 per gli
+  elementi non testuali: questo gradino piu' scuro misura 3,42:1 sul bianco e
+  3,17:1 sulla carta. Non usarlo altrove, non e' un secondo accento.
 - **Ottone chiaro** (`#d9c39c`): la stessa voce sui fondi scuri — numerazione
   dei passi, etichette nella fascia blu, hover dei bottoni chiari.
 
@@ -251,8 +256,8 @@ paragrafo lead. È l'elemento che rende il sito riconoscibile scorrendolo.
 
 L'ordine delle sezioni della landing è esso stesso una scelta di sistema:
 hero, striscia di quattro fatti, chi siamo, **le persone**, il percorso del
-rapporto sulla fascia scura, i servizi con la nota sulla fatturazione, chiusura
-con l'invito al contatto. Le persone vengono prima della tassonomia, e la
+rapporto sulla fascia scura, i servizi con la nota sulla fatturazione, le
+recensioni Google, chiusura con l'invito al contatto. Le persone vengono prima della tassonomia, e la
 fatturazione elettronica è uno strumento dentro i servizi, non un capitolo a sé.
 
 La hero non argomenta e non elenca: etichetta, titolo, una sola frase di
@@ -376,13 +381,37 @@ ritratto è l'unico cerchio del sistema.
 
 ### Team portrait (signature)
 Cerchio da `clamp(104px, 10vw, 132px)` con gradiente carta scura→blu al 10% e
-filetto, `clamp(124px, 12vw, 156px)` nella card del titolare. In hover il ritratto sale di 4px, scala a 1.04 e prende un doppio alone
+filetto, `clamp(124px, 14vw, 188px)` nella card del titolare. In hover il ritratto sale di 4px, scala a 1.04 e prende un doppio alone
 concentrico nel blu del marchio (5px al 10%, 10px al 5%) più una diffusione bassa;
 le iniziali passano al blu chiaro e il nome al blu del marchio. La card sotto non
 cambia sfondo: le persone non sono link e non devono sembrarlo. Dove la
 fotografia esiste il ritratto parte da `grayscale(.25)` e va al colore pieno;
 dove non esiste ancora, il cerchio porta le iniziali del nome. Sotto il nome, il
 ruolo in `.86rem` inchiostro tenue, in ottone d'inchiostro per il titolare.
+
+### Google reviews card
+Una sola card in fondo alla pagina: a sinistra la media in Jost 300 nel corpo
+del display, le cinque stelle e il conteggio delle valutazioni; a destra il
+carosello delle singole recensioni, una per schermata, su fondo carta dentro la
+card bianca. Le stelle sono due file sovrapposte, quella piena ritagliata in
+larghezza sulla frazione esatta del voto: il mezzo voto e' misurato, non
+arrotondato. I comandi stanno sotto il carosello: indicatori a sinistra, le due
+frecce affiancate a destra in pillole da 44px, disabilitate agli estremi.
+Nessun avanzamento automatico — non c'e' nulla da mettere in pausa e la
+sobrieta' resta quella del resto del sito.
+
+Tre vincoli che non sono estetici e vanno rispettati:
+
+- **Il testo delle recensioni non si riscrive.** Le condizioni di Google Maps
+  Platform impongono di mostrarlo integro e attribuito: a schermo e' accorciato
+  a sei righe con il rimando alla recensione completa, mai riassunto.
+- **Nessuna richiesta a Google dal browser.** I dati arrivano da un JSON
+  statico dello stesso dominio, quindi la sezione non ha bisogno di consenso;
+  gli avatar Google non vengono usati (iniziali al loro posto) perche'
+  sarebbero una chiamata a `googleusercontent`.
+- **Senza dati la sezione non esiste.** Il `<section>` nasce `hidden` e viene
+  mostrato solo con dati validi: niente cornice vuota, niente recensioni
+  inventate.
 
 ### Section opener (signature)
 La tripletta etichetta-titolo-lead descritta in Typography, con l'etichetta in

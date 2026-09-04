@@ -10,8 +10,8 @@ Static bilingual site, no dependencies, no build step.
 
 ```
 .
-├── index.html                  Landing unica: hero, valori, chi siamo,
-│                               servizi, fatturazione, team, CTA
+├── index.html                  Landing unica: hero, valori, chi siamo, team,
+│                               metodo, servizi, fatturazione, recensioni, CTA
 ├── pages/
 │   ├── contatti.html           Contatti + mappa Google Maps (su consenso)
 │   ├── note-legali.html        Note legali
@@ -21,8 +21,12 @@ Static bilingual site, no dependencies, no build step.
 │   ├── css/style.css           Design system (token, componenti, responsive)
 │   ├── js/i18n.js              Motore bilingue IT/EN + dizionario inglese
 │   ├── js/main.js              Header, menu, animazioni, avviso cookie, mappa
+│   ├── js/reviews.js           Card «Dicono di noi» (recensioni Google)
+│   ├── data/reviews.json       Recensioni scaricate (le scrive GitHub Actions)
 │   ├── fonts/                  Jost e Inter in locale (woff2)
 │   └── img/                    Logo, favicon, manifest (vedi assets/img/README.md)
+├── scripts/fetch-reviews.mjs   Scarica valutazione e recensioni da Google
+├── .github/workflows/reviews.yml  Le aggiorna ogni giorno
 ├── 404.html                    Pagina di errore autoportante
 ├── robots.txt
 ├── sitemap.xml
@@ -73,25 +77,87 @@ composto in Jost:
 
 ## Fotografie del team
 
-Le card del team mostrano un segnaposto tondo con le iniziali. Per inserire i
-ritratti è sufficiente aggiungere un `<img>` dentro `.team__photo`:
+C'è il ritratto del titolare (`assets/img/massimo_urbani_face.png`), non quelli
+degli altri sei professionisti: le loro card riportano solo nome e ruolo, senza
+segnaposto. La card del titolare occupa la colonna di sinistra e le altre sei
+stanno accanto in due colonne per tre righe.
+
+Se in futuro arrivassero altre fotografie, basta aggiungere un `<img>` dentro un
+`.team__photo` e togliere la classe `team__card--plain`:
 
 ```html
-<div class="team__photo"><img src="../assets/img/team/massimo-urbani.jpg" alt="Rag. Massimo Urbani"></div>
+<div class="team__photo"><img src="assets/img/nome-cognome.jpg" alt="" width="380" height="380" loading="lazy"></div>
 ```
 
-Il ritaglio circolare e l'`object-fit: cover` sono già gestiti dal CSS; le immagini
-rendono meglio quadrate, almeno 320x320 px.
+Il ritaglio circolare, l'`object-fit: cover` e il passaggio da grigio a colore in
+hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
+320x320 px.
+
+## Recensioni Google / Google reviews
+
+La sezione «Dicono di noi» mostra la valutazione media della scheda Google dello
+Studio e le ultime recensioni in un carosello. **Non** è un widget di terze
+parti: il browser del visitatore non contatta Google e la sezione non richiede
+alcun consenso.
+
+Come funziona:
+
+1. `.github/workflows/reviews.yml` gira ogni notte (e a comando) su GitHub
+   Actions ed esegue `scripts/fetch-reviews.mjs`;
+2. lo script interroga la **Places API (New)** di Google e scrive
+   `assets/data/reviews.json`;
+3. se il file è cambiato, il workflow lo committa su `main` e il sito
+   ripubblica; `assets/js/reviews.js` lo legge come file statico.
+
+Serve una cosa sola, da configurare nel repository:
+
+| Dove | Nome | Valore |
+|---|---|---|
+| *Settings → Secrets and variables → Actions → Secrets* | `GOOGLE_MAPS_API_KEY` | chiave di un progetto Google Cloud con **Places API (New)** abilitata |
+| *…→ Variables* (facoltativo, consigliato) | `GOOGLE_PLACE_ID` | place id della scheda |
+
+Senza il segreto il workflow termina senza fare nulla e la sezione resta
+nascosta: nessuna cornice vuota, nessuna recensione inventata.
+
+Il place id: alla prima esecuzione, se `GOOGLE_PLACE_ID` non c'è, lo script lo
+cerca per nome e indirizzo e lo stampa nel log del workflow — conviene copiarlo
+nelle *Variables*, così ogni esecuzione fa una chiamata in meno e non può
+agganciare la scheda sbagliata. Il nome usato per la ricerca si può cambiare con
+la variabile `GOOGLE_PLACE_NAME`.
+
+Costi: una esecuzione al giorno sono ~60 chiamate al mese (una per lingua),
+dentro la quota gratuita mensile di Places API; il progetto Google Cloud deve
+comunque avere la fatturazione attiva perché la chiave funzioni.
+
+Vincoli che il codice rispetta e che è meglio non aggirare:
+
+- il testo delle recensioni viene salvato e mostrato **come Google lo
+  restituisce**, con nome dell'autore e rimando alla recensione: le condizioni
+  di Google Maps Platform non consentono di riscriverlo o riassumerlo. A schermo
+  è accorciato a sei righe, con il collegamento alla versione integrale;
+- Google restituisce al massimo **cinque** recensioni per scheda: è un limite
+  dell'API, non del componente;
+- l'aggiornamento quotidiano tiene la copia locale entro i 30 giorni di cache
+  ammessi;
+- gli avatar degli autori non vengono usati (al loro posto le iniziali): sono
+  ospitati su `googleusercontent.com` e sarebbero una chiamata a terze parti dal
+  browser del visitatore.
+
+Per vedere la card prima di avere la chiave: `index.html?reviews=demo` carica
+`assets/data/reviews.example.json`, con testi dichiaratamente inventati.
 
 ## Contenuti da validare
 
 I testi sono stati ricostruiti dai contenuti pubblici del sito attuale
 (`studiourbani.it`) e riscritti in forma più compatta. Da verificare con lo Studio
-prima della pubblicazione: partita IVA e dati di iscrizione all'Ordine (non presenti
-nel footer), elenco puntuale dei servizi nelle aree *Consulenza Aziendale*,
-*Associazioni* e *Legale*, ruoli dei singoli professionisti nella sezione Team,
-data di ultimo aggiornamento delle pagine legali e URL dell'area riservata clienti
+prima della pubblicazione: dati di iscrizione all'Ordine (non presenti nel
+footer), elenco puntuale dei servizi nelle aree *Consulenza Aziendale*
+(`index.html`, `srv.4.l1`-`l4`), *Associazioni* (`srv.7.l1`-`l3`) e *Legale*
+(`srv.8.l1`-`l3`), data di ultimo aggiornamento delle tre pagine legali
+(`legal.updatedDate`, oggi «settembre 2026») e URL dell'area riservata clienti
 (oggi il pulsante rimanda alla pagina contatti).
+
+Nomi e ruoli dei professionisti sono invece stati forniti dallo Studio.
 
 Le sezioni *Fisco e normativa* e *Focus Lazio* del sito attuale, alimentate da feed
 RSS, non sono state riprodotte.

@@ -118,16 +118,19 @@ riconoscimenti, loghi di clienti, dati economici.
 
 Attenzione alla provenienza dei testi: i contenuti sono stati ricostruiti dagli
 snapshot dei motori di ricerca del sito precedente, perché il dominio è
-irraggiungibile dall'ambiente di sviluppo. Da validare con lo Studio prima
-della pubblicazione: l'elenco puntuale delle aree *Consulenza Aziendale*,
-*Associazioni* e *Legale* e le date di aggiornamento delle pagine legali. Nomi e
-ruoli dello staff sono invece stati forniti direttamente dallo Studio.
+irraggiungibile dall'ambiente di sviluppo. Riguarda in particolare l'elenco
+puntuale delle aree *Consulenza Aziendale*, *Associazioni* e *Legale* e le date
+di aggiornamento delle pagine legali; nomi e ruoli dello staff sono invece stati
+forniti direttamente dallo Studio. Il committente li ha accettati così come
+sono: non sono più una verifica pendente, si correggeranno se e quando lo Studio
+segnalerà variazioni.
 
 Decisioni aperte, da non risolvere per conto dello Studio:
 
-- **Fotografie del team.** Fornita quella del titolare; per le altre sei
-  persone la card mostra un segnaposto tondo con le iniziali. Per inserirne una
-  basta un `<img>` dentro `.team__photo`, come nella card di Massimo Urbani.
+- **Fotografie del team.** Fornita quella del titolare; per le altre sei non
+  esistono e non sono attese, quindi la card riporta solo nome e ruolo, senza
+  segnaposto. Se in futuro arrivassero, basta un `<img>` dentro `.team__photo`
+  come nella card di Massimo Urbani.
 - **Versione inglese.** Requisito reale, legato a clienti e operazioni
   internazionali: l'inglese va mantenuto allineato all'italiano a ogni
   modifica dei contenuti, non trattato come un extra.

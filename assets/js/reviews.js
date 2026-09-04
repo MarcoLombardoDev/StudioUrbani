@@ -16,6 +16,55 @@
   var dotsBox = root.querySelector('[data-reviews-dots]');
   var prev = root.querySelector('[data-reviews-prev]');
   var next = root.querySelector('[data-reviews-next]');
+  var toggle = root.querySelector('[data-reviews-toggle]');
+
+  /* Avanzamento automatico lento: sette secondi per recensione. Si ferma al
+     passaggio del mouse, quando il fuoco entra nel carosello, quando la
+     sezione non e' a schermo o la scheda passa in secondo piano, e su
+     richiesta col comando di pausa. Con prefers-reduced-motion non parte. */
+  var AUTO_MS = 7000;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var timer = null;
+  var paused = false;   // scelta esplicita di chi guarda
+  var held = 0;         // sospensioni temporanee: mouse, fuoco, fuori schermo
+
+  function canAuto() {
+    return !reduce.matches && !paused && held === 0 && track.querySelectorAll('.review').length > 1;
+  }
+
+  function tick() {
+    var n = track.querySelectorAll('.review').length;
+    if (!n) return;
+    var last = index >= n - 1;
+    /* Tornando in testa lo scorrimento sarebbe lungo quanto tutta la fila:
+       meglio un salto secco. */
+    goto(last ? 0 : index + 1, !last);
+  }
+
+  function play() {
+    stop();
+    if (!canAuto()) return;
+    timer = setInterval(tick, AUTO_MS);
+  }
+
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  function hold(on) {
+    held = Math.max(0, held + (on ? 1 : -1));
+    if (canAuto()) play();
+    else stop();
+  }
+
+  function syncToggle() {
+    if (!toggle) return;
+    var off = paused;
+    toggle.setAttribute('aria-pressed', String(off));
+    toggle.setAttribute('aria-label', off ? T[lang()].play : T[lang()].pause);
+    toggle.querySelector('[data-icon="pause"]').hidden = off;
+    toggle.querySelector('[data-icon="play"]').hidden = !off;
+  }
 
   var T = {
     it: {
@@ -26,6 +75,8 @@
       dot: function (i) { return 'Vai alla recensione ' + i; },
       updated: function (d) { return 'ultimo aggiornamento ' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }); },
       photoAlt: function (a) { return 'Fotografia del profilo di ' + a; },
+      pause: 'Metti in pausa lo scorrimento',
+      play: 'Riprendi lo scorrimento',
       translated: 'Traduzione di Google'
     },
     en: {
@@ -36,6 +87,8 @@
       dot: function (i) { return 'Go to review ' + i; },
       updated: function (d) { return 'last updated ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); },
       photoAlt: function (a) { return 'Profile photo of ' + a; },
+      pause: 'Pause the slideshow',
+      play: 'Resume the slideshow',
       translated: 'Translated by Google'
     }
   };
@@ -134,6 +187,7 @@
     var single = list.length < 2;
     root.querySelector('.reviews__nav').hidden = single;
     root.querySelector('.reviews__carousel').hidden = list.length === 0;
+    if (toggle) toggle.hidden = single || reduce.matches;
   }
 
   function goto(i, smooth) {
@@ -155,11 +209,39 @@
   }
 
   function bind() {
-    if (prev) prev.addEventListener('click', function () { goto(index - 1, true); });
-    if (next) next.addEventListener('click', function () { goto(index + 1, true); });
+    /* Chi prende in mano i comandi decide da se' quando scorrere: l'automatismo
+       si ferma e resta fermo, senza riprendere sotto le dita. */
+    if (prev) prev.addEventListener('click', function () { paused = true; syncToggle(); stop(); goto(index - 1, true); });
+    if (next) next.addEventListener('click', function () { paused = true; syncToggle(); stop(); goto(index + 1, true); });
     dotsBox.addEventListener('click', function (e) {
       var b = e.target.closest('button[data-go]');
-      if (b) goto(Number(b.getAttribute('data-go')), true);
+      if (!b) return;
+      paused = true; syncToggle(); stop();
+      goto(Number(b.getAttribute('data-go')), true);
+    });
+    if (toggle) toggle.addEventListener('click', function () {
+      paused = !paused;
+      syncToggle();
+      if (paused) stop(); else play();
+    });
+
+    root.addEventListener('mouseenter', function () { hold(true); });
+    root.addEventListener('mouseleave', function () { hold(false); });
+    /* Il fuoco dentro il carosello sospende lo scorrimento, cosi' chi naviga
+       da tastiera legge senza fretta. Il comando di pausa e' l'eccezione:
+       altrimenti premere «riprendi» non avrebbe effetto, perche' il fuoco
+       resta proprio su quel bottone. */
+    root.addEventListener('focusin', function (e) { if (!toggle || !toggle.contains(e.target)) hold(true); });
+    root.addEventListener('focusout', function (e) { if (!toggle || !toggle.contains(e.target)) hold(false); });
+    document.addEventListener('visibilitychange', function () { hold(document.hidden); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { hold(!e.isIntersecting); });
+      }, { threshold: 0.2 }).observe(root);
+    }
+    if (reduce.addEventListener) reduce.addEventListener('change', function () {
+      if (toggle) toggle.hidden = reduce.matches || track.querySelectorAll('.review').length < 2;
+      if (canAuto()) play(); else stop();
     });
     track.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { goto(index + 1, true); e.preventDefault(); }
@@ -184,6 +266,7 @@
       if (!data) return;
       renderAside();
       renderSlides();
+      syncToggle();
       goto(index, false);
     });
   }
@@ -206,7 +289,9 @@
       renderSlides();
       bind();
       syncDots();
+      syncToggle();
       section.hidden = false;
+      play();
     })
     .catch(function () { /* niente dati: la sezione resta nascosta */ });
 })();

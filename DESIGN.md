@@ -402,10 +402,22 @@ una per schermata, su fondo carta dentro la card bianca. Ogni recensione porta
 la fotografia del profilo dell'autore, scaricata e servita in locale, con le
 iniziali come ripiego dove Google non la fornisce. Le stelle sono due file sovrapposte, quella piena ritagliata in
 larghezza sulla frazione esatta del voto: il mezzo voto e' misurato, non
-arrotondato. I comandi stanno sotto il carosello: indicatori a sinistra, le due
-frecce affiancate a destra in pillole da 44px, disabilitate agli estremi.
-Nessun avanzamento automatico — non c'e' nulla da mettere in pausa e la
-sobrieta' resta quella del resto del sito.
+arrotondato. I comandi stanno sotto il carosello: indicatori a sinistra, a destra il
+comando di pausa e le due frecce, in pillole da 44px; le frecce sono
+disabilitate agli estremi.
+
+L'avanzamento e' automatico ma lento — sette secondi per recensione, e
+tornando in testa un salto secco invece di uno scorrimento lungo quanto tutta
+la fila. Si ferma da se' col mouse sopra la card, quando il fuoco entra nel
+carosello, quando la sezione non e' a schermo e quando la scheda passa in
+secondo piano; con `prefers-reduced-motion` non parte affatto e il comando di
+pausa non compare, perche' non c'e' nulla da fermare. Chi usa frecce o
+indicatori lo ferma per sempre: ha preso in mano il passo e non se lo ritrova
+strappato di sotto. Il comando di pausa e' l'unico elemento esente dalla
+sospensione da fuoco, altrimenti premere «riprendi» non avrebbe effetto — il
+fuoco resta proprio la'. Un carosello che si muove da solo senza un comando
+per fermarlo non e' ammissibile (WCAG 2.2.2): il bottone e' parte del
+componente, non un extra.
 
 Tre vincoli che non sono estetici e vanno rispettati:
 

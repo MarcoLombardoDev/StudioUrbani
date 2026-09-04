@@ -97,9 +97,9 @@ hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
 ## Recensioni Google / Google reviews
 
 La sezione «Dicono di noi» mostra la valutazione media della scheda Google dello
-Studio e le ultime recensioni in un carosello. **Non** è un widget di terze
-parti: il browser del visitatore non contatta Google e la sezione non richiede
-alcun consenso.
+Studio e le ultime recensioni in un carosello che avanza da sé ogni sette
+secondi, con comando di pausa. **Non** è un widget di terze parti: il browser
+del visitatore non contatta Google e la sezione non richiede alcun consenso.
 
 Come funziona:
 
@@ -169,18 +169,22 @@ Vincoli che il codice rispetta e che è meglio non aggirare:
 Per vedere la card prima di avere la chiave: `index.html?reviews=demo` carica
 `assets/data/reviews.example.json`, con testi dichiaratamente inventati.
 
-## Contenuti da validare
+## Provenienza dei contenuti
 
-I testi sono stati ricostruiti dai contenuti pubblici del sito attuale
-(`studiourbani.it`) e riscritti in forma più compatta. Da verificare con lo Studio
-prima della pubblicazione: dati di iscrizione all'Ordine (non presenti nel
-footer), elenco puntuale dei servizi nelle aree *Consulenza Aziendale*
-(`index.html`, `srv.4.l1`-`l4`), *Associazioni* (`srv.7.l1`-`l3`) e *Legale*
-(`srv.8.l1`-`l3`), data di ultimo aggiornamento delle tre pagine legali
-(`legal.updatedDate`, oggi «settembre 2026») e URL dell'area riservata clienti
-(oggi il pulsante rimanda alla pagina contatti).
+I testi sono stati ricostruiti dai contenuti pubblici del sito precedente
+(`studiourbani.it`, irraggiungibile dall'ambiente di sviluppo) e riscritti in
+forma più compatta. Il committente li ha approvati così come sono; queste sono
+le parti da ritoccare se lo Studio segnalerà variazioni:
 
-Nomi e ruoli dei professionisti sono invece stati forniti dallo Studio.
+- elenco dei servizi nelle aree *Consulenza Aziendale* (`index.html`,
+  `srv.4.l1`-`l4`), *Associazioni* (`srv.7.l1`-`l3`) e *Legale*
+  (`srv.8.l1`-`l3`), le tre ricostruite in modo meno diretto;
+- data di ultimo aggiornamento delle tre pagine legali (`legal.updatedDate`,
+  oggi «settembre 2026»);
+- dati di iscrizione all'Ordine, oggi non riportati nel footer;
+- URL dell'area riservata clienti: il pulsante rimanda alla pagina contatti.
+
+Nomi e ruoli dei professionisti sono stati forniti direttamente dallo Studio.
 
 Le sezioni *Fisco e normativa* e *Focus Lazio* del sito attuale, alimentate da feed
 RSS, non sono state riprodotte.

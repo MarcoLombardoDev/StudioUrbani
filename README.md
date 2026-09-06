@@ -116,7 +116,8 @@ La sezione «Dicono di noi» mostra la valutazione media della scheda Google del
 Studio e le ultime recensioni in un carosello che avanza da sé ogni cinque
 secondi e mezzo, con comando di pausa (si ferma anche col mouse sopra, col
 fuoco dentro, fuori schermo e a scheda nascosta; con `prefers-reduced-motion`
-non parte). **Non** è un widget di terze parti: il browser
+non parte). Accanto alla media, due rimandi alla scheda: «Leggile tutte» e
+«Scrivi la tua», quest'ultimo costruito dal place id dei dati. **Non** è un widget di terze parti: il browser
 del visitatore non contatta Google e la sezione non richiede alcun consenso.
 
 Come funziona:

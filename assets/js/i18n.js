@@ -148,6 +148,7 @@
     'reviews.eyebrow': "What they say",
     'reviews.title': "Our Google reviews.",
     'reviews.all': "Read them all",
+    'reviews.write': "Write yours",
     'reviews.carousel': "Google reviews",
     'reviews.prev': "Previous review",
     'reviews.next': "Next review",

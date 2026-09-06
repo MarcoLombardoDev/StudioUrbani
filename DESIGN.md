@@ -402,10 +402,12 @@ Una sola card, attaccata a quella della fatturazione elettronica: appartiene a
 quel blocco, quindi la sezione azzera il proprio riempimento superiore e i due
 riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
 A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
-sotto, e accanto — oltre un filetto verticale che separa le due colonne per
-intero — l'etichetta con numero di valutazioni e data dell'ultimo aggiornamento
-e, sotto di essa, il rimando alla scheda Google; sotto i 560px le due parti si
-impilano e il filetto sparisce. A destra il carosello delle singole recensioni,
+sotto; accanto, in colonna, i due rimandi alla scheda Google — leggere tutte le
+recensioni e scriverne una — larghi uguali fra loro e non quanto la card, che
+li ridurrebbe a due barre. L'etichetta con numero di valutazioni e data
+dell'ultimo aggiornamento sta sotto l'intera riga, come didascalia di quello
+che precede. Nessun filetto fra le due colonne: i bottoni hanno gia' una forma
+propria. Sotto i 560px voto e bottoni si impilano. A destra il carosello delle singole recensioni,
 una per schermata, su fondo carta dentro la card bianca. Ogni recensione porta
 la fotografia del profilo dell'autore, scaricata e servita in locale, con le
 iniziali come ripiego dove Google non la fornisce. Le stelle sono due file sovrapposte, quella piena ritagliata in
@@ -435,7 +437,9 @@ Tre vincoli che non sono estetici e vanno rispettati:
 - **Nessuna richiesta a Google dal browser.** I dati arrivano da un JSON
   statico dello stesso dominio e le fotografie dei profili da
   `assets/img/reviews/`, scaricate dal workflow: la sezione non ha bisogno di
-  consenso perche' non contatta nessuno.
+  consenso perche' non contatta nessuno. I due rimandi a Google sono
+  collegamenti, non richieste: il secondo si costruisce dal place id dei dati,
+  cosi' resta giusto anche se cambia la scheda.
 - **Senza dati la sezione non esiste.** Il `<section>` nasce `hidden` e viene
   mostrato solo con dati validi: niente cornice vuota, niente recensioni
   inventate.

@@ -156,6 +156,13 @@
     meta.hidden = parts.length === 0;
 
     if (data.url) link.href = data.url;
+
+    /* Il rimando per scrivere una recensione si costruisce dal place id dei
+       dati, cosi' resta giusto anche se un domani cambia la scheda. */
+    var write = root.querySelector('[data-reviews-write]');
+    if (write && data.placeId) {
+      write.href = 'https://search.google.com/local/writereview?placeid=' + encodeURIComponent(data.placeId);
+    }
   }
 
   function renderSlides() {

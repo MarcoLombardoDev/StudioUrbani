@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T08:12:34.000Z",
+  "generatedAt": "2026-09-07T10:33:49.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -192,7 +192,7 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Apre le sezioni."
+        "purpose": "Apre le sezioni. Stessa misura del Display (clamp(1.95rem, 2.9vw, 2.6rem)), non un gradino sotto: pesano quanto il titolo della hero, restando peso 300."
       },
       "title": {
         "displayName": "Title",

@@ -26,7 +26,7 @@ typography:
     letterSpacing: "-0.015em"
   headline:
     fontFamily: "Jost, 'Century Gothic', Futura, 'Trebuchet MS', sans-serif"
-    fontSize: "clamp(2rem, 4.2vw, 3.1rem)"
+    fontSize: "clamp(1.95rem, 2.9vw, 2.6rem)"
     fontWeight: 300
     lineHeight: 1.1
     letterSpacing: "-0.015em"
@@ -231,7 +231,10 @@ titoli e nelle etichette.
   grande spinge il paragrafo di apertura sotto la piega. Nella hero, e solo
   lì, sale a peso 700: è l'unica riga di tutto il sito in grassetto, la prima
   cosa che si legge arrivando sulla pagina.
-- **Headline** (300, `clamp(2rem, 4.2vw, 3.1rem)`, 1.1): apre le sezioni.
+- **Headline** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): apre le sezioni —
+  stessa misura del Display, non un gradino sotto: pesano quanto il titolo
+  della hero, cambia solo che restano peso 300 e non vanno a capo per
+  costruzione.
 - **Title** (400, `clamp(1.25rem, 2vw, 1.5rem)`, 1.1): nomi delle aree di
   servizio, titoli delle card, intestazioni dei paragrafi legali.
 - **Title small** (500, `1.05rem`): titoli brevi dentro le card, nomi delle

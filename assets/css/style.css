@@ -125,7 +125,7 @@ h1, h2, h3, h4, .display, .wordmark {
   color: var(--ink);
 }
 h1 { font-size: clamp(1.95rem, 2.9vw, 2.6rem); }   /* dimensionato perche' ogni riga del titolo stia su una riga sola */
-h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+h2 { font-size: clamp(1.95rem, 2.9vw, 2.6rem); }   /* stessa misura dell'h1: i titoli di sezione pesano quanto quello della hero */
 h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 400; letter-spacing: -.005em; }
 h4 { font-size: 1.05rem; font-weight: 500; }
 p { margin: 0 0 1.1em; }

@@ -414,7 +414,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 }
 .hero .wrap { position: relative; z-index: 1; }
 .hero__inner { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, .7fr); gap: clamp(28px, 4vw, 60px); align-items: center; }
-.hero h1 { margin-bottom: 1.4rem; }
+.hero h1 { margin-bottom: 1.4rem; font-weight: 700; }
 .hero__lead { max-width: 56ch; margin-bottom: 2.2rem; }
 .hero__aside { display: grid; gap: 1.4rem; padding-bottom: .4rem; }
 
@@ -518,7 +518,9 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
    i bottoni hanno gia' una forma propria e una riga in piu' sarebbe rumore. */
 .reviews__side { display: grid; justify-items: stretch; gap: .6rem; }
 .reviews__side .btn { justify-content: space-between; }
-.reviews__score { display: grid; justify-items: start; gap: .5rem; flex: none; margin: 0; }
+/* Voto e stelle centrati fra loro sempre, non solo da mobile: sono l'unico
+   dato del blocco, ha senso leggerli come una colonna unica. */
+.reviews__score { display: grid; justify-items: center; gap: .5rem; flex: none; margin: 0; }
 .reviews__avg { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 3.4rem); font-weight: 300; line-height: 1; color: var(--navy); }
 .reviews__meta {
   margin-top: 1.1rem;

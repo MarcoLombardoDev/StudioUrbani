@@ -224,11 +224,13 @@ senza aggiungere personalità, così il carattere del sistema resta tutto nei
 titoli e nelle etichette.
 
 ### Hierarchy
-- **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 della hero e
-  delle pagine interne, un unico blocco in un solo peso e colore — non due
-  righe con stili diversi — che va a capo dove serve secondo la larghezza
-  disponibile, come qualunque paragrafo. Il massimo è volutamente contenuto:
-  un titolo più grande spinge il paragrafo di apertura sotto la piega.
+- **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 delle pagine
+  interne, un unico blocco in un solo peso e colore — non due righe con stili
+  diversi — che va a capo dove serve secondo la larghezza disponibile, come
+  qualunque paragrafo. Il massimo è volutamente contenuto: un titolo più
+  grande spinge il paragrafo di apertura sotto la piega. Nella hero, e solo
+  lì, sale a peso 700: è l'unica riga di tutto il sito in grassetto, la prima
+  cosa che si legge arrivando sulla pagina.
 - **Headline** (300, `clamp(2rem, 4.2vw, 3.1rem)`, 1.1): apre le sezioni.
 - **Title** (400, `clamp(1.25rem, 2vw, 1.5rem)`, 1.1): nomi delle aree di
   servizio, titoli delle card, intestazioni dei paragrafi legali.
@@ -412,7 +414,9 @@ Una sola card, attaccata a quella della fatturazione elettronica: appartiene a
 quel blocco, quindi la sezione azzera il proprio riempimento superiore e i due
 riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
 A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
-sotto; accanto, in colonna, i due rimandi alla scheda Google — leggere tutte le
+centrate sotto di essa, sempre — non solo da mobile: sono l'unico dato del
+blocco, ha senso leggerle come una colonna sola; accanto, in colonna, i due
+rimandi alla scheda Google — leggere tutte le
 recensioni e scriverne una — larghi uguali fra loro e non quanto la card, che
 li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
 sull'altra: e' un `<p>` con il margine di default annullato a rendere possibile

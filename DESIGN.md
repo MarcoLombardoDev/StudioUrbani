@@ -407,8 +407,8 @@ li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
 sull'altra: e' un `<p>` con il margine di default annullato a rendere possibile
 l'allineamento, altrimenti il margine invisibile in coda sposta il centro
 percepito verso l'alto. Sotto, come didascalia di tutta la riga, l'etichetta
-con numero di valutazioni e data dell'ultimo aggiornamento (mese abbreviato,
-«4 set 2026»): stesso trattamento del payoff del marchio, maiuscolo e
+con numero di valutazioni e «aggiornato il» seguito dalla data (mese
+abbreviato, «7 set 2026»): stesso trattamento del payoff del marchio, maiuscolo e
 spaziato, un filo piu' grande (`.64rem` contro `.6rem`) perche' qui
 l'informazione e' reale, non un motto decorativo. Nessun filetto fra le due
 colonne: i bottoni hanno gia' una forma propria. Sotto i 560px voto e bottoni

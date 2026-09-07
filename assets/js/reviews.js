@@ -73,7 +73,7 @@
       stars: function (r) { return r.toLocaleString('it-IT', { maximumFractionDigits: 1 }) + ' stelle su 5'; },
       slide: function (i, n) { return 'Recensione ' + i + ' di ' + n; },
       dot: function (i) { return 'Vai alla recensione ' + i; },
-      updated: function (d) { return 'ultimo aggiornamento ' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }); },
+      updated: function (d) { return 'aggiornato il ' + d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }); },
       photoAlt: function (a) { return 'Fotografia del profilo di ' + a; },
       pause: 'Metti in pausa lo scorrimento',
       play: 'Riprendi lo scorrimento',

@@ -422,10 +422,11 @@ quel blocco, quindi la sezione azzera il proprio riempimento superiore e i due
 riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
 A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
 centrate sotto di essa, sempre — non solo da mobile: sono l'unico dato del
-blocco, ha senso leggerle come una colonna sola; accanto, in colonna, i due
-rimandi alla scheda Google — leggere tutte le
-recensioni e scriverne una — larghi uguali fra loro e non quanto la card, che
-li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
+blocco, ha senso leggerle come una colonna sola; accanto, con un distacco netto
+(`clamp(28px, 3.4vw, 48px)`, il doppio delle 22px iniziali: meno di così le due
+colonne si leggevano come un unico blocco confuso), i due rimandi alla scheda
+Google in colonna — leggere tutte le recensioni e scriverne una — larghi
+uguali fra loro e non quanto la card, che li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
 sull'altra: e' un `<p>` con il margine di default annullato a rendere possibile
 l'allineamento, altrimenti il margine invisibile in coda sposta il centro
 percepito verso l'alto. Sotto, come didascalia di tutta la riga, l'etichetta
@@ -474,7 +475,17 @@ Tre vincoli che non sono estetici e vanno rispettati:
 ### Section opener (signature)
 La tripletta etichetta-titolo-lead descritta in Typography, con l'etichetta in
 `display: inline-flex` e un filetto d'ottone da 28px prima del testo. Nelle
-sezioni centrate il filetto si nasconde.
+sezioni centrate (`.section-head--center`: servizi e le persone) il filetto si
+nasconde e il blocco si allinea al centro; le altre restano a sinistra.
+
+L'etichetta è sempre `.eyebrow`, mai un'altra classe che le somigli: dentro un
+contenitore con una regola generica sul tag `p` — per esempio
+`.billing-note p` — un selettore come `.contenitore p` batte in specificità la
+sola classe `.eyebrow` e le sovrascrive dimensione e colore senza che lo si
+noti a colpo d'occhio (era successo con «Fatturazione elettronica», che
+sembrava un'altra etichetta rispetto a «Dicono di noi» pur condividendo la
+stessa classe). La regola corretta esclude l'eyebrow: `.contenitore
+p:not(.eyebrow)`.
 
 ### Map consent gate (signature)
 Al posto dell'iframe di Google Maps, un pannello a gradiente carta con icona,

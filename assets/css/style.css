@@ -489,7 +489,11 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   align-items: center;
 }
 .billing-note h2 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); margin-bottom: .8rem; }
-.billing-note p { font-size: .98rem; color: var(--ink-soft); max-width: 68ch; }
+/* Esclude .eyebrow: senza quel :not, questa regola (piu' specifica della
+   sola .eyebrow) sovrascriveva dimensione e colore dell'etichetta
+   «Fatturazione elettronica», facendola apparire diversa da quella di
+   «Dicono di noi» pur condividendo la stessa classe. */
+.billing-note p:not(.eyebrow) { font-size: .98rem; color: var(--ink-soft); max-width: 68ch; }
 @media (max-width: 820px) { .billing-note { grid-template-columns: 1fr; } }
 
 /* ---------- Dicono di noi (recensioni Google) ---------- */
@@ -512,7 +516,9 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .reviews h2 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); margin-bottom: 1.2rem; }
 /* Voto e stelle in colonna, il conteggio accanto: due blocchi affiancati,
    separati da un filetto, cosi' il numero grande resta l'unico protagonista. */
-.reviews__figures { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 22px); }
+/* Gap raddoppiato rispetto alle 22px iniziali: voto e bottoni leggevano come
+   un unico blocco confuso, ora restano due elementi distinti nella riga. */
+.reviews__figures { display: flex; align-items: center; gap: clamp(28px, 3.4vw, 48px); }
 @media (max-width: 900px) { .reviews__figures { justify-content: center; } }
 /* I due rimandi alla scheda Google, in colonna accanto al voto. Niente filetto:
    i bottoni hanno gia' una forma propria e una riga in piu' sarebbe rumore. */

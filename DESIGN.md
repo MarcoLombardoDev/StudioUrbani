@@ -428,8 +428,13 @@ centrate sotto di essa, sempre — non solo da mobile: sono l'unico dato del
 blocco, ha senso leggerle come una colonna sola; accanto, con un distacco netto
 (`clamp(28px, 3.4vw, 48px)`, il doppio delle 22px iniziali: meno di così le due
 colonne si leggevano come un unico blocco confuso), i due rimandi alla scheda
-Google in colonna — leggere tutte le recensioni e scriverne una — larghi
-uguali fra loro e non quanto la card, che li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
+Google in colonna — «Leggi tutte le recensioni», con il logomark Google a
+colori prima del testo, e «Raccontaci com'è andata» — larghi uguali fra loro
+e non quanto la card, che li ridurrebbe a due barre. Il logomark è l'unica
+icona a colori del sistema: le altre sono tutte tratto da 1.2px su griglia 24,
+mai riempimenti, ma qui identifica la destinazione del rimando (Google), non
+un'azione — la stessa logica delle stelle, che sono l'eccezione cromatica per
+un motivo analogo. Le due colonne sono centrate verticalmente l'una
 sull'altra: e' un `<p>` con il margine di default annullato a rendere possibile
 l'allineamento, altrimenti il margine invisibile in coda sposta il centro
 percepito verso l'alto. Sotto, come didascalia di tutta la riga, l'etichetta

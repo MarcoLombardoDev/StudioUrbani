@@ -225,11 +225,10 @@ titoli e nelle etichette.
 
 ### Hierarchy
 - **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 della hero e
-  delle pagine interne, spezzato su due righe con la seconda in peso 200 e
-  colore più tenue. Il massimo è volutamente contenuto e misurato: 2.6rem è la
-  dimensione più grande alla quale ciascuna delle due righe del titolo della
-  hero resta su una riga sola: un titolo più grande le manda a capo e spinge il
-  paragrafo di apertura sotto la piega.
+  delle pagine interne, un unico blocco in un solo peso e colore — non due
+  righe con stili diversi — che va a capo dove serve secondo la larghezza
+  disponibile, come qualunque paragrafo. Il massimo è volutamente contenuto:
+  un titolo più grande spinge il paragrafo di apertura sotto la piega.
 - **Headline** (300, `clamp(2rem, 4.2vw, 3.1rem)`, 1.1): apre le sezioni.
 - **Title** (400, `clamp(1.25rem, 2vw, 1.5rem)`, 1.1): nomi delle aree di
   servizio, titoli delle card, intestazioni dei paragrafi legali.
@@ -404,10 +403,15 @@ riquadri distano quanto la griglia dei servizi dalla nota sulla fatturazione.
 A sinistra la media in Jost 300 nel corpo del display con le cinque stelle
 sotto; accanto, in colonna, i due rimandi alla scheda Google — leggere tutte le
 recensioni e scriverne una — larghi uguali fra loro e non quanto la card, che
-li ridurrebbe a due barre. L'etichetta con numero di valutazioni e data
-dell'ultimo aggiornamento sta sotto l'intera riga, come didascalia di quello
-che precede. Nessun filetto fra le due colonne: i bottoni hanno gia' una forma
-propria. Sotto i 560px voto e bottoni si impilano. A destra il carosello delle singole recensioni,
+li ridurrebbe a due barre. Le due colonne sono centrate verticalmente l'una
+sull'altra: e' un `<p>` con il margine di default annullato a rendere possibile
+l'allineamento, altrimenti il margine invisibile in coda sposta il centro
+percepito verso l'alto. Sotto, come didascalia di tutta la riga, l'etichetta
+con numero di valutazioni e data dell'ultimo aggiornamento: stesso trattamento
+del payoff del marchio (maiuscolo, `.07em`, peso 500), un filo piu' grande
+perche' qui l'informazione e' reale, non un motto decorativo. Nessun filetto
+fra le due colonne: i bottoni hanno gia' una forma propria. Sotto i 560px voto
+e bottoni si impilano. A destra il carosello delle singole recensioni,
 una per schermata, su fondo carta dentro la card bianca. Ogni recensione porta
 la fotografia del profilo dell'autore, scaricata e servita in locale, con le
 iniziali come ripiego dove Google non la fornisce. Le stelle sono due file sovrapposte, quella piena ritagliata in

@@ -34,8 +34,7 @@
 
     /* --- hero --- */
     'hero.eyebrow': "Chartered accountants · Statutory auditors · Labour consultants",
-    'hero.title1': "Accounting, tax and labour.",
-    'hero.title2': "One point of contact, for every decision.",
+    'hero.title': "Accounting, tax and labour, one point of contact for every decision.",
     'hero.lead': "We assist companies, professionals and private clients: whoever knows your case is the same person who follows its figures, filings and deadlines.",
     'hero.link1': "About the firm",
     'hero.link2': "The people",

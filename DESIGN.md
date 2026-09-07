@@ -281,7 +281,11 @@ dei servizi, 266px per i recapiti), tranne il team, che usa 4 colonne fisse sopr
 i 900px e 2 sotto, con la card del titolare su due celle: sette persone stanno
 così in righe sempre complete a entrambe le larghezze, mai con celle vuote. Le sezioni a due colonne (chi siamo, fatturazione) usano frazioni
 asimmetriche — `.9fr / 1.1fr`, `1fr / .92fr` — e collassano a colonna singola a
-900px.
+900px. In «chi siamo» il testo è diviso apposta perché le due colonne pesino
+uguale da desktop: la sinistra porta titolo e le prime due frasi (fino a «…le
+scadenze.»), la destra la terza frase, l'elenco puntato e la citazione — non
+un taglio a metà arbitrario, ma quello che lascia le due colonne alla stessa
+altezza.
 
 I punti di rottura non sono una scala: sono nove soglie dettate dal contenuto,
 da 480px a 940px, più `min-width: 900px` per il team. La regola è che si aggiunge

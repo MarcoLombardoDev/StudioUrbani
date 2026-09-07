@@ -472,6 +472,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .hero__hours a:hover { border-color: var(--navy); }
 
 .panel__actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+@media (max-width: 900px) { .panel__actions { justify-content: center; } }
 .panel__actions .btn { padding: .8rem 1.25rem; font-size: .92rem; }
 .panel__actions .btn svg { width: 16px; height: 16px; }
 
@@ -512,6 +513,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 /* Voto e stelle in colonna, il conteggio accanto: due blocchi affiancati,
    separati da un filetto, cosi' il numero grande resta l'unico protagonista. */
 .reviews__figures { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 22px); }
+@media (max-width: 900px) { .reviews__figures { justify-content: center; } }
 /* I due rimandi alla scheda Google, in colonna accanto al voto. Niente filetto:
    i bottoni hanno gia' una forma propria e una riga in piu' sarebbe rumore. */
 .reviews__side { display: grid; justify-items: stretch; gap: .6rem; }
@@ -536,7 +538,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 @media (max-width: 560px) {
   /* I bottoni restano larghi quanto il piu' lungo dei due, non quanto la card:
      due pillole da tutta la larghezza sarebbero due barre. */
-  .reviews__figures { display: grid; justify-items: start; gap: 1rem; }
+  .reviews__figures { display: grid; justify-items: center; gap: 1rem; }
   .reviews__meta { max-width: none; }
 }
 
@@ -637,6 +639,7 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .cta__facts li { position: relative; padding-left: 1.05rem; font-size: 1.02rem; color: var(--ink-soft); }
 .cta__facts li::before { content: ''; position: absolute; left: 0; top: .72em; width: 5px; height: 1px; background: var(--brass); }
 .cta .btn-row { align-items: center; }
+@media (max-width: 820px) { .cta .btn-row { justify-content: center; } }
 
 /* Azione di contatto in fondo al menu mobile */
 .nav__call { display: none; }
@@ -830,6 +833,12 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .contact-card h2 { font-size: 1.12rem; font-weight: 400; letter-spacing: normal; margin-bottom: .8rem; }
 .contact-card ul { list-style: none; display: grid; gap: .4rem; }
 .contact-card li, .contact-card a { overflow-wrap: anywhere; }
+/* «Ottieni indicazioni» e' l'unico .btn diretto nella card: sotto i 940px lo
+   si centra come blocco a se', senza toccare l'allineamento del resto della
+   card (un text-align sul contenitore avrebbe centrato anche l'indirizzo). */
+@media (max-width: 700px) {
+  .contact-card > .btn { display: flex; width: fit-content; margin-inline: auto; }
+}
 .contact-card a:not(.btn):hover { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
 .contact-card .label { display: block; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: .7rem; }
 .contact-card .label:first-child { margin-top: 0; }

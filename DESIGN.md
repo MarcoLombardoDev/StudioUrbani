@@ -380,6 +380,17 @@ svuotava di significato.
   di lingua e chiusura restano sopra il pannello. L'header a menu aperto rinuncia
   alla sfocatura, che altrimenti diventerebbe il contenitore del pannello.
 
+Un secondo bordo, per i gruppi di bottoni: quando la loro colonna diventa a
+piena larghezza — pannello «Parlare con lo Studio», «Come contattarci», il
+gruppo voto-e-rimandi di «Dicono di noi», «Ottieni indicazioni» in contatti —
+il gruppo si centra orizzontalmente nel proprio contenitore, non solo a
+sinistra. La soglia non è un valore comune di «mobile»: è quella in cui
+*quel* contenitore smette di stare a fianco di un'altra colonna, perché
+centrare un gruppo mentre è ancora affiancato a un testo lo sposterebbe solo
+dentro la sua fetta stretta, senza leggersi come centrato. Il resto del
+contenuto (indirizzo, orari, testo del pannello) resta allineato a sinistra:
+si centra il bottone o il gruppo di bottoni, mai il testo intorno.
+
 ### Chips
 - Lo switch di lingua è l'unico chip: due bottoni in pillola dentro una pillola
   con filetto, la lingua attiva in blu pieno su testo bianco, `aria-pressed` a

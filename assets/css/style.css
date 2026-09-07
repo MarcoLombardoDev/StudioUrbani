@@ -521,16 +521,15 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .reviews__meta {
   margin-top: 1.1rem;
   font-family: var(--font-body);
-  /* Uguale trattamento del payoff del marchio (maiuscolo, .07em, 500), ma un
-     filo piu' leggibile: qui c'e' un'informazione reale (quante recensioni e
-     quando), non un motto decorativo. */
-  font-size: .74rem;
+  /* Uguale trattamento del payoff del marchio (maiuscolo, .07em, 500), un
+     filo piu' grande perche' qui c'e' un'informazione reale (quante
+     recensioni e quando), non un motto decorativo. */
+  font-size: .64rem;
   font-weight: 500;
   letter-spacing: .07em;
   text-transform: uppercase;
   line-height: 1.5;
   color: var(--muted);
-  max-width: 44ch;
 }
 /* Sotto i 560px non c'e' spazio per due colonne: voto e etichetta si
    impilano e il filetto verticale non serve piu'. */

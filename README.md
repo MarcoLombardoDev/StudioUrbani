@@ -124,9 +124,14 @@ Come funziona:
 
 1. `.github/workflows/reviews.yml` gira ogni notte (e a comando) su GitHub
    Actions ed esegue `scripts/fetch-reviews.mjs`;
-2. lo script interroga la **Places API (New)** di Google e scrive
-   `assets/data/reviews.json`;
-3. se il file è cambiato, il workflow lo committa su `main` e il sito
+2. lo script interroga la **Places API (New)** di Google e riscrive sempre
+   `assets/data/reviews.json` con l'esito, anche quando voto e recensioni sono
+   identici alla notte prima: la data che il file porta è la prova che il
+   controllo è avvenuto, non solo che qualcosa è cambiato — se si scrivesse
+   solo sui cambiamenti sostanziali, in un periodo senza nuove recensioni la
+   data mostrata in pagina resterebbe ferma per settimane, dando l'impressione
+   che il controllo notturno si sia fermato quando invece gira regolarmente;
+3. il workflow committa il file su `main` a ogni esecuzione e il sito
    ripubblica; `assets/js/reviews.js` lo legge come file statico.
 
 Serve una cosa sola, da configurare nel repository:

@@ -194,13 +194,17 @@ const next = JSON.stringify(payload, null, 2) + '\n';
 let prev = null;
 try { prev = await readFile(OUT, 'utf8'); } catch { /* prima esecuzione */ }
 
-// Un aggiornamento che cambia solo updatedAt non vale un commit.
+/* Il file viene sempre riscritto, anche quando voto e recensioni sono
+   identici alla notte prima: updatedAt e' la prova che il controllo e'
+   avvenuto, non solo che qualcosa e' cambiato, ed e' quella data che compare
+   in pagina come «ultimo aggiornamento». Scriverlo solo sui cambiamenti
+   sostanziali lo lascerebbe fermo per settimane in un periodo senza nuove
+   recensioni, dando l'impressione che il controllo notturno si sia fermato
+   quando invece gira regolarmente. */
 const stripTime = (s) => (s ? s.replace(/"updatedAt": "[^"]*",\n/, '') : s);
-if (prev && stripTime(prev) === stripTime(next)) {
-  console.log('Nessuna variazione: file lasciato invariato.');
-  process.exit(0);
-}
+const changed = !prev || stripTime(prev) !== stripTime(next);
 
 await mkdir(dirname(OUT), { recursive: true });
 await writeFile(OUT, next, 'utf8');
-console.log('Scritto', OUT, '—', payload.rating, 'su 5,', payload.total, 'valutazioni,', reviews.length, 'recensioni.');
+console.log('Scritto', OUT, '—', payload.rating, 'su 5,', payload.total, 'valutazioni,', reviews.length, 'recensioni',
+  changed ? '(dati cambiati)' : '(solo la data di controllo)');

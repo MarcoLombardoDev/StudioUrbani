@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T12:04:46.000Z",
+  "generatedAt": "2026-09-07T12:10:50.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -188,7 +188,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "H1 di hero e pagine interne, un unico blocco in un solo peso e colore che va a capo secondo la larghezza disponibile, come un paragrafo qualunque. Nella hero sale a peso 700, unica riga in grassetto del sito."
+        "purpose": "H1 di hero e pagine interne, un unico blocco in un solo peso e colore che va a capo secondo la larghezza disponibile, come un paragrafo qualunque."
       },
       "headline": {
         "displayName": "Headline",

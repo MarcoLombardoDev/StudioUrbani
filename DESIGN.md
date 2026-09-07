@@ -224,13 +224,13 @@ senza aggiungere personalità, così il carattere del sistema resta tutto nei
 titoli e nelle etichette.
 
 ### Hierarchy
-- **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 delle pagine
-  interne, un unico blocco in un solo peso e colore — non due righe con stili
-  diversi — che va a capo dove serve secondo la larghezza disponibile, come
-  qualunque paragrafo. Il massimo è volutamente contenuto: un titolo più
-  grande spinge il paragrafo di apertura sotto la piega. Nella hero, e solo
-  lì, sale a peso 700: è l'unica riga di tutto il sito in grassetto, la prima
-  cosa che si legge arrivando sulla pagina.
+- **Display** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): l'h1 della hero e
+  delle pagine interne, un unico blocco in un solo peso e colore — non due
+  righe con stili diversi — che va a capo dove serve secondo la larghezza
+  disponibile, come qualunque paragrafo. Il massimo è volutamente contenuto:
+  un titolo più grande spinge il paragrafo di apertura sotto la piega. Un
+  peso 700 provato sulla hero è stato tolto dopo prova visiva: il sistema non
+  ha un secondo peso per i titoli, sono tutti 300.
 - **Headline** (300, `clamp(1.95rem, 2.9vw, 2.6rem)`, 1.1): apre le sezioni —
   stessa misura del Display, non un gradino sotto: pesano quanto il titolo
   della hero, cambia solo che restano peso 300 e non vanno a capo per

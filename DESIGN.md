@@ -391,9 +391,12 @@ svuotava di significato.
 
 Un secondo bordo, per i gruppi di bottoni: quando la loro colonna diventa a
 piena larghezza — pannello «Parlare con lo Studio», «Come contattarci», il
-gruppo voto-e-rimandi di «Dicono di noi», «Ottieni indicazioni» in contatti —
-il gruppo si centra orizzontalmente nel proprio contenitore, non solo a
-sinistra. La soglia non è un valore comune di «mobile»: è quella in cui
+gruppo voto-e-rimandi di «Dicono di noi», «Ottieni indicazioni» in contatti,
+«Richiedi informazioni» nella nota sulla fatturazione, «Azzera le preferenze
+memorizzate» nella cookie policy — il gruppo si centra orizzontalmente nel
+proprio contenitore, non solo a sinistra. È una regola di tutti i bottoni
+isolati del sito, non un'eccezione caso per caso: un `.btn-row` nuovo va
+verificato allo stesso modo, e se manca il pezzo mobile non è finito. La soglia non è un valore comune di «mobile»: è quella in cui
 *quel* contenitore smette di stare a fianco di un'altra colonna, perché
 centrare un gruppo mentre è ancora affiancato a un testo lo sposterebbe solo
 dentro la sua fetta stretta, senza leggersi come centrato. Il resto del

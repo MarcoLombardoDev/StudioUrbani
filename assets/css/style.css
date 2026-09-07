@@ -494,7 +494,10 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
    «Fatturazione elettronica», facendola apparire diversa da quella di
    «Dicono di noi» pur condividendo la stessa classe. */
 .billing-note p:not(.eyebrow) { font-size: .98rem; color: var(--ink-soft); max-width: 68ch; }
-@media (max-width: 820px) { .billing-note { grid-template-columns: 1fr; } }
+@media (max-width: 820px) {
+  .billing-note { grid-template-columns: 1fr; }
+  .billing-note .btn-row { justify-content: center; }
+}
 
 /* ---------- Dicono di noi (recensioni Google) ---------- */
 /* La card segue quella della fatturazione elettronica e le appartiene: i due
@@ -884,6 +887,10 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .prose table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.6rem; font-size: .93rem; }
 .prose th, .prose td { text-align: left; padding: .8rem .9rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
 .prose th { font-family: var(--font-display); font-weight: 500; color: var(--ink); background: var(--paper-2); }
+/* «Azzera le preferenze memorizzate»: stessa soglia usata per il bottone
+   isolato di «Ottieni indicazioni», un unico .btn dentro una colonna di sola
+   lettura, non affiancato ad altro. */
+@media (max-width: 700px) { .prose .btn-row { justify-content: center; } }
 .prose__wrap { overflow-x: auto; }
 .callout { background: var(--white); border: 1px solid var(--line-soft); border-left: 2px solid var(--brass); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin: 1.6rem 0; }
 .callout p { font-size: .95rem; margin-bottom: 0; }

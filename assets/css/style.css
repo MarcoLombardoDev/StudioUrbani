@@ -527,11 +527,6 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
    i bottoni hanno gia' una forma propria e una riga in piu' sarebbe rumore. */
 .reviews__side { display: grid; justify-items: stretch; gap: .6rem; }
 .reviews__side .btn { justify-content: space-between; }
-/* Il marchio Google e' l'unica icona a colori del sistema (le altre sono
-   tratto da 1.2px, mai riempimenti): qui identifica la destinazione del
-   rimando, non un'azione, quindi resta il logomark reale invece di un
-   segno geometrico coerente col resto. */
-.reviews__google-mark { width: 15px; height: 15px; flex: none; }
 /* Voto e stelle centrati fra loro sempre, non solo da mobile: sono l'unico
    dato del blocco, ha senso leggerli come una colonna unica. */
 .reviews__score { display: grid; justify-items: center; gap: .5rem; flex: none; margin: 0; }

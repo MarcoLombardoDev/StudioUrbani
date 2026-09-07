@@ -213,6 +213,19 @@ Nomi e ruoli dei professionisti sono stati forniti direttamente dallo Studio.
 Le sezioni *Fisco e normativa* e *Focus Lazio* del sito attuale, alimentate da feed
 RSS, non sono state riprodotte.
 
+## Cache di CSS e JavaScript / CSS and JS caching
+
+`style.css`, `i18n.js`, `main.js` e `reviews.js` sono referenziati con
+`?v=AAAAMMGG` in ogni pagina: senza quel parametro, un browser che li ha già
+scaricati può continuare a servirli dalla cache anche dopo un deploy,
+lasciando la pagina con l'HTML nuovo ma lo stile o il comportamento vecchio —
+esattamente il sintomo di «ho pubblicato ma non cambia nulla».
+
+**Quando si tocca `style.css` o uno dei quattro file JS in un modo che cambia
+il rendering o il comportamento, il numero di versione va aggiornato in tutte
+le pagine che lo referenziano** (oggi: `index.html` e i quattro file in
+`pages/`). Non serve per modifiche solo di contenuto (testo, immagini).
+
 ## Anteprima locale / Local preview
 
 Basta aprire `index.html` nel browser. Per un contesto più realistico (percorsi

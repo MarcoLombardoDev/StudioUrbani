@@ -11,6 +11,21 @@
         ],
         "createdAt": "2026-09-04T06:59:48.249Z",
         "reason": "user confirmed: il payoff del marchio a .6rem e' una scelta del committente, ribadita dopo la segnalazione"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-13T17:16:23.215Z",
+        "reason": "Inter is the project's established body typeface, paired with Jost for display — documented design decision from project start, not an AI-slop default"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "assets/css/style.css"
+        ],
+        "createdAt": "2026-09-13T17:16:28.180Z",
+        "reason": ".callout's 2px brass left border matches .quote's identical, pre-existing accent treatment (DESIGN.md's single-accent rule): thin brass rule, not the thick saturated side-tab pattern the check targets"
       }
     ]
   }

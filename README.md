@@ -113,18 +113,22 @@ hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
 ## Fotografie degli ambienti
 
 Sette scatti degli uffici (`assets/img/1.jpg`–`7.jpg`, JPEG 900×1200, rapporto
-3:4), nessun ritaglio (il rapporto della griglia è lo stesso del file):
+nativo 3:4):
 
-- «Chi siamo» (home): tre foto in riga (1, 2, 4 — componente `.gallery.gallery--3`).
-- «Come lavoriamo» (home): altre tre foto in riga sotto il pannello di
-  contatto (5, 6, 7), stesso componente.
-- Contatti: una foto sola (3) accanto alle quattro card, impilate a sinistra
-  (`.contact-layout`).
+- «Chi siamo» (home): tutto il testo (le due colonne originarie, impilate)
+  a sinistra; a destra un carosello di tre foto (1, 2, 4 — `.gallery--3`).
+- «Come lavoriamo» (home): stesso schema — testo e pannello di contatto
+  impilati a sinistra, carosello (5, 6, 7) a destra.
+- Contatti: una foto sola (3, non un carosello) accanto alle quattro card,
+  impilate a sinistra (`.contact-layout`).
 
-Sotto i 900px le due gallerie da tre foto della landing diventano un
-carosello a scorrimento nativo che avanza da solo, senza controlli a schermo
-(solo il dito): appena l'utente tocca per scorrere manualmente si ferma per
-sempre, come le altre interazioni manuali del sito. Vedi `assets/js/gallery.js`.
+`.gallery--3` è sempre un carosello (non solo da mobile): un fotogramma alla
+volta, a scorrimento nativo, senza controlli a schermo (solo il dito o il
+trackpad). Avanza da solo ogni 3,2s e si ferma per sempre al primo scorrimento
+manuale. Sopra i 900px riempie l'altezza della colonna di testo accanto
+(`object-fit: cover`, non il rapporto nativo — l'unica eccezione del sito);
+sotto i 900px, dove testo e carosello si impilano, torna al rapporto 3:4.
+Vedi `assets/js/gallery.js`.
 
 Dettagli su file, distribuzione e come aggiungerne altre in `assets/img/README.md`.
 

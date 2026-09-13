@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  var MOBILE = window.matchMedia("(max-width: 900px)");
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)");
   var INTERVAL_MS = 3200;
 
@@ -10,7 +9,7 @@
     var stoppedByUser = false;
 
     function canAuto() {
-      return !stoppedByUser && MOBILE.matches && !REDUCED.matches && !document.hidden;
+      return !stoppedByUser && !REDUCED.matches && !document.hidden;
     }
 
     function inView() {
@@ -43,7 +42,6 @@
     gallery.addEventListener("pointerdown", stopForever, { passive: true });
     gallery.addEventListener("touchstart", stopForever, { passive: true });
 
-    MOBILE.addEventListener("change", start);
     if (REDUCED.addEventListener) REDUCED.addEventListener("change", start);
     document.addEventListener("visibilitychange", start);
 

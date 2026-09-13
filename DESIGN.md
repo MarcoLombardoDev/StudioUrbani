@@ -482,36 +482,46 @@ Tre vincoli che non sono estetici e vanno rispettati:
 
 ### Photo gallery (signature)
 Le prime fotografie reali degli ambienti dello Studio (`assets/img/1.jpg` –
-`7.jpg`, tutte 900×1200, rapporto 3:4): niente ritaglio via `object-fit` — il
-rapporto della griglia e' lo stesso del file, l'intera inquadratura resta
-visibile. Filetto sottile e raggio grande, uguali a ogni altro riquadro del
-sito (sul fondo scuro di «Come lavoriamo» il filetto passa a bianco a bassa
-opacita', come quello del pannello); nessun trattamento fotografico speciale
-(niente grayscale: sono documentazione, non ritratti). Tre punti d'uso:
+`7.jpg`, tutte 900×1200, rapporto nativo 3:4). Filetto sottile e raggio
+grande, uguali a ogni altro riquadro del sito (sul fondo scuro di «Come
+lavoriamo» il filetto passa a bianco a bassa opacita', come quello del
+pannello); nessun trattamento fotografico speciale (niente grayscale: sono
+documentazione, non ritratti). Tre punti d'uso:
 
-- **«Chi siamo»**: tre foto in riga sotto le due colonne di testo
-  (`.gallery.gallery--3`: `1.jpg`, `2.jpg`, `4.jpg`).
-- **«Come lavoriamo»**: altre tre foto in riga sotto il pannello di contatto,
-  stesso componente (`5.jpg`, `6.jpg`, `7.jpg`) — la landing ha cosi' due
-  blocchi da tre foto, non uno.
-- **Contatti**: una foto sola (`3.jpg`) accanto alle quattro card di contatto,
-  impilate in un'unica colonna a sinistra (`.contact-layout`): la card e la
-  fotografia condividono la stessa altezza, non e' la fotografia a inseguire
-  quella delle card.
+- **«Chi siamo»**: tutto il testo (le due colonne originarie, impilate) nella
+  colonna di sinistra; il carosello (`1.jpg`, `2.jpg`, `4.jpg`) in quella di
+  destra, alto quanto il testo accanto.
+- **«Come lavoriamo»**: stesso schema — testo e pannello di contatto impilati
+  a sinistra, carosello (`5.jpg`, `6.jpg`, `7.jpg`) a destra.
+- **Contatti**: una foto sola (`3.jpg`, non un carosello: e' una sola
+  immagine) accanto alle quattro card, impilate in un'unica colonna a
+  sinistra (`.contact-layout`).
 
-Sotto i 900px una `.gallery--3` non impila le tre foto in colonna: diventa un
-carosello a scorrimento nativo (`overflow-x` + `scroll-snap`, un fotogramma
-alla volta) che avanza da solo ogni 3,2s, senza alcun controllo a schermo — a
-differenza del carosello delle recensioni non ha ne' frecce ne' indicatori ne'
-pausa visibili, l'unico modo di intervenire e' il gesto di scorrimento col
-dito, che lo ferma per sempre (`assets/js/gallery.js`). Si sospende comunque
-da se' con `prefers-reduced-motion`, a scheda nascosta e fuori schermo, per
-coerenza con l'altro carosello del sito, anche se qui — senza testo da
-leggere e senza un comando visibile da poter "riprendere" — l'assenza totale
-di controlli e' la scelta giusta, non un'eccezione al requisito WCAG 2.2.2
-del carosello delle recensioni (quel criterio riguarda contenuto che si
-aggiorna automaticamente smettendo di essere leggibile; qui sono solo
-fotografie, equivalenti fra loro).
+Un primo tentativo mostrava le tre foto in riga, a piena larghezza, sotto le
+due colonne di testo: un'altezza intera in piu' rispetto al testo, che
+allungava la sezione oltre il necessario. Affiancarle al testo invece che
+impilarle sotto tiene l'altezza della sezione a quella del testo o del
+carosello, non alla somma dei due — per questo, sopra i 900px, `.gallery--3`
+riempie **l'altezza della colonna** (`object-fit: cover`, non un rapporto
+fisso): e' l'unico posto del sito dove una fotografia non mantiene il proprio
+rapporto nativo, scelta deliberata per non lasciare vuoto o sfondare la
+colonna. Sotto i 900px, dove testo e carosello si impilano (stesso punto in
+cui collassano `.about`/`.billing`), il carosello torna al rapporto 3:4:
+non ha piu' un'altezza di colonna da inseguire.
+
+`.gallery--3` e' sempre un carosello, non solo da mobile: un fotogramma alla
+volta, a scorrimento nativo (`overflow-x` + `scroll-snap`), senza alcun
+controllo a schermo — a differenza del carosello delle recensioni non ha ne'
+frecce ne' indicatori ne' pausa visibili. Avanza da solo ogni 3,2s; l'unico
+modo di intervenire e' il gesto di scorrimento (dito su schermo touch,
+trackpad o rotellina su desktop), che lo ferma per sempre (`assets/js/
+gallery.js`). Si sospende da se' con `prefers-reduced-motion`, a scheda
+nascosta e fuori schermo, per coerenza con l'altro carosello del sito, anche
+se qui — senza testo da leggere e senza un comando visibile da poter
+"riprendere" — l'assenza totale di controlli e' la scelta giusta, non
+un'eccezione al requisito WCAG 2.2.2 del carosello delle recensioni (quel
+criterio riguarda contenuto che si aggiorna automaticamente smettendo di
+essere leggibile; qui sono solo fotografie, equivalenti fra loro).
 
 L'alt passa da `data-i18n-alt`, non da un attributo statico: e' la prima volta
 che il sito descrive un contenuto informativo dentro un `alt`, quindi va

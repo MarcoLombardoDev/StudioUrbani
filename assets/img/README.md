@@ -34,17 +34,22 @@ riposo e colore in hover sono già gestiti dal CSS.
 corridoio, sale riunioni, postazioni), tutti JPEG 900×1200 (rapporto 3:4).
 Distribuiti così:
 
-- **Home, sezione «Chi siamo»** (`.gallery.gallery--3`): `1.jpg`, `2.jpg`, `4.jpg`.
-- **Home, sezione «Come lavoriamo»** (`.gallery.gallery--3`, fondo scuro): `5.jpg`, `6.jpg`, `7.jpg`.
-- **Contatti** (`.contact-layout__photo`, accanto alle quattro card impilate a sinistra): `3.jpg`.
+- **Home, sezione «Chi siamo»** (`.gallery--3`, colonna di destra; il testo,
+  impilato, occupa quella di sinistra): `1.jpg`, `2.jpg`, `4.jpg`.
+- **Home, sezione «Come lavoriamo»** (`.gallery--3`, fondo scuro, colonna di
+  destra; testo e pannello di contatto impilati a sinistra): `5.jpg`, `6.jpg`, `7.jpg`.
+- **Contatti** (`.contact-layout__photo`, foto sola, accanto alle quattro
+  card impilate a sinistra): `3.jpg`.
 
-Il componente `.gallery` (in `style.css`) mantiene il rapporto 3:4 nativo —
-nessun ritaglio. Sotto i 900px una `.gallery--3` non impila le tre foto: diventa
-un carosello a scorrimento nativo che avanza da solo e si ferma per sempre al
-primo tocco manuale (`assets/js/gallery.js`, solo su `index.html`). Aggiungerne
-una nuova: un altro `<img>` dentro il contenitore, stessa larghezza/altezza
-native in attributo per evitare CLS. L'alt testo passa da `data-i18n-alt`
-(tradotto in `assets/js/i18n.js`), non da un attributo statico.
+`.gallery--3` è sempre un carosello (un fotogramma alla volta, scorrimento
+nativo, nessun controllo a schermo), non solo da mobile: sopra i 900px
+riempie l'altezza della colonna di testo accanto (`object-fit: cover`);
+sotto, dove testo e carosello si impilano, torna al rapporto 3:4 nativo.
+Avanza da solo e si ferma per sempre al primo scorrimento manuale
+(`assets/js/gallery.js`, solo su `index.html`). Aggiungerne una nuova: un
+altro `<img>` dentro il contenitore, stessa larghezza/altezza native in
+attributo per evitare CLS. L'alt testo passa da `data-i18n-alt` (tradotto in
+`assets/js/i18n.js`), non da un attributo statico.
 
 ## Sottocartelle / Subfolders
 

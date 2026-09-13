@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T18:57:04.000Z",
+  "generatedAt": "2026-09-13T19:11:32.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -369,10 +369,10 @@
       "name": "Photo Gallery",
       "kind": "custom",
       "refersTo": "card",
-      "description": "Riga di fotografie reali degli ambienti, rapporto 3:4 nativo; sotto i 900px diventa un carosello a scorrimento nativo senza controlli a schermo.",
-      "html": "<div class=\"ds-gallery ds-gallery-3\"><img src=\"1.jpg\" alt=\"\"><img src=\"2.jpg\" alt=\"\"><img src=\"3.jpg\" alt=\"\"></div>",
-      "css": ".ds-gallery { display: grid; gap: clamp(16px,2.2vw,28px); margin-top: clamp(32px,4vw,56px); } .ds-gallery img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg, 10px); border: 1px solid rgba(16,20,28,.08); } .ds-gallery-3 { grid-template-columns: repeat(3, minmax(0,1fr)); } @media (max-width: 900px) { .ds-gallery-3 { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; } }",
-      "notes": "Due gallerie da tre foto sulla landing (Chi siamo, Come lavoriamo) e una foto sola accanto alle card di Contatti. Sotto i 900px una .gallery--3 usa overflow-x + scroll-snap e avanza da sola ogni 3,2s (assets/js/gallery.js): nessuna freccia, indicatore o pausa visibile, solo il gesto col dito, che la ferma per sempre. Sul fondo scuro di «Come lavoriamo» il filetto delle foto passa a bianco a bassa opacita'."
+      "description": "Testo impilato in una colonna, carosello a tre foto nell'altra: sopra i 900px il carosello riempie l'altezza della colonna (object-fit: cover), sotto torna al rapporto 3:4 nativo e le due colonne si impilano.",
+      "html": "<div class=\"ds-two-col\"><div class=\"ds-content\">testo…</div><div class=\"ds-gallery ds-gallery-3\"><img src=\"1.jpg\" alt=\"\"><img src=\"2.jpg\" alt=\"\"><img src=\"3.jpg\" alt=\"\"></div></div>",
+      "css": ".ds-two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.5fr); gap: clamp(36px,6vw,80px); align-items: stretch; } @media (max-width: 900px) { .ds-two-col { grid-template-columns: 1fr; } } .ds-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; } .ds-gallery img { flex: 0 0 100%; scroll-snap-align: start; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg, 10px); border: 1px solid rgba(16,20,28,.08); } @media (max-width: 900px) { .ds-gallery img { height: auto; aspect-ratio: 3/4; } }",
+      "notes": "Un fotogramma alla volta, sempre (non solo da mobile): a scorrimento nativo (scroll-snap), avanza da solo ogni 3,2s, senza alcun controllo a schermo (ne' frecce ne' indicatori ne' pausa) — solo il gesto di scorrimento, che lo ferma per sempre (assets/js/gallery.js). Si sospende da se' con prefers-reduced-motion, a scheda nascosta e fuori schermo. Il primo tentativo mostrava le tre foto in riga sotto il testo: un'altezza intera in piu', non affiancata. Sul fondo scuro di «Come lavoriamo» il filetto delle foto passa a bianco a bassa opacita'."
     }
   ],
   "narrative": {

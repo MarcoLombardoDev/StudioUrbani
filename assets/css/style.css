@@ -689,8 +689,14 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 @media (max-width: 480px) { .strip__inner { grid-template-columns: 1fr; } .strip__item { border-left: 0; border-top: 1px solid var(--line-soft); } .strip__item:first-child { border-top: 0; } }
 
 /* ---------- Chi siamo ---------- */
-.about { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
+/* Tutto il testo nella colonna di sinistra, la galleria (carosello) in quella
+   di destra: prima le due colonne erano di solo testo e le tre foto stavano
+   in una riga a parte sotto, alte quanto un'immagine intera in piu' rispetto
+   al testo. Cosi' l'altezza della sezione e' quella del testo o della
+   galleria, non la somma delle due. */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .5fr); gap: clamp(36px, 6vw, 80px); align-items: stretch; }
 @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+.about__content { display: grid; gap: clamp(32px, 4vw, 56px); }
 .about__body > p + p { margin-top: 0; }
 .about__list { list-style: none; display: grid; gap: 1rem; margin-top: 2rem; }
 .about__list li { display: flex; gap: .85rem; align-items: flex-start; font-size: .98rem; color: var(--ink-soft); }
@@ -709,30 +715,33 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .quote footer { margin-top: .9rem; font-family: var(--font-body); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
 /* ---------- Fotografie dello studio ---------- */
-/* Le tre foto di «Chi siamo» e «Come lavoriamo». Rapporto 3:4, identico
-   all'originale 900x1200: object-fit: cover non ritaglia nulla, serve solo da
-   rete di sicurezza se in futuro arrivasse un file con proporzioni diverse. */
-.gallery { display: grid; gap: clamp(16px, 2.2vw, 28px); margin-top: clamp(32px, 4vw, 56px); }
-.gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line-soft); }
-.gallery--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* Le tre foto di «Chi siamo» e «Come lavoriamo», nella colonna accanto al
+   testo: su desktop alte quanto il testo (object-fit: cover su tutta
+   l'altezza della colonna, come la fotografia di Contatti), non un rapporto
+   fisso che le farebbe piu' alte o piu' basse del contenuto accanto.
+
+   Un fotogramma alla volta, sempre — non solo da mobile: tre foto affiancate
+   nella loro colonna avrebbero letto strette, e messe una sopra l'altra
+   avrebbero reso la colonna piu' alta del testo accanto. E' un carosello a
+   scorrimento nativo (scroll-snap) senza alcun controllo a schermo — solo il
+   dito o il trackpad; l'avanzamento automatico e la sospensione al primo
+   tocco manuale sono gestiti da assets/js/gallery.js. */
+.gallery--3 {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gallery--3::-webkit-scrollbar { display: none; }
+.gallery--3 img { flex: 0 0 100%; scroll-snap-align: start; width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line-soft); }
 /* Il filetto chiaro sparisce sul fondo scuro di «Come lavoriamo»: qui prende
    lo stesso trattamento del bordo del pannello (bianco a bassa opacita'). */
-.section--dark .gallery img { border-color: rgba(255, 255, 255, .14); }
-
-/* Sotto i 900px tre foto affiancate leggono strette: diventano un carosello a
-   scorrimento nativo (scroll-snap, un fotogramma alla volta), senza controlli
-   a schermo — solo il dito. L'avanzamento automatico e la sospensione al
-   tocco sono gestiti da assets/js/gallery.js. */
+.section--dark .gallery--3 img { border-color: rgba(255, 255, 255, .14); }
+/* Impilata (sotto i 900px, come .about/.billing) non ha piu' un'altezza di
+   colonna da inseguire: torna al rapporto nativo 3:4. */
 @media (max-width: 900px) {
-  .gallery--3 {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .gallery--3::-webkit-scrollbar { display: none; }
-  .gallery--3 img { flex: 0 0 100%; scroll-snap-align: start; }
+  .gallery--3 img { height: auto; min-height: 0; aspect-ratio: 3 / 4; }
 }
 
 /* ---------- Team ---------- */
@@ -844,9 +853,13 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .service li { position: relative; padding-left: 1.05rem; font-size: .945rem; color: var(--ink-soft); line-height: 1.55; }
 .service li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass); }
 
-/* ---------- Fatturazione ---------- */
-.billing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr); gap: clamp(36px, 6vw, 76px); align-items: center; }
+/* ---------- Come lavoriamo ---------- */
+/* Stesso principio di .about: tutto il contenuto (testo e pannello di
+   contatto) nella colonna di sinistra, la galleria/carosello in quella di
+   destra, cosi' le tre foto non aggiungono un'altezza intera in piu'. */
+.billing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .5fr); gap: clamp(36px, 6vw, 76px); align-items: stretch; }
 @media (max-width: 900px) { .billing { grid-template-columns: 1fr; } }
+.billing__content { display: grid; gap: clamp(36px, 6vw, 76px); }
 .steps { list-style: none; counter-reset: s; display: grid; gap: 1.5rem; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 1.1rem; }
 .steps li::before {

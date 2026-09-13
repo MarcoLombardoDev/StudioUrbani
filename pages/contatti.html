@@ -40,7 +40,7 @@
 <link rel="preload" href="../assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="../assets/css/style.css?v=20260907j">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260907l">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Vai al contenuto</a>
@@ -89,49 +89,78 @@
     <div class="wrap">
       <div class="contact-layout">
         <div class="contact-grid">
-          <article class="contact-card reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
-            <h2 data-i18n="contatti.addr.t">Sede</h2>
-            <ul>
-              <li>Via Cristoforo Colombo 348</li>
-              <li>Sc. D int. 3</li>
-              <li>00145 Roma (RM)</li>
-            </ul>
-            <a class="btn btn--ghost btn--sm mt-3" href="https://www.google.com/maps/dir/?api=1&destination=Via+Cristoforo+Colombo+348,+00145+Roma" target="_blank" rel="noopener noreferrer">
-              <span data-i18n="contatti.addr.cta">Ottieni indicazioni</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
-          <article class="contact-card reveal" data-delay="1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2.2"/></svg>
-            <h2 data-i18n="contatti.hours.t">Orari</h2>
-            <ul>
-              <li><span class="label" data-i18n="contatti.hours.l1">Lunedì - Venerdì</span>09:00 - 13:00</li>
-              <li>14:00 - 18:00</li>
-              <li><span class="label" data-i18n="contatti.hours.l2">Sabato e domenica</span><span data-i18n="contatti.hours.closed">Chiuso</span></li>
-            </ul>
-          </article>
+          <div class="contact-grid__pair">
+            <article class="contact-card reveal">
+              <div class="contact-card__head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2.2"/></svg>
+                <h2 data-i18n="contatti.hours.t">Orari</h2>
+              </div>
+              <ul>
+                <li><span class="label" data-i18n="contatti.hours.l1">Lunedì - Venerdì</span>09:00 - 13:00</li>
+                <li>14:00 - 18:00</li>
+                <li><span class="label" data-i18n="contatti.hours.l2">Sabato e domenica</span><span data-i18n="contatti.hours.closed">Chiuso</span></li>
+              </ul>
+            </article>
+            <article class="contact-card reveal" data-delay="1">
+              <div class="contact-card__head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
+                <h2 data-i18n="contatti.tel.t">Telefono e fax</h2>
+              </div>
+              <ul>
+                <li><a href="tel:+39065123225">(+39) 06 5123225</a></li>
+                <li><a href="tel:+39065123619">(+39) 06 5123619</a></li>
+                <li><a href="tel:+39065127516">(+39) 06 5127516</a></li>
+              </ul>
+              <p data-i18n="contatti.tel.whatsapp">Vuoi contattarci sulla nuova app Whatsapp Business? Registra il numero telefonico (+39) 06 5123225 sulla tua rubrica e scrivici, saremo lieti di rispondere alle tue domande.</p>
+            </article>
+          </div>
+
           <article class="contact-card reveal" data-delay="2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a11 11 0 006.1 6.1l1.4-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg>
-            <h2 data-i18n="contatti.tel.t">Telefono e fax</h2>
-            <ul>
-              <li><a href="tel:+39065123225">(+39) 06 5123225</a></li>
-              <li><a href="tel:+39065123619">(+39) 06 5123619</a></li>
-              <li><a href="tel:+39065127516">(+39) 06 5127516</a></li>
-            </ul>
-          </article>
-          <article class="contact-card reveal" data-delay="3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
-            <h2 data-i18n="contatti.mail.t">Email</h2>
+            <div class="contact-card__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.8 6.7L12 13l8.2-6.3"/></svg>
+              <h2 data-i18n="contatti.mail.t">Email</h2>
+            </div>
             <ul>
               <li><span class="label" data-i18n="contatti.mail.l1">Comunicazioni generiche</span><a href="mailto:info@studiourbani.it">info@studiourbani.it</a></li>
               <li><span class="label" data-i18n="contatti.mail.l2">Comunicazioni amministrative</span><a href="mailto:amministrazione@studiourbani.it">amministrazione@studiourbani.it</a></li>
               <li><span class="label" data-i18n="contatti.mail.l3">Comunicazioni inerenti la privacy</span><a href="mailto:privacy@studiourbani.it">privacy@studiourbani.it</a></li>
             </ul>
           </article>
+
+          <article class="contact-card reveal" data-delay="3">
+            <div class="contact-card__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4"/></svg>
+              <h2 data-i18n="contatti.apply.t">Candidatura spontanea</h2>
+            </div>
+            <p data-i18n="contatti.apply.d">Sei un professionista e vuoi collaborare con noi? Inviaci il tuo Curriculum Vitae e una breve presentazione alla mail <a href="mailto:cv@studiourbani.it">cv@studiourbani.it</a>. Il nostro team esaminerà la tua proposta e ti contatterà qualora si presentino opportunità in linea con il tuo profilo.</p>
+          </article>
+
+          <article class="contact-card reveal" data-delay="4">
+            <div class="contact-card__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <h2 data-i18n="contatti.addr.t">Sede</h2>
+            </div>
+            <ul>
+              <li>Via Cristoforo Colombo 348</li>
+              <li>Sc. D int. 3</li>
+              <li>00145 Roma (RM)</li>
+            </ul>
+            <p data-i18n="contatti.addr.transitIntro">La sede è facilmente raggiungibile sia dal centro della città che dalla periferia (zona ex Fiera di Roma), inoltre è ben servita dai mezzi pubblici:</p>
+            <ul>
+              <li data-i18n="contatti.addr.transit1">Linea ATAC nr. 714 dir. Termini, fermata Colombo-Georgofili</li>
+              <li data-i18n="contatti.addr.transit2">Linea ATAC nr. 714 dir. Nervi/Palazzo Sport, fermata Colombo Guarnieri Carducci</li>
+              <li data-i18n="contatti.addr.transit3">Metro B fermata San Paolo o Garbatella</li>
+            </ul>
+            <a class="btn btn--ghost btn--sm mt-3" href="https://www.google.com/maps/dir/?api=1&destination=Via+Cristoforo+Colombo+348,+00145+Roma" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="contatti.addr.cta">Ottieni indicazioni</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
         </div>
 
-        <img class="contact-layout__photo" src="../assets/img/3.jpg" alt="Le targhe dello Studio Urbani sulla porta d'ingresso" data-i18n-alt="contatti.photo1" width="900" height="1200" loading="lazy" decoding="async">
+        <div class="contact-layout__photo">
+          <img src="../assets/img/7.jpg" alt="Una postazione di lavoro dello Studio Urbani" data-i18n-alt="contatti.photo1" width="900" height="1200" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </section>
@@ -217,7 +246,7 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
-<script src="../assets/js/i18n.js?v=20260907c"></script>
+<script src="../assets/js/i18n.js?v=20260907e"></script>
 <script src="../assets/js/main.js?v=20260907"></script>
 </body>
 </html>

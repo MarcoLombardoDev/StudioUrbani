@@ -37,9 +37,9 @@ Distribuiti così:
 - **Home, sezione «Chi siamo»** (`.gallery--3`, colonna di destra; il testo,
   impilato, occupa quella di sinistra): `1.jpg`, `2.jpg`, `4.jpg`.
 - **Home, sezione «Come lavoriamo»** (`.gallery--3`, fondo scuro, colonna di
-  destra; testo e pannello di contatto impilati a sinistra): `5.jpg`, `6.jpg`, `7.jpg`.
-- **Contatti** (`.contact-layout__photo`, foto sola, accanto alle quattro
-  card impilate a sinistra): `3.jpg`.
+  destra; testo e pannello di contatto impilati a sinistra): `5.jpg`, `6.jpg`, `3.jpg`.
+- **Contatti** (`.contact-layout__photo`, foto sola, accanto alle cinque
+  card impilate a sinistra): `7.jpg`.
 
 `.gallery--3` è sempre un carosello (un fotogramma alla volta, scorrimento
 nativo, nessun controllo a schermo), non solo da mobile: sopra i 900px

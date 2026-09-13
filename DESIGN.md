@@ -250,7 +250,9 @@ titoli e nelle etichette.
 ### Named Rules
 **La regola del peso leggero.** Nessun titolo supera il peso 500. In un sistema
 geometrico il grassetto legge come pesantezza, non come importanza: la gerarchia
-si fa con la dimensione e con l'aria.
+si fa con la dimensione e con l'aria. Unica eccezione dichiarata: i titoli
+delle card di Contatti (`.contact-card__head h2`, peso 700), richiesti
+esplicitamente per leggersi accanto alla rispettiva icona.
 
 **La regola dell'etichetta.** Ogni sezione si apre con la stessa tripletta —
 etichetta in maiuscoletto d'ottone preceduta da un filetto di 28px, titolo,
@@ -492,9 +494,9 @@ documentazione, non ritratti). Tre punti d'uso:
   colonna di sinistra; il carosello (`1.jpg`, `2.jpg`, `4.jpg`) in quella di
   destra, alto quanto il testo accanto.
 - **«Come lavoriamo»**: stesso schema — testo e pannello di contatto impilati
-  a sinistra, carosello (`5.jpg`, `6.jpg`, `7.jpg`) a destra.
-- **Contatti**: una foto sola (`3.jpg`, non un carosello: e' una sola
-  immagine) accanto alle quattro card, impilate in un'unica colonna a
+  a sinistra, carosello (`5.jpg`, `6.jpg`, `3.jpg`) a destra.
+- **Contatti**: una foto sola (`7.jpg`, non un carosello: e' una sola
+  immagine) accanto alle cinque card, impilate in un'unica colonna a
   sinistra (`.contact-layout`).
 
 Un primo tentativo mostrava le tre foto in riga, a piena larghezza, sotto le

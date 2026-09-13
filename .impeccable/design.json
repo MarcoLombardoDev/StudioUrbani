@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T19:11:32.000Z",
+  "generatedAt": "2026-09-13T20:01:21.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -373,6 +373,15 @@
       "html": "<div class=\"ds-two-col\"><div class=\"ds-content\">testo…</div><div class=\"ds-gallery ds-gallery-3\"><img src=\"1.jpg\" alt=\"\"><img src=\"2.jpg\" alt=\"\"><img src=\"3.jpg\" alt=\"\"></div></div>",
       "css": ".ds-two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.5fr); gap: clamp(36px,6vw,80px); align-items: stretch; } @media (max-width: 900px) { .ds-two-col { grid-template-columns: 1fr; } } .ds-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; } .ds-gallery img { flex: 0 0 100%; scroll-snap-align: start; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg, 10px); border: 1px solid rgba(16,20,28,.08); } @media (max-width: 900px) { .ds-gallery img { height: auto; aspect-ratio: 3/4; } }",
       "notes": "Un fotogramma alla volta, sempre (non solo da mobile): a scorrimento nativo (scroll-snap), avanza da solo ogni 3,2s, senza alcun controllo a schermo (ne' frecce ne' indicatori ne' pausa) — solo il gesto di scorrimento, che lo ferma per sempre (assets/js/gallery.js). Si sospende da se' con prefers-reduced-motion, a scheda nascosta e fuori schermo. Il primo tentativo mostrava le tre foto in riga sotto il testo: un'altezza intera in piu', non affiancata. Sul fondo scuro di «Come lavoriamo» il filetto delle foto passa a bianco a bassa opacita'."
+    },
+    {
+      "name": "Contact Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card di contatto: icona e titolo in grassetto affiancati (unica eccezione alla regola del peso leggero), poi lista e/o paragrafo.",
+      "html": "<article class=\"ds-contact\"><div class=\"ds-contact-head\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.2V12l3.2 2.2\"/></svg><h2>Orari</h2></div><ul><li>Lunedì - Venerdì 09:00-13:00</li></ul><p>Testo supplementare, piu' piccolo e in inchiostro tenue.</p></article>",
+      "css": ".ds-contact { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(22px,2.6vw,30px); } .ds-contact-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; } .ds-contact-head svg { width: 22px; height: 22px; color: var(--brass, #b3915f); flex: none; } .ds-contact-head h2 { margin: 0; font-family: Jost, sans-serif; font-size: 1.12rem; font-weight: 700; color: var(--ink, #10141c); } .ds-contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; } .ds-contact p { font-family: Inter, sans-serif; font-size: .95rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-contact ul + p, .ds-contact p + ul { margin-top: 1rem; }",
+      "notes": "Icona e titolo in grassetto affiancati: unica eccezione dichiarata alla regola del peso leggero (nessun altro titolo del sito supera il peso 500), richiesta esplicitamente per queste card. Due card corte (Orari, Telefono) affiancate in una riga (flex, non grid); le altre (Email, Candidatura spontanea, Sede), piu' lunghe, impilate a piena larghezza sotto in un semplice stack verticale."
     }
   ],
   "narrative": {

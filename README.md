@@ -118,8 +118,8 @@ nativo 3:4):
 - «Chi siamo» (home): tutto il testo (le due colonne originarie, impilate)
   a sinistra; a destra un carosello di tre foto (1, 2, 4 — `.gallery--3`).
 - «Come lavoriamo» (home): stesso schema — testo e pannello di contatto
-  impilati a sinistra, carosello (5, 6, 7) a destra.
-- Contatti: una foto sola (3, non un carosello) accanto alle quattro card,
+  impilati a sinistra, carosello (5, 6, 3) a destra.
+- Contatti: una foto sola (7, non un carosello) accanto alle cinque card,
   impilate a sinistra (`.contact-layout`).
 
 `.gallery--3` è sempre un carosello (non solo da mobile): un fotogramma alla
@@ -131,6 +131,23 @@ sotto i 900px, dove testo e carosello si impilano, torna al rapporto 3:4.
 Vedi `assets/js/gallery.js`.
 
 Dettagli su file, distribuzione e come aggiungerne altre in `assets/img/README.md`.
+
+## Pagina Contatti
+
+Cinque card: Orari e Telefono affiancate in cima, poi Email, Candidatura
+spontanea e Sede impilate a piena larghezza (`.contact-grid`, un flex a
+colonna con una riga interna `.contact-grid__pair` per le prime due — non una
+griglia: una `.contact-grid` a griglia con alcune card a piena larghezza
+tramite `grid-column` calcolava, con card di lunghezza molto diversa fra
+loro, un'altezza totale più corta di quella reale dei contenuti). Icona e
+titolo in grassetto affiancati in ogni card (`.contact-card__head`, unica
+eccezione dichiarata alla regola del peso leggero di DESIGN.md).
+
+Contenuti aggiunti oltre ai dati di base: nella card «Telefono e fax», un
+invito a scrivere su WhatsApp Business salvando il numero principale;
+«Candidatura spontanea» raccoglie i CV a `cv@studiourbani.it`; nella card
+«Sede», sotto l'indirizzo, le linee di mezzi pubblici che servono la zona,
+poi il bottone «Ottieni indicazioni».
 
 ## Recensioni Google / Google reviews
 

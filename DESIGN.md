@@ -485,21 +485,33 @@ Le prime fotografie reali degli ambienti dello Studio (`assets/img/1.jpg` –
 `7.jpg`, tutte 900×1200, rapporto 3:4): niente ritaglio via `object-fit` — il
 rapporto della griglia e' lo stesso del file, l'intera inquadratura resta
 visibile. Filetto sottile e raggio grande, uguali a ogni altro riquadro del
-sito, nessun trattamento fotografico speciale (niente grayscale: sono
-documentazione, non ritratti). Tre punti d'uso, stesso componente:
+sito (sul fondo scuro di «Come lavoriamo» il filetto passa a bianco a bassa
+opacita', come quello del pannello); nessun trattamento fotografico speciale
+(niente grayscale: sono documentazione, non ritratti). Tre punti d'uso:
 
 - **«Chi siamo»**: tre foto in riga sotto le due colonne di testo
-  (`.gallery.gallery--3`), una colonna sola sotto i 900px — lo stesso punto in
-  cui collassa `.about` appena sopra.
-- **Contatti**: due foto affiancate appena sotto il titolo di pagina
-  (`.gallery.gallery--2`), una sola colonna sotto i 700px, come `.contact-grid`
-  subito dopo. Le due sezioni sono una coppia visiva (la galleria azzera il
-  riempimento inferiore, la griglia quello superiore), lo stesso
-  accorgimento della coppia fatturazione/recensioni.
-- **«Come lavoriamo»**: una foto sola in cima al pannello scuro di contatto
-  (`.panel__photo`), tagliata invece a 16:10 (l'unica eccezione al rapporto
-  nativo: dentro un pannello stretto una verticale intera avrebbe schiacciato
-  tutto il resto del contenuto sotto la piega).
+  (`.gallery.gallery--3`: `1.jpg`, `2.jpg`, `4.jpg`).
+- **«Come lavoriamo»**: altre tre foto in riga sotto il pannello di contatto,
+  stesso componente (`5.jpg`, `6.jpg`, `7.jpg`) — la landing ha cosi' due
+  blocchi da tre foto, non uno.
+- **Contatti**: una foto sola (`3.jpg`) accanto alle quattro card di contatto,
+  impilate in un'unica colonna a sinistra (`.contact-layout`): la card e la
+  fotografia condividono la stessa altezza, non e' la fotografia a inseguire
+  quella delle card.
+
+Sotto i 900px una `.gallery--3` non impila le tre foto in colonna: diventa un
+carosello a scorrimento nativo (`overflow-x` + `scroll-snap`, un fotogramma
+alla volta) che avanza da solo ogni 3,2s, senza alcun controllo a schermo — a
+differenza del carosello delle recensioni non ha ne' frecce ne' indicatori ne'
+pausa visibili, l'unico modo di intervenire e' il gesto di scorrimento col
+dito, che lo ferma per sempre (`assets/js/gallery.js`). Si sospende comunque
+da se' con `prefers-reduced-motion`, a scheda nascosta e fuori schermo, per
+coerenza con l'altro carosello del sito, anche se qui — senza testo da
+leggere e senza un comando visibile da poter "riprendere" — l'assenza totale
+di controlli e' la scelta giusta, non un'eccezione al requisito WCAG 2.2.2
+del carosello delle recensioni (quel criterio riguarda contenuto che si
+aggiorna automaticamente smettendo di essere leggibile; qui sono solo
+fotografie, equivalenti fra loro).
 
 L'alt passa da `data-i18n-alt`, non da un attributo statico: e' la prima volta
 che il sito descrive un contenuto informativo dentro un `alt`, quindi va

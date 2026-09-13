@@ -62,9 +62,9 @@
     'about.li3': "<strong>Support in litigation:</strong> tax appeals, self-review requests and dealings with the tax authorities.",
     'about.quote': "«To meet our clients' expectations and to make the relationship between the tax authorities and the taxpayer easier.»",
     'about.quoteRole': "Managing partner",
-    'about.photo1': "Waiting area at the Studio Urbani offices",
-    'about.photo2': "Corridor and archive at the Studio Urbani offices",
-    'about.photo3': "One of the meeting rooms at the Studio Urbani offices",
+    'about.photo1': "The office entrance, with the «Studio Urbani» doormat",
+    'about.photo2': "Waiting area at the Studio Urbani offices",
+    'about.photo3': "Corridor and archive at the Studio Urbani offices",
 
     /* --- servizi --- */
     'services.eyebrow': "What we do",
@@ -145,7 +145,9 @@
     'rel.panel.l1': "Monday to Friday, 9am-1pm and 2pm-6pm",
     'rel.panel.l2': "Via Cristoforo Colombo 348, Sc. D int. 3 — Rome",
     'rel.panel.l3': "Meeting at the office or by video call",
-    'rel.panel.photo': "A workstation at the Studio Urbani offices",
+    'rel.photo1': "One of the meeting rooms at the Studio Urbani offices",
+    'rel.photo2': "Another meeting room at the Studio Urbani offices",
+    'rel.photo3': "A workstation at the Studio Urbani offices",
 
     /* --- dicono di noi --- */
     'reviews.eyebrow': "What they say",
@@ -197,7 +199,6 @@
     'contatti.addr.t': "Office",
     'contatti.addr.cta': "Get directions",
     'contatti.photo1': "The Studio Urbani nameplates on the office door",
-    'contatti.photo2': "The office entrance, with the «Studio Urbani» doormat",
     'contatti.tel.t': "Phone and fax",
     'contatti.mail.t': "Email",
     'contatti.mail.l1': "General enquiries",

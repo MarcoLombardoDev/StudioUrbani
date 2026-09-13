@@ -113,13 +113,18 @@ hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
 ## Fotografie degli ambienti
 
 Sette scatti degli uffici (`assets/img/1.jpg`–`7.jpg`, JPEG 900×1200, rapporto
-3:4) distribuiti in tre gallerie (componente `.gallery` in `style.css`, nessun
-ritaglio: il rapporto della griglia è lo stesso del file):
+3:4), nessun ritaglio (il rapporto della griglia è lo stesso del file):
 
-- «Chi siamo» (home): tre foto in riga, una colonna sotto i 900px.
-- «Come lavoriamo» (home): una foto in cima al pannello di contatto, tagliata
-  a 16:10 — l'unica eccezione, per non schiacciare il resto del pannello.
-- Contatti: due foto affiancate sotto il titolo, una colonna sotto i 700px.
+- «Chi siamo» (home): tre foto in riga (1, 2, 4 — componente `.gallery.gallery--3`).
+- «Come lavoriamo» (home): altre tre foto in riga sotto il pannello di
+  contatto (5, 6, 7), stesso componente.
+- Contatti: una foto sola (3) accanto alle quattro card, impilate a sinistra
+  (`.contact-layout`).
+
+Sotto i 900px le due gallerie da tre foto della landing diventano un
+carosello a scorrimento nativo che avanza da solo, senza controlli a schermo
+(solo il dito): appena l'utente tocca per scorrere manualmente si ferma per
+sempre, come le altre interazioni manuali del sito. Vedi `assets/js/gallery.js`.
 
 Dettagli su file, distribuzione e come aggiungerne altre in `assets/img/README.md`.
 
@@ -229,16 +234,17 @@ RSS, non sono state riprodotte.
 
 ## Cache di CSS e JavaScript / CSS and JS caching
 
-`style.css`, `i18n.js`, `main.js` e `reviews.js` sono referenziati con
-`?v=AAAAMMGG` in ogni pagina: senza quel parametro, un browser che li ha già
-scaricati può continuare a servirli dalla cache anche dopo un deploy,
-lasciando la pagina con l'HTML nuovo ma lo stile o il comportamento vecchio —
-esattamente il sintomo di «ho pubblicato ma non cambia nulla».
+`style.css`, `i18n.js`, `main.js`, `reviews.js` e `gallery.js` sono referenziati
+con `?v=AAAAMMGG` in ogni pagina che li usa: senza quel parametro, un browser
+che li ha già scaricati può continuare a servirli dalla cache anche dopo un
+deploy, lasciando la pagina con l'HTML nuovo ma lo stile o il comportamento
+vecchio — esattamente il sintomo di «ho pubblicato ma non cambia nulla».
 
-**Quando si tocca `style.css` o uno dei quattro file JS in un modo che cambia
+**Quando si tocca `style.css` o uno dei cinque file JS in un modo che cambia
 il rendering o il comportamento, il numero di versione va aggiornato in tutte
 le pagine che lo referenziano** (oggi: `index.html` e i quattro file in
-`pages/`). Non serve per modifiche solo di contenuto (testo, immagini).
+`pages/`; `gallery.js` è usato solo da `index.html`). Non serve per modifiche
+solo di contenuto (testo, immagini).
 
 ## Anteprima locale / Local preview
 

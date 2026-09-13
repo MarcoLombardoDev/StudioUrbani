@@ -34,16 +34,17 @@ riposo e colore in hover sono già gestiti dal CSS.
 corridoio, sale riunioni, postazioni), tutti JPEG 900×1200 (rapporto 3:4).
 Distribuiti così:
 
-- **Home, sezione «Chi siamo»** (`.gallery.gallery--3`): `2.jpg`, `4.jpg`, `6.jpg`.
-- **Home, sezione «Come lavoriamo»** (`.panel__photo`): `7.jpg`.
-- **Contatti**, subito sotto il titolo (`.gallery.gallery--2`): `3.jpg`, `1.jpg`.
+- **Home, sezione «Chi siamo»** (`.gallery.gallery--3`): `1.jpg`, `2.jpg`, `4.jpg`.
+- **Home, sezione «Come lavoriamo»** (`.gallery.gallery--3`, fondo scuro): `5.jpg`, `6.jpg`, `7.jpg`.
+- **Contatti** (`.contact-layout__photo`, accanto alle quattro card impilate a sinistra): `3.jpg`.
 
 Il componente `.gallery` (in `style.css`) mantiene il rapporto 3:4 nativo —
-nessun ritaglio — e si riduce a una colonna sotto i 900px (`--3`) o i 700px
-(`--2`, stesso punto di rottura di `.contact-grid`). Aggiungerne una nuova:
-un altro `<img>` dentro il contenitore, stessa larghezza/altezza native in
-attributo per evitare CLS. L'alt testo passa da `data-i18n-alt` (tradotto in
-`assets/js/i18n.js`), non da un attributo statico.
+nessun ritaglio. Sotto i 900px una `.gallery--3` non impila le tre foto: diventa
+un carosello a scorrimento nativo che avanza da solo e si ferma per sempre al
+primo tocco manuale (`assets/js/gallery.js`, solo su `index.html`). Aggiungerne
+una nuova: un altro `<img>` dentro il contenitore, stessa larghezza/altezza
+native in attributo per evitare CLS. L'alt testo passa da `data-i18n-alt`
+(tradotto in `assets/js/i18n.js`), non da un attributo statico.
 
 ## Sottocartelle / Subfolders
 

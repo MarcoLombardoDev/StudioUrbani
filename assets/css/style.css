@@ -235,22 +235,36 @@ strong { font-weight: 600; }
   height: var(--header-h);
   display: flex;
   align-items: center;
-  transition: height .4s var(--ease), background-color .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+  transform-origin: top;
+  transition: transform .4s var(--ease), background-color .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
   border-bottom: 1px solid transparent;
 }
+/* Il rimpicciolimento allo scroll era un'animazione di height (82px -> 68px):
+   proprieta' di layout, ricalcolata a ogni frame. Qui la stessa riduzione
+   visiva si ottiene scalando il contenitore (transform, non layout) e
+   annullando lo schiacciamento sul contenuto con una scala inversa uguale e
+   contraria su .site-header__inner, cosi' testo e icone restano nitidi. */
 .site-header.is-solid {
-  height: 68px;
+  transform: scaleY(calc(68 / 82));
   background: rgba(247, 246, 243, .86);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom-color: var(--line-soft);
 }
-.site-header__inner { width: 100%; display: flex; align-items: center; gap: clamp(16px, 4vw, 48px); }
+.site-header__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+  transform-origin: top;
+  transition: transform .4s var(--ease);
+}
+.site-header.is-solid .site-header__inner { transform: translateY(-4px) scaleY(calc(82 / 68)); }
 
 /* Wordmark (placeholder tipografico del logo) */
 .brand { display: inline-flex; align-items: center; gap: .8rem; margin-right: auto; }
-.brand__logo { width: auto; height: 46px; flex: none; transition: height .4s var(--ease); }
-.site-header.is-solid .brand__logo { height: 38px; }
+.brand__logo { width: auto; height: 46px; flex: none; transition: transform .4s var(--ease); }
+.site-header.is-solid .brand__logo { transform: scale(calc(38 / 46)); }
 .wordmark { display: block; font-size: 1.42rem; font-weight: 300; letter-spacing: .005em; line-height: 1; color: var(--ink); }
 .wordmark em { font-style: normal; color: var(--navy); }
 .brand__payoff {

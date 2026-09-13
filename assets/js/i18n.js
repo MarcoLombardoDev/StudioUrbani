@@ -34,7 +34,7 @@
 
     /* --- hero --- */
     'hero.eyebrow': "Chartered accountants · Statutory auditors · Labour consultants",
-    'hero.title': "Accounting, tax and labour, one point of contact for every decision.",
+    'hero.title': "Accounting, tax and labour, one point of contact for every decision",
     'hero.lead': "We assist companies, professionals and private clients: whoever knows your case is the same person who follows its figures, filings and deadlines.",
     'hero.link1': "About the firm",
     'hero.link2': "The people",
@@ -53,7 +53,7 @@
 
     /* --- chi siamo --- */
     'about.eyebrow': "About us",
-    'about.title': "A firm built on the continuity of the relationship.",
+    'about.title': "A firm built on the continuity of the relationship",
     'about.p1': "Studio Urbani devotes its work to assisting companies, professionals and private clients in accounting, tax, employment and litigation matters.",
     'about.p2': "With its own resources and in cooperation with experienced professionals, the firm provides tax, administrative, banking and financial advice, statutory audit services, data processing and public relations. Every file has a stable contact person: whoever knows the client is the same person who follows their figures, filings and deadlines.",
     'about.p3': "For matters of particular international, corporate, criminal-tax and legal relevance, the firm draws on relationships with university lecturers, audit and certification firms, foreign professional practices, merchant banks, service companies and trade associations.",
@@ -68,7 +68,7 @@
 
     /* --- servizi --- */
     'services.eyebrow': "What we do",
-    'services.title': "Nine practice areas, under one roof.",
+    'services.title': "Nine practice areas, under one roof",
     'services.lead': "Studio Massimo Urbani, with its own resources and in cooperation with experienced professionals, provides services in the areas below.",
 
     'srv.1.t': "Corporate",
@@ -124,13 +124,13 @@
 
     /* --- fatturazione --- */
     'billing.eyebrow': "Electronic invoicing",
-    'billing.title': "Bookkeeping and invoices in the cloud, if you prefer.",
+    'billing.title': "Bookkeeping and invoices in the cloud, if you prefer",
     'billing.lead': "As an alternative to the classic method, the firm provides a client area for bookkeeping and electronic invoicing: issuing and receiving in XML, compliant archiving, documents always available to consult.",
     'billing.panel.cta': "Request information",
 
     /* --- come lavoriamo --- */
     'rel.eyebrow': "How we work",
-    'rel.title': "One point of contact, from beginning to end.",
+    'rel.title': "One point of contact, from beginning to end",
     'rel.lead': "From the first call to routine administration the path is always the same: no handovers, no file that starts again from zero.",
     'rel.s1.t': "First contact",
     'rel.s1.d': "A phone call or an email: you describe the situation and we tell you straight away whether and how we can take it on.",
@@ -151,7 +151,7 @@
 
     /* --- dicono di noi --- */
     'reviews.eyebrow': "What they say",
-    'reviews.title': "What our clients think.",
+    'reviews.title': "What our clients think",
     'reviews.all': "Read all the reviews",
     'reviews.write': "Tell us how it went",
     'reviews.carousel': "Google reviews",
@@ -160,7 +160,7 @@
 
     /* --- team --- */
     'team.eyebrow': "The people",
-    'team.title': "The person who answers is the person on your file.",
+    'team.title': "The person who answers is the person on your file",
     'team.lead': "The staff of Studio Massimo Urbani is made up of the professionals below, each following their own portfolio of clients over time.",
     'team.role1': "Managing partner · Chartered accountant, statutory auditor",
     'team.role2': "Chartered accountant",
@@ -172,7 +172,7 @@
 
     /* --- cta --- */
     'cta.eyebrow': "Contact",
-    'cta.title': "Let's talk about you.",
+    'cta.title': "Let's talk about you",
     'cta.lead': "Ask for an appointment: we will be glad to understand what you need and to give you all the help required.",
     'cta.btn1': "How to reach us",
 
@@ -194,7 +194,7 @@
 
     /* --- contatti --- */
     'contatti.eyebrow': "Where we are",
-    'contatti.title': "Rome, Via Cristoforo Colombo 348.",
+    'contatti.title': "Rome, Via Cristoforo Colombo 348",
     'contatti.lead': "A phone call or an email is enough to get started: we arrange a meeting at the office or by video call and review your situation together.",
     'contatti.addr.t': "Office",
     'contatti.addr.cta': "Get directions",
@@ -216,7 +216,7 @@
     'contatti.hours.l2': "Saturday and Sunday",
     'contatti.hours.closed': "Closed",
     'contatti.map.eyebrow': "Map",
-    'contatti.map.title': "How to reach the firm.",
+    'contatti.map.title': "How to reach the firm",
     'contatti.map.consentT': "Interactive Google Maps map",
     'contatti.map.consentD': "Loading the map will send some data (including your IP address) to Google. The map is not loaded without your consent.",
     'contatti.map.consentBtn': "Load the map",

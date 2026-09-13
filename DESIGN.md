@@ -258,6 +258,11 @@ esplicitamente per leggersi accanto alla rispettiva icona.
 etichetta in maiuscoletto d'ottone preceduta da un filetto di 28px, titolo,
 paragrafo lead. È l'elemento che rende il sito riconoscibile scorrendolo.
 
+**La regola del titolo senza punto.** Nessun `<h1>`–`<h4>` del sito termina con
+un punto fermo, qualunque sia la sua lunghezza o quanti periodi contenga: un
+titolo si legge come un'etichetta, non come una frase chiusa. Riguarda solo i
+titoli — lead, paragrafi e citazioni restano punteggiati normalmente.
+
 ## Layout
 
 L'ordine delle sezioni della landing è esso stesso una scelta di sistema:

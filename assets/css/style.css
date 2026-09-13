@@ -682,8 +682,9 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .strip__inner { display: grid; grid-template-columns: repeat(4, 1fr); }
 .strip__item { padding: clamp(26px, 3.4vw, 40px) clamp(16px, 2.4vw, 32px); border-left: 1px solid var(--line-soft); }
 .strip__item:first-child { border-left: 0; }
-.strip__item svg { width: 26px; height: 26px; color: var(--brass); margin-bottom: .9rem; stroke-width: 1.2; }
-.strip__item h2 { font-size: 1.05rem; font-weight: 500; letter-spacing: normal; margin-bottom: .35rem; }
+.strip__head { display: flex; align-items: center; gap: .7rem; margin-bottom: .6rem; }
+.strip__head svg { width: 26px; height: 26px; color: var(--brass); stroke-width: 1.2; flex: none; }
+.strip__head h2 { font-size: 1.05rem; font-weight: 500; letter-spacing: normal; margin: 0; }
 .strip__item p { font-size: .92rem; color: var(--muted); }
 @media (max-width: 860px) { .strip__inner { grid-template-columns: repeat(2, 1fr); } .strip__item:nth-child(3) { border-left: 0; } .strip__item:nth-child(n+3) { border-top: 1px solid var(--line-soft); } }
 @media (max-width: 480px) { .strip__inner { grid-template-columns: 1fr; } .strip__item { border-left: 0; border-top: 1px solid var(--line-soft); } .strip__item:first-child { border-top: 0; } }
@@ -843,15 +844,16 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   padding: clamp(24px, 2.6vw, 32px);
   cursor: default;
 }
+.service__head { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.25rem; }
 .service__icon {
   width: 46px; height: 46px; border-radius: var(--radius-lg);
   display: grid; place-items: center;
   background: rgba(4, 80, 125, .07);
   color: var(--navy);
-  margin-bottom: 1.25rem;
+  flex: none;
 }
 .service__icon svg { width: 23px; height: 23px; stroke-width: 1.2; }
-.service h3 { margin-bottom: .7rem; }
+.service__head h3 { margin: 0; }
 .service ul { list-style: none; display: grid; gap: .5rem; margin-top: .2rem; }
 .service li { position: relative; padding-left: 1.05rem; font-size: .945rem; color: var(--ink-soft); line-height: 1.55; }
 .service li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass); }
@@ -919,6 +921,9 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .contact-card ul { list-style: none; display: grid; gap: .4rem; }
 .contact-card p { font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
 .contact-card ul + p, .contact-card p + ul { margin-top: 1rem; }
+/* Le righe dei mezzi pubblici (Sede) seguono un paragrafo, non l'indirizzo:
+   stesso stile del testo sopra, non quello piu' marcato della lista indirizzo. */
+.contact-card p + ul li { font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
 .contact-card li, .contact-card a { overflow-wrap: anywhere; }
 /* «Ottieni indicazioni» e' l'unico .btn diretto nella card: sotto la soglia
    in cui .contact-layout collassa a una colonna lo si centra come blocco a

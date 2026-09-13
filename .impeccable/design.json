@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T20:01:21.000Z",
+  "generatedAt": "2026-09-13T20:19:02.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -320,9 +320,9 @@
       "name": "Service Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Card di un’area di servizio: descrittiva e immobile, non è un link.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/></svg></div><h3>Area Contabilità</h3><ul><li>Contabilità semplificata e ordinaria</li><li>Adempimenti IVA e tenuta dei registri</li></ul></article>",
-      "css": ".ds-card { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(24px,2.6vw,32px); cursor: default; } .ds-card-icon { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: rgba(4,80,125,.07); color: var(--navy, #04507d); margin-bottom: 1.25rem; } .ds-card-icon svg { width: 23px; height: 23px; } .ds-card h3 { margin: 0 0 .7rem; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; line-height: 1.1; color: var(--ink, #10141c); } .ds-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .ds-card li { position: relative; padding-left: 1.05rem; font-family: Inter, sans-serif; font-size: .945rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-card li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass, #b3915f); }"
+      "description": "Card di un'area di servizio: descrittiva e immobile, non e' un link. Icona e titolo affiancati in cima.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><div class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/></svg></div><h3>Area Contabilità</h3></div><ul><li>Contabilità semplificata e ordinaria</li><li>Adempimenti IVA e tenuta dei registri</li></ul></article>",
+      "css": ".ds-card { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(24px,2.6vw,32px); cursor: default; } .ds-card-head { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.25rem; } .ds-card-icon { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: rgba(4,80,125,.07); color: var(--navy, #04507d); flex: none; } .ds-card-icon svg { width: 23px; height: 23px; } .ds-card-head h3 { margin: 0; font-family: Jost, sans-serif; font-size: 1.4rem; font-weight: 400; line-height: 1.1; color: var(--ink, #10141c); } .ds-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .ds-card li { position: relative; padding-left: 1.05rem; font-family: Inter, sans-serif; font-size: .945rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-card li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass, #b3915f); }"
     },
     {
       "name": "Team Portrait",

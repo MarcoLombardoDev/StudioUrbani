@@ -914,10 +914,9 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .contact-card { background: var(--white); border: 1px solid var(--line-soft); border-radius: var(--radius-lg); padding: clamp(22px, 2.6vw, 30px); }
 .contact-card__head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; }
 .contact-card__head svg { width: 22px; height: 22px; color: var(--brass); stroke-width: 1.2; flex: none; }
-/* Titolo in grassetto accanto all'icona: unica eccezione dichiarata alla
-   regola del peso leggero (nessun titolo oltre 500), voluta esplicitamente
-   per queste card. */
-.contact-card__head h2 { font-size: 1.12rem; font-weight: 700; letter-spacing: normal; margin: 0; }
+/* Stesso trattamento di .strip__head/.service__head: icona e titolo in
+   riga, peso 500 come ogni altro titolo del sito. */
+.contact-card__head h2 { font-size: 1.12rem; font-weight: 500; letter-spacing: normal; margin: 0; }
 .contact-card ul { list-style: none; display: grid; gap: .4rem; }
 .contact-card p { font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
 .contact-card ul + p, .contact-card p + ul { margin-top: 1rem; }

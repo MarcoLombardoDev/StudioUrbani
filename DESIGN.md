@@ -250,9 +250,7 @@ titoli e nelle etichette.
 ### Named Rules
 **La regola del peso leggero.** Nessun titolo supera il peso 500. In un sistema
 geometrico il grassetto legge come pesantezza, non come importanza: la gerarchia
-si fa con la dimensione e con l'aria. Unica eccezione dichiarata: i titoli
-delle card di Contatti (`.contact-card__head h2`, peso 700), richiesti
-esplicitamente per leggersi accanto alla rispettiva icona.
+si fa con la dimensione e con l'aria.
 
 **La regola dell'etichetta.** Ogni sezione si apre con la stessa tripletta —
 etichetta in maiuscoletto d'ottone preceduta da un filetto di 28px, titolo,

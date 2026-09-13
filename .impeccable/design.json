@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T20:19:02.000Z",
+  "generatedAt": "2026-09-13T20:24:59.000Z",
   "title": "Design System: Studio Urbani",
   "extensions": {
     "colorMeta": {
@@ -378,10 +378,10 @@
       "name": "Contact Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Card di contatto: icona e titolo in grassetto affiancati (unica eccezione alla regola del peso leggero), poi lista e/o paragrafo.",
+      "description": "Card di contatto: icona e titolo affiancati (stesso trattamento di Strip valori e Service Card), poi lista e/o paragrafo.",
       "html": "<article class=\"ds-contact\"><div class=\"ds-contact-head\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.2V12l3.2 2.2\"/></svg><h2>Orari</h2></div><ul><li>Lunedì - Venerdì 09:00-13:00</li></ul><p>Testo supplementare, piu' piccolo e in inchiostro tenue.</p></article>",
-      "css": ".ds-contact { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(22px,2.6vw,30px); } .ds-contact-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; } .ds-contact-head svg { width: 22px; height: 22px; color: var(--brass, #b3915f); flex: none; } .ds-contact-head h2 { margin: 0; font-family: Jost, sans-serif; font-size: 1.12rem; font-weight: 700; color: var(--ink, #10141c); } .ds-contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; } .ds-contact p { font-family: Inter, sans-serif; font-size: .95rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-contact ul + p, .ds-contact p + ul { margin-top: 1rem; }",
-      "notes": "Icona e titolo in grassetto affiancati: unica eccezione dichiarata alla regola del peso leggero (nessun altro titolo del sito supera il peso 500), richiesta esplicitamente per queste card. Due card corte (Orari, Telefono) affiancate in una riga (flex, non grid); le altre (Email, Candidatura spontanea, Sede), piu' lunghe, impilate a piena larghezza sotto in un semplice stack verticale."
+      "css": ".ds-contact { background: #fff; border: 1px solid rgba(16,20,28,.06); border-radius: 10px; padding: clamp(22px,2.6vw,30px); } .ds-contact-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; } .ds-contact-head svg { width: 22px; height: 22px; color: var(--brass, #b3915f); flex: none; } .ds-contact-head h2 { margin: 0; font-family: Jost, sans-serif; font-size: 1.12rem; font-weight: 500; color: var(--ink, #10141c); } .ds-contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; } .ds-contact p { font-family: Inter, sans-serif; font-size: .95rem; line-height: 1.55; color: var(--ink-soft, #39424f); } .ds-contact ul + p, .ds-contact p + ul { margin-top: 1rem; }",
+      "notes": "Icona e titolo affiancati, stesso schema di .strip__head e .service__head: peso 500, come ogni altro titolo del sito (nessuna eccezione alla regola del peso leggero). Due card corte (Orari, Telefono) affiancate in una riga (flex, non grid); le altre (Email, Candidatura spontanea, Sede), piu' lunghe, impilate a piena larghezza sotto in un semplice stack verticale."
     }
   ],
   "narrative": {

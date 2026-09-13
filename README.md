@@ -110,14 +110,28 @@ Il ritaglio circolare, l'`object-fit: cover` e il passaggio da grigio a colore i
 hover sono già gestiti dal CSS; le immagini rendono meglio quadrate, almeno
 320x320 px.
 
+## Fotografie degli ambienti
+
+Sette scatti degli uffici (`assets/img/1.jpg`–`7.jpg`, JPEG 900×1200, rapporto
+3:4) distribuiti in tre gallerie (componente `.gallery` in `style.css`, nessun
+ritaglio: il rapporto della griglia è lo stesso del file):
+
+- «Chi siamo» (home): tre foto in riga, una colonna sotto i 900px.
+- «Come lavoriamo» (home): una foto in cima al pannello di contatto, tagliata
+  a 16:10 — l'unica eccezione, per non schiacciare il resto del pannello.
+- Contatti: due foto affiancate sotto il titolo, una colonna sotto i 700px.
+
+Dettagli su file, distribuzione e come aggiungerne altre in `assets/img/README.md`.
+
 ## Recensioni Google / Google reviews
 
 La sezione «Dicono di noi» mostra la valutazione media della scheda Google dello
 Studio e le ultime recensioni in un carosello che avanza da sé ogni cinque
 secondi e mezzo, con comando di pausa (si ferma anche col mouse sopra, col
 fuoco dentro, fuori schermo e a scheda nascosta; con `prefers-reduced-motion`
-non parte). Accanto alla media, due rimandi alla scheda: «Leggile tutte» e
-«Scrivi la tua», quest'ultimo costruito dal place id dei dati. **Non** è un widget di terze parti: il browser
+non parte). Accanto alla media, due rimandi alla scheda: «Leggi tutte le
+recensioni» e «Raccontaci com'è andata», quest'ultimo costruito dal place id
+dei dati. **Non** è un widget di terze parti: il browser
 del visitatore non contatta Google e la sezione non richiede alcun consenso.
 
 Come funziona:

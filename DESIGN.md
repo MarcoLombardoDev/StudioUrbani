@@ -480,6 +480,31 @@ Tre vincoli che non sono estetici e vanno rispettati:
   mostrato solo con dati validi: niente cornice vuota, niente recensioni
   inventate.
 
+### Photo gallery (signature)
+Le prime fotografie reali degli ambienti dello Studio (`assets/img/1.jpg` –
+`7.jpg`, tutte 900×1200, rapporto 3:4): niente ritaglio via `object-fit` — il
+rapporto della griglia e' lo stesso del file, l'intera inquadratura resta
+visibile. Filetto sottile e raggio grande, uguali a ogni altro riquadro del
+sito, nessun trattamento fotografico speciale (niente grayscale: sono
+documentazione, non ritratti). Tre punti d'uso, stesso componente:
+
+- **«Chi siamo»**: tre foto in riga sotto le due colonne di testo
+  (`.gallery.gallery--3`), una colonna sola sotto i 900px — lo stesso punto in
+  cui collassa `.about` appena sopra.
+- **Contatti**: due foto affiancate appena sotto il titolo di pagina
+  (`.gallery.gallery--2`), una sola colonna sotto i 700px, come `.contact-grid`
+  subito dopo. Le due sezioni sono una coppia visiva (la galleria azzera il
+  riempimento inferiore, la griglia quello superiore), lo stesso
+  accorgimento della coppia fatturazione/recensioni.
+- **«Come lavoriamo»**: una foto sola in cima al pannello scuro di contatto
+  (`.panel__photo`), tagliata invece a 16:10 (l'unica eccezione al rapporto
+  nativo: dentro un pannello stretto una verticale intera avrebbe schiacciato
+  tutto il resto del contenuto sotto la piega).
+
+L'alt passa da `data-i18n-alt`, non da un attributo statico: e' la prima volta
+che il sito descrive un contenuto informativo dentro un `alt`, quindi va
+tradotto come ogni altro testo, non lasciato in italiano sotto EN.
+
 ### Section opener (signature)
 La tripletta etichetta-titolo-lead descritta in Typography, con l'etichetta in
 `display: inline-flex` e un filetto d'ottone da 28px prima del testo. Nelle

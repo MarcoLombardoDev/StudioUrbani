@@ -694,6 +694,24 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 }
 .quote footer { margin-top: .9rem; font-family: var(--font-body); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
+/* ---------- Fotografie dello studio ---------- */
+/* Componente condiviso fra «Chi siamo» (3 foto) e la pagina Contatti (2 foto).
+   Rapporto 3:4, identico all'originale 900x1200: object-fit: cover non ritaglia
+   nulla, serve solo da rete di sicurezza se in futuro arrivasse un file con
+   proporzioni leggermente diverse. */
+.gallery { display: grid; gap: clamp(16px, 2.2vw, 28px); margin-top: clamp(32px, 4vw, 56px); }
+.gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line-soft); }
+.gallery--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .gallery--3 { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; } }
+.gallery--2 { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+@media (min-width: 700px) { .gallery--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 699px) { .gallery--2 { max-width: 420px; margin-inline: auto; } }
+
+/* La galleria e la griglia di contatti sotto formano un'unica coppia visiva:
+   stesso accorgimento gia' usato per fatturazione/recensioni. */
+#contatti-foto { padding-bottom: 0; }
+#contatti-foto + .section { padding-top: 0; }
+
 /* ---------- Team ---------- */
 /* Otto professionisti: 4 colonne su desktop e 2 su schermi ridotti,
    così le righe restano sempre complete. */
@@ -824,6 +842,15 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
   border-radius: var(--radius-lg);
   padding: clamp(26px, 3vw, 38px);
   backdrop-filter: blur(6px);
+}
+.panel__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.6rem;
 }
 .panel h2 { font-size: 1.5rem; font-weight: 400; letter-spacing: -.005em; margin-bottom: .9rem; }
 .panel__meta { list-style: none; display: grid; gap: .8rem; margin: 1.6rem 0 1.8rem; }

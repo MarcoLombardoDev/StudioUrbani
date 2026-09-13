@@ -11,6 +11,7 @@
 | `android-chrome-192x192.png`, `android-chrome-512x512.png` | PNG | Icone del web manifest |
 | `site.webmanifest` | JSON | Manifest PWA (percorsi relativi a questa cartella) |
 | `massimo_urbani_face.png` | PNG 380×380 | Ritratto del titolare nella card del team |
+| `1.jpg` – `7.jpg` | JPEG 900×1200 | Fotografie degli ambienti dello Studio |
 
 `logo-light.svg` è derivato da `logo.svg` sostituendo il tratto con `#ffffff`
 e i vuoti con il colore del footer (`--navy-deep`, `#033a5c`): se cambia il
@@ -26,6 +27,23 @@ Se un domani arrivassero — quadrate, almeno 320×320 px, inquadratura sul volt
 — si inseriscono con un `<img>` dentro un `.team__photo`, togliendo la classe
 `team__card--plain` dalla card. Ritaglio circolare, `object-fit`, `grayscale` in
 riposo e colore in hover sono già gestiti dal CSS.
+
+## Fotografie degli ambienti / Office photos
+
+`1.jpg` – `7.jpg`: sette scatti degli uffici (ingresso, sala d'attesa,
+corridoio, sale riunioni, postazioni), tutti JPEG 900×1200 (rapporto 3:4).
+Distribuiti così:
+
+- **Home, sezione «Chi siamo»** (`.gallery.gallery--3`): `2.jpg`, `4.jpg`, `6.jpg`.
+- **Home, sezione «Come lavoriamo»** (`.panel__photo`): `7.jpg`.
+- **Contatti**, subito sotto il titolo (`.gallery.gallery--2`): `3.jpg`, `1.jpg`.
+
+Il componente `.gallery` (in `style.css`) mantiene il rapporto 3:4 nativo —
+nessun ritaglio — e si riduce a una colonna sotto i 900px (`--3`) o i 700px
+(`--2`, stesso punto di rottura di `.contact-grid`). Aggiungerne una nuova:
+un altro `<img>` dentro il contenitore, stessa larghezza/altezza native in
+attributo per evitare CLS. L'alt testo passa da `data-i18n-alt` (tradotto in
+`assets/js/i18n.js`), non da un attributo statico.
 
 ## Sottocartelle / Subfolders
 

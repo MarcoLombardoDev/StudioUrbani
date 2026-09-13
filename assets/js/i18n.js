@@ -62,6 +62,9 @@
     'about.li3': "<strong>Support in litigation:</strong> tax appeals, self-review requests and dealings with the tax authorities.",
     'about.quote': "«To meet our clients' expectations and to make the relationship between the tax authorities and the taxpayer easier.»",
     'about.quoteRole': "Managing partner",
+    'about.photo1': "Waiting area at the Studio Urbani offices",
+    'about.photo2': "Corridor and archive at the Studio Urbani offices",
+    'about.photo3': "One of the meeting rooms at the Studio Urbani offices",
 
     /* --- servizi --- */
     'services.eyebrow': "What we do",
@@ -142,6 +145,7 @@
     'rel.panel.l1': "Monday to Friday, 9am-1pm and 2pm-6pm",
     'rel.panel.l2': "Via Cristoforo Colombo 348, Sc. D int. 3 — Rome",
     'rel.panel.l3': "Meeting at the office or by video call",
+    'rel.panel.photo': "A workstation at the Studio Urbani offices",
 
     /* --- dicono di noi --- */
     'reviews.eyebrow': "What they say",
@@ -192,6 +196,8 @@
     'contatti.lead': "A phone call or an email is enough to get started: we arrange a meeting at the office or by video call and review your situation together.",
     'contatti.addr.t': "Office",
     'contatti.addr.cta': "Get directions",
+    'contatti.photo1': "The Studio Urbani nameplates on the office door",
+    'contatti.photo2': "The office entrance, with the «Studio Urbani» doormat",
     'contatti.tel.t': "Phone and fax",
     'contatti.mail.t': "Email",
     'contatti.mail.l1': "General enquiries",
@@ -345,7 +351,7 @@
   var cached = false;
 
   function nodes() {
-    return document.querySelectorAll('[data-i18n], [data-i18n-content], [data-i18n-aria-label], [data-i18n-title], [data-i18n-placeholder]');
+    return document.querySelectorAll('[data-i18n], [data-i18n-content], [data-i18n-aria-label], [data-i18n-title], [data-i18n-placeholder], [data-i18n-alt]');
   }
 
   function attrTargets(el) {

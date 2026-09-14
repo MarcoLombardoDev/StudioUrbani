@@ -920,9 +920,11 @@ body.nav-open .burger span::after { transform: translateY(-5.5px) rotate(-45deg)
 .contact-card ul { list-style: none; display: grid; gap: .4rem; }
 .contact-card p { font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
 .contact-card ul + p, .contact-card p + ul { margin-top: 1rem; }
-/* Le righe dei mezzi pubblici (Sede) seguono un paragrafo, non l'indirizzo:
-   stesso stile del testo sopra, non quello piu' marcato della lista indirizzo. */
-.contact-card p + ul li { font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
+/* Le righe dei mezzi pubblici (Sede): stesso stile del paragrafo sopra, non
+   quello piu' marcato della lista indirizzo, con un trattino invece del
+   pallino — stesso segno gia' usato nelle liste delle card servizi. */
+.contact-card__transit li { position: relative; padding-left: 1.05rem; font-size: .95rem; line-height: 1.55; color: var(--ink-soft); }
+.contact-card__transit li::before { content: ''; position: absolute; left: 0; top: .68em; width: 5px; height: 1px; background: var(--brass); }
 .contact-card li, .contact-card a { overflow-wrap: anywhere; }
 /* «Ottieni indicazioni» e' l'unico .btn diretto nella card: sotto la soglia
    in cui .contact-layout collassa a una colonna lo si centra come blocco a

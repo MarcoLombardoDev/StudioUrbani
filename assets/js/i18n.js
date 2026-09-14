@@ -206,7 +206,7 @@
     'contatti.tel.t': "Phone and fax",
     'contatti.tel.whatsapp': "Want to reach us on WhatsApp Business? Save (+39) 06 5123225 to your contacts and message us: we'll be happy to answer your questions.",
     'contatti.apply.t': "Open application",
-    'contatti.apply.d': "Are you a professional and want to work with us? Send your CV and a short introduction to <a href='mailto:cv@studiourbani.it'>cv@studiourbani.it</a>. Our team will review your profile and get in touch if a suitable opportunity comes up.",
+    'contatti.apply.d': "Are you a professional and want to work with us? Send your CV and a short introduction, and our team will review your profile and get in touch if a suitable opportunity comes up:",
     'contatti.mail.t': "Email",
     'contatti.mail.l1': "General enquiries",
     'contatti.mail.l2': "Administrative matters",

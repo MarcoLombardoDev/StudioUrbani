@@ -314,32 +314,38 @@ in capo allo Studio, come indicato nel footer del sito. Non si accettano
 contributi esterni: il repository è pubblico solo per rendere possibile
 l'anteprima su GitHub Pages.
 
-### Portare il sito su un hosting tradizionale / Moving to classic hosting
+### Hosting su Aruba / Aruba hosting
 
-Il sito non ha nulla da migrare: 0,9 MB di file statici, **nessun PHP e nessun
-database**. Su un hosting Linux basta l'accesso FTP, `.htaccess` abilitato, un
-certificato SSL incluso e un centinaio di MB di spazio; i piani venduti su
-database, PHP e risorse dedicate non aggiungono niente a un sito statico.
+Il sito è pubblicato anche su `www.studiourbani.it`, hosting Aruba con accesso
+FTP (`ftp.studiourbani.it`, cartella `/www.studiourbani.it/`). Il deploy è
+`.github/workflows/deploy-aruba.yml`: a ogni push su `main`, GitHub carica i
+file via FTP (`SamKirkland/FTP-Deploy-Action`), aggiornando solo ciò che è
+cambiato — non l'intero sito a ogni volta — grazie a uno stato che l'azione
+tiene sul server stesso (`.ftp-deploy-sync-state.json`). Servono tre segreti
+del repository: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
+
+Al primo passaggio, per svuotare la cartella (rimuove un eventuale WordPress
+preesistente): *Actions → «Pubblica su Aruba» → Run workflow*, spuntando
+«Svuota la cartella». È l'unica volta che va spuntata: alle esecuzioni
+automatiche successive resta disattivata, così il deploy non cancella mai la
+cartella da solo.
 
 L'unica cosa che non si sposta da sé è l'aggiornamento notturno delle
-recensioni, che vive in GitHub Actions. La strada scelta è tenere GitHub come
-sorgente — il job continua a girare dov'è, con la chiave nei segreti — e
-aggiungere un secondo workflow che carica i file sull'hosting via FTP a ogni
-push su `main`. Portare invece lo scaricamento sull'hosting significherebbe
-riscrivere lo script in PHP (Aruba non offre Node), tenere la chiave in un file
-fuori dalla webroot e dipendere dai cron job del piano.
+recensioni, che resta in GitHub Actions: il job gira dov'è, con la chiave nei
+segreti, e scrive `assets/data/reviews.json` su `main` come sempre — da lì la
+Action di deploy lo porta anche sull'hosting.
 
-Da preparare al momento del passaggio: un `.htaccess` con HTTPS forzato,
-canonicalizzazione su `www`, `ErrorDocument 404 /404.html` e cache lunga su
-font e immagini — regole che oggi dà GitHub Pages. Non c'è invece nulla da
-cambiare nei riferimenti assoluti: `canonical`, `og:`, `robots.txt` e
-`sitemap.xml` puntano già al dominio finale, e lo script che aggiunge
-`noindex` si attiva solo su host `github.io`.
+`.htaccess`, alla radice, forza HTTPS e la canonicalizzazione su `www`, imposta
+`ErrorDocument 404 /404.html` e una cache lunga su font e immagini — le stesse
+regole che su GitHub Pages sono implicite. Non c'è invece nulla da cambiare
+nei riferimenti assoluti: `canonical`, `og:`, `robots.txt` e `sitemap.xml`
+puntano già al dominio finale, e lo script che aggiunge `noindex` si attiva
+solo su host `github.io` (l'anteprima resta disponibile in parallelo).
 
-Due verifiche prima di toccare il piano di hosting: **dove sono le caselle di
-posta** `@studiourbani.it` (per uno studio il cui primo contatto è l'email, è
-il rischio più serio dell'intera migrazione) e il fatto che il dominio sia già
-sullo stesso provider, così al passaggio non si toccano i nameserver.
+Verificato prima del passaggio: le caselle di posta `@studiourbani.it` restano
+sullo stesso account Aruba, indipendenti dalla cartella web svuotata dal primo
+deploy; il dominio era già sullo stesso provider, quindi nessun nameserver è
+stato toccato.
 
 ## Convenzioni / Conventions
 

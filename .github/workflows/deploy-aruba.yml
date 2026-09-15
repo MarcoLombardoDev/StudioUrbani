@@ -1,0 +1,59 @@
+name: Pubblica su Aruba
+
+# Carica il sito via FTP su ftp.studiourbani.it ogni volta che main cambia.
+# Aggiornamento incrementale: SamKirkland/FTP-Deploy-Action tiene uno stato
+# dei file gia' caricati (.ftp-deploy-sync-state.json sul server) e trasmette
+# solo cio' che e' cambiato, non l'intero sito a ogni deploy.
+#
+# Servono tre SEGRETI del repository (Settings > Secrets and variables >
+# Actions > New repository secret):
+#   FTP_SERVER    ftp.studiourbani.it
+#   FTP_USERNAME  l'utente FTP Aruba
+#   FTP_PASSWORD  la password FTP
+#
+# Prima pubblicazione, per svuotare la cartella (rimuove il WordPress
+# preesistente): Actions > "Pubblica su Aruba" > Run workflow, spuntando
+# "Svuota la cartella". Alle esecuzioni successive, lanciate automaticamente
+# a ogni push su main, quella casella resta disattivata: il deploy aggiorna
+# solo i file cambiati, senza mai cancellare l'intera cartella da solo.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      clean_slate:
+        description: 'Svuota la cartella prima di caricare (solo per la prima pubblicazione)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Carica via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          server-dir: /www.studiourbani.it/
+          dangerous-clean-slate: ${{ github.event.inputs.clean_slate == 'true' }}
+          exclude: |
+            .git*
+            .git*/**
+            .github/**
+            .claude/**
+            .impeccable/**
+            scripts/**
+            README.md
+            DESIGN.md
+            PRODUCT.md
+            CLAUDE.md
+            .nojekyll

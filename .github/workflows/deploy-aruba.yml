@@ -16,6 +16,15 @@ name: Pubblica su Aruba
 # "Svuota la cartella". Alle esecuzioni successive, lanciate automaticamente
 # a ogni push su main, quella casella resta disattivata: il deploy aggiorna
 # solo i file cambiati, senza mai cancellare l'intera cartella da solo.
+#
+# "Svuota la cartella" puo' fallire su un'installazione WordPress grande: una
+# volta cancellati tutti i file, l'azione a volte prova comunque a rientrare
+# in una vecchia cartella appena rimossa (es. wp-content/plugins/...) e si
+# ferma con "550 Can't change directory" — un bug dell'azione stessa nel
+# passaggio dalla cancellazione al caricamento, non un problema di credenziali
+# o del sito. Se succede: svuotare la cartella a mano via FTP o dal pannello
+# Aruba, poi rilanciare senza "Svuota la cartella" (la cartella e' gia' vuota,
+# quindi non serve).
 
 on:
   push:

@@ -330,6 +330,15 @@ preesistente): *Actions → «Pubblica su Aruba» → Run workflow*, spuntando
 automatiche successive resta disattivata, così il deploy non cancella mai la
 cartella da solo.
 
+Alla migrazione da WordPress, «Svuota la cartella» ha cancellato tutto
+correttamente ma è poi fallita nel passaggio al caricamento: l'azione ha
+provato a rientrare in una cartella di un plugin (`wp-content/plugins/...`)
+appena rimossa, fermandosi con «550 Can't change directory» — un bug
+dell'azione stessa nel passaggio dalla cancellazione al caricamento, non delle
+credenziali o del sito. Soluzione che ha funzionato: svuotare la cartella a
+mano (FTP o pannello Aruba) e rilanciare senza «Svuota la cartella», visto che
+ormai era già vuota.
+
 L'unica cosa che non si sposta da sé è l'aggiornamento notturno delle
 recensioni, che resta in GitHub Actions: il job gira dov'è, con la chiave nei
 segreti, e scrive `assets/data/reviews.json` su `main` come sempre — da lì la
